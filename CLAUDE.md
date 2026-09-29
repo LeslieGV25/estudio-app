@@ -117,8 +117,10 @@ reserva=`isReserve`, apuntes=`Note`, simulacro=`ExamRules`.
 - **Fase 0 — Base** ✅ formato, esquema, validador Python, pack de Zaragoza. Pendiente en Flutter:
   `flutter create`, estructura de carpetas, dependencias, tema, router, CI (GitHub Actions: analyze + test).
 - **Fase 1 — Datos**: esquema Drift + migraciones; parseo del pack; `PackValidator` en Dart con tests
-  (casos válidos e inválidos); el pack de Zaragoza se importa al primer arranque desde `assets/`;
-  pantalla de packs (lista, activar, importar desde fichero, borrar).
+  (casos válidos e inválidos); el pack de Zaragoza se importa al primer arranque desde el asset
+  `packs/zgz-tai.pack.json` (declarado tal cual en `pubspec.yaml`, sin copiarlo a `assets/`: es la
+  misma fuente que usan `tools/validate_pack.py` y `tools/build_zgz_pack.py`); pantalla de packs
+  (lista, activar, importar desde fichero, borrar).
 - **Fase 2 — Práctica**: elegir tema/bloque/fuente y nº de preguntas; pantalla de pregunta con
   contexto y código; feedback y explicación; guardar cada respuesta como evento.
 - **Fase 3 — Repaso**: Leitner, contador de «pendientes hoy», sesión de repaso.

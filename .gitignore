@@ -4,3 +4,17 @@ __pycache__/
 build/
 .idea/
 .vscode/
+
+# Flutter/Dart
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+migrate_working_dir/
+*.iml
+*.ipr
+*.iws
+
+# Código generado (riverpod/drift/freezed/json_serializable)
+*.g.dart
+*.freezed.dart
