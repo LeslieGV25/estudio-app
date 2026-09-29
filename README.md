@@ -1,5 +1,7 @@
 # Estudio por packs
 
+[![CI](https://github.com/LeslieGV25/estudio-app/actions/workflows/ci.yml/badge.svg)](https://github.com/LeslieGV25/estudio-app/actions/workflows/ci.yml)
+
 App multiplataforma (Android y web) hecha con Flutter para preparar exámenes con tests: práctica por temas,
 simulacros con las reglas del examen real, repaso inteligente de fallos y estadísticas.
 
