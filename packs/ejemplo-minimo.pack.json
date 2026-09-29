@@ -1,0 +1,41 @@
+{
+  "formato": "estudio-pack",
+  "version_formato": 1,
+  "pack": {
+    "id": "ejemplo-minimo",
+    "nombre": "Pack de ejemplo",
+    "descripcion": "Plantilla mínima para crear tu propio pack.",
+    "version": "1.0.0",
+    "tipo": "curso",
+    "idioma": "es-ES"
+  },
+  "temario": {
+    "bloques": [{ "id": 1, "nombre": "Bloque único" }],
+    "temas": [
+      { "id": 1, "bloque": 1, "titulo": "Tema 1" },
+      { "id": 2, "bloque": 1, "titulo": "Tema 2" }
+    ]
+  },
+  "fuentes": [
+    { "id": "mis-preguntas", "tipo": "estudio", "nombre": "Mis preguntas", "oficial": false, "respuestas": "elaboracion_propia" }
+  ],
+  "preguntas": [
+    {
+      "id": "p-001",
+      "fuente": "mis-preguntas",
+      "tema": 1,
+      "enunciado": "¿Cuántos bits tiene una dirección IPv4?",
+      "opciones": { "a": "32", "b": "64", "c": "128" },
+      "correcta": "a",
+      "explicacion": "IPv4 usa 32 bits; IPv6, 128."
+    },
+    {
+      "id": "p-002",
+      "fuente": "mis-preguntas",
+      "tema": 2,
+      "enunciado": "¿Qué comando de Linux muestra el directorio actual?",
+      "opciones": { "a": "cd", "b": "pwd", "c": "ls", "d": "dir" },
+      "correcta": "b"
+    }
+  ]
+}

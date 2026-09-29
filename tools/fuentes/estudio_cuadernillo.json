@@ -1,0 +1,2656 @@
+{
+ "version": 1,
+ "id": "estudio-cuadernillo",
+ "organismo": "Ayuntamiento de Zaragoza",
+ "plaza": "Técnica/o Auxiliar Informática",
+ "convocatoria": "Material de estudio propio (basado en el cuadernillo, revisado)",
+ "turno": "estudio",
+ "fecha_examen": null,
+ "fuente_respuestas": "elaboracion_propia",
+ "origen": "material_propio",
+ "estado": "revisado_no_oficial",
+ "ejercicios": [
+  {
+   "id": "est",
+   "nombre": "Preguntas de estudio por temas",
+   "num_opciones": 3,
+   "contextos": [],
+   "preguntas": [
+    {
+     "id": "est-t01-01",
+     "numero": "1",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 1,
+     "enunciado": "Según el artículo 1.1 de la Constitución, ¿cuáles son los valores superiores del ordenamiento jurídico?",
+     "opciones": {
+      "a": "La libertad, la justicia, la igualdad y el pluralismo político.",
+      "b": "La libertad, la igualdad, la fraternidad y el pluralismo político.",
+      "c": "La justicia, la igualdad, la solidaridad y la propiedad."
+     },
+     "correcta": "a",
+     "explicacion": "Art. 1.1 CE: cuatro valores superiores, libertad, justicia, igualdad y pluralismo político."
+    },
+    {
+     "id": "est-t01-02",
+     "numero": "2",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 1,
+     "enunciado": "Según el artículo 1.3 de la Constitución, la forma política del Estado español es:",
+     "opciones": {
+      "a": "El Estado autonómico.",
+      "b": "La Monarquía parlamentaria.",
+      "c": "La Monarquía constitucional."
+     },
+     "correcta": "b",
+     "explicacion": "Art. 1.3 CE: «La forma política del Estado español es la Monarquía parlamentaria»."
+    },
+    {
+     "id": "est-t01-03",
+     "numero": "3",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 1,
+     "enunciado": "Según el artículo 137 de la Constitución, el Estado se organiza territorialmente en:",
+     "opciones": {
+      "a": "Municipios, comarcas, provincias y Comunidades Autónomas.",
+      "b": "Municipios y Comunidades Autónomas.",
+      "c": "Municipios, provincias y las Comunidades Autónomas que se constituyan."
+     },
+     "correcta": "c",
+     "explicacion": "Art. 137 CE. Las comarcas no aparecen en la Constitución; las crea la legislación autonómica."
+    },
+    {
+     "id": "est-t01-04",
+     "numero": "4",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 1,
+     "enunciado": "Según el artículo 103.3 de la Constitución, el acceso a la función pública se rige por los principios de:",
+     "opciones": {
+      "a": "Mérito y capacidad.",
+      "b": "Igualdad y publicidad.",
+      "c": "Objetividad y eficacia."
+     },
+     "correcta": "a",
+     "explicacion": "Art. 103.3 CE: acceso a la función pública de acuerdo con los principios de mérito y capacidad."
+    },
+    {
+     "id": "est-t01-05",
+     "numero": "5",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 1,
+     "enunciado": "¿Qué título de la Constitución regula la organización territorial del Estado?",
+     "opciones": {
+      "a": "El Título VI.",
+      "b": "El Título VIII.",
+      "c": "El Título IV."
+     },
+     "correcta": "b",
+     "explicacion": "Título VIII (arts. 137-158). El IV es «Del Gobierno y de la Administración» y el VI «Del Poder Judicial»."
+    },
+    {
+     "id": "est-t02-01",
+     "numero": "6",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 2,
+     "enunciado": "Según la Ley Orgánica 3/2007, la situación en que una disposición, criterio o práctica aparentemente neutros pone a personas de un sexo en desventaja particular respecto de las del otro se denomina:",
+     "opciones": {
+      "a": "Discriminación directa.",
+      "b": "Acción positiva.",
+      "c": "Discriminación indirecta."
+     },
+     "correcta": "c",
+     "explicacion": "Art. 6.2 LO 3/2007. La directa es el trato menos favorable explícitamente por razón de sexo (art. 6.1)."
+    },
+    {
+     "id": "est-t02-02",
+     "numero": "7",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 2,
+     "enunciado": "Según el artículo 7.3 de la Ley Orgánica 3/2007, el acoso sexual y el acoso por razón de sexo:",
+     "opciones": {
+      "a": "Se considerarán en todo caso discriminatorios.",
+      "b": "Solo son discriminatorios si se prueba la intención de discriminar.",
+      "c": "Se consideran infracciones laborales, pero no discriminación."
+     },
+     "correcta": "a",
+     "explicacion": "Art. 7.3 LO 3/2007: se considerarán en todo caso discriminatorios."
+    },
+    {
+     "id": "est-t02-03",
+     "numero": "8",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 2,
+     "enunciado": "Las medidas específicas a favor de las mujeres para corregir situaciones patentes de desigualdad de hecho respecto de los hombres se denominan en la Ley Orgánica 3/2007:",
+     "opciones": {
+      "a": "Planes de conciliación.",
+      "b": "Acciones positivas.",
+      "c": "Medidas de transversalidad."
+     },
+     "correcta": "b",
+     "explicacion": "Art. 11 LO 3/2007. La transversalidad (art. 15) es integrar la igualdad en todas las políticas."
+    },
+    {
+     "id": "est-t03-01",
+     "numero": "9",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 3,
+     "enunciado": "El Estatuto de Autonomía de Aragón vigente fue aprobado por:",
+     "opciones": {
+      "a": "La Ley Orgánica 8/1982, de 10 de agosto.",
+      "b": "La Ley 10/2017, de 30 de noviembre.",
+      "c": "La Ley Orgánica 5/2007, de 20 de abril."
+     },
+     "correcta": "c",
+     "explicacion": "LO 5/2007. La LO 8/1982 fue el Estatuto original. La Ley 10/2017 es la de régimen especial de Zaragoza."
+    },
+    {
+     "id": "est-t03-02",
+     "numero": "10",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 3,
+     "enunciado": "¿Qué institución aragonesa tiene como misión la defensa de los derechos y libertades reconocidos en el Estatuto, de forma similar al Defensor del Pueblo?",
+     "opciones": {
+      "a": "El Justicia de Aragón.",
+      "b": "El Tribunal Superior de Justicia de Aragón.",
+      "c": "La Diputación General de Aragón."
+     },
+     "correcta": "a",
+     "explicacion": "El Justicia es institución de la Comunidad (art. 32 EAAr); el TSJA es un órgano judicial."
+    },
+    {
+     "id": "est-t03-03",
+     "numero": "11",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 3,
+     "enunciado": "En el Estatuto de Autonomía de Aragón, las competencias en las que el Estado dicta la legislación y Aragón solo la ejecuta se denominan:",
+     "opciones": {
+      "a": "Exclusivas.",
+      "b": "Ejecutivas.",
+      "c": "Compartidas."
+     },
+     "correcta": "b",
+     "explicacion": "Exclusivas: toda la potestad es de Aragón. Compartidas: el Estado dicta las bases y Aragón las desarrolla. Ejecutivas: Aragón solo ejecuta."
+    },
+    {
+     "id": "est-t04-01",
+     "numero": "12",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 4,
+     "enunciado": "Según el artículo 21.3 de la Ley 39/2015, cuando las normas reguladoras no fijen el plazo máximo para resolver y notificar, este será de:",
+     "opciones": {
+      "a": "Seis meses.",
+      "b": "Un mes.",
+      "c": "Tres meses."
+     },
+     "correcta": "c",
+     "explicacion": "Art. 21.3 Ley 39/2015: plazo supletorio de tres meses."
+    },
+    {
+     "id": "est-t04-02",
+     "numero": "13",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 4,
+     "enunciado": "Según la Ley 39/2015, el plazo para interponer recurso de alzada contra un acto expreso es de:",
+     "opciones": {
+      "a": "Un mes.",
+      "b": "Tres meses.",
+      "c": "Quince días."
+     },
+     "correcta": "a",
+     "explicacion": "Art. 122.1: un mes si el acto es expreso. Si el acto no es expreso, se puede recurrir en cualquier momento (no son 3 meses, eso era la antigua Ley 30/1992)."
+    },
+    {
+     "id": "est-t04-03",
+     "numero": "14",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 4,
+     "enunciado": "Según los artículos 122 y 124 de la Ley 39/2015, si el acto NO es expreso, los recursos de alzada y potestativo de reposición pueden interponerse:",
+     "opciones": {
+      "a": "En el plazo de un mes.",
+      "b": "En cualquier momento.",
+      "c": "En el plazo de tres meses."
+     },
+     "correcta": "b",
+     "explicacion": "Arts. 122.1 y 124.1 Ley 39/2015. Corrige al cuadernillo, que indicaba 3 meses."
+    },
+    {
+     "id": "est-t04-04",
+     "numero": "15",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 4,
+     "enunciado": "Según el artículo 24.1 de la Ley 39/2015, en los procedimientos iniciados a solicitud del interesado, el vencimiento del plazo sin notificarse resolución expresa legitima al interesado para entenderla, con carácter general:",
+     "opciones": {
+      "a": "Desestimada por silencio administrativo.",
+      "b": "Caducada.",
+      "c": "Estimada por silencio administrativo."
+     },
+     "correcta": "c",
+     "explicacion": "Regla general del art. 24.1: silencio estimatorio, salvo las excepciones previstas en la ley."
+    },
+    {
+     "id": "est-t04-05",
+     "numero": "16",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 4,
+     "enunciado": "¿Qué recurso administrativo procede contra actos firmes en vía administrativa solo por causas tasadas, como la aparición de documentos esenciales ignorados al dictarlos?",
+     "opciones": {
+      "a": "El recurso extraordinario de revisión.",
+      "b": "El recurso de alzada.",
+      "c": "El recurso potestativo de reposición."
+     },
+     "correcta": "a",
+     "explicacion": "Art. 125 Ley 39/2015."
+    },
+    {
+     "id": "est-t04-06",
+     "numero": "17",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 4,
+     "enunciado": "Según el artículo 3.1 de la Ley 40/2015, las Administraciones Públicas actúan de acuerdo con los principios de eficacia, jerarquía, descentralización, coordinación y:",
+     "opciones": {
+      "a": "Centralización.",
+      "b": "Desconcentración.",
+      "c": "Concentración."
+     },
+     "correcta": "b",
+     "explicacion": "Art. 3.1 Ley 40/2015, igual que el art. 103.1 CE. La trampa habitual es poner «concentración»."
+    },
+    {
+     "id": "est-t05-01",
+     "numero": "18",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 5,
+     "enunciado": "Según la Ley 10/2017 de régimen especial del municipio de Zaragoza, el órgano ejecutivo que en otros grandes municipios se denomina Junta de Gobierno Local recibe el nombre de:",
+     "opciones": {
+      "a": "Consejo de Ciudad.",
+      "b": "Comisión de Capitalidad.",
+      "c": "Gobierno de Zaragoza."
+     },
+     "correcta": "c",
+     "explicacion": "El Gobierno de Zaragoza es el órgano colegiado ejecutivo; la representación del municipio es del Alcalde (art. 12.1)."
+    },
+    {
+     "id": "est-t05-02",
+     "numero": "19",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 5,
+     "enunciado": "El régimen especial de Zaragoza como capital de Aragón tiene su origen en un mandato de:",
+     "opciones": {
+      "a": "El Estatuto de Autonomía de Aragón.",
+      "b": "La Constitución Española.",
+      "c": "La Ley 7/1985, Reguladora de las Bases del Régimen Local."
+     },
+     "correcta": "a",
+     "explicacion": "El art. 87 del Estatuto prevé que Zaragoza, como capital de Aragón, tenga un régimen especial establecido por ley de Cortes de Aragón."
+    },
+    {
+     "id": "est-t06-01",
+     "numero": "20",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 6,
+     "enunciado": "Según el artículo 59.1 del Texto Refundido de la Ley Reguladora de las Haciendas Locales, ¿cuál de estos impuestos es de exigencia obligatoria para los Ayuntamientos?",
+     "opciones": {
+      "a": "El Impuesto sobre el Incremento de Valor de los Terrenos de Naturaleza Urbana.",
+      "b": "El Impuesto sobre Vehículos de Tracción Mecánica.",
+      "c": "El Impuesto sobre Construcciones, Instalaciones y Obras."
+     },
+     "correcta": "b",
+     "explicacion": "Obligatorios (art. 59.1): IBI, IAE e IVTM. Potestativos (art. 59.2): ICIO e IIVTNU."
+    },
+    {
+     "id": "est-t06-02",
+     "numero": "21",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 6,
+     "enunciado": "En el sistema tributario local, los precios públicos:",
+     "opciones": {
+      "a": "Son un tipo de tasa.",
+      "b": "Son un tipo de contribución especial.",
+      "c": "Son un recurso de las haciendas locales, pero no son un tributo."
+     },
+     "correcta": "c",
+     "explicacion": "Los tributos son tasas, contribuciones especiales e impuestos. Los precios públicos son un recurso distinto (art. 2 TRLRHL)."
+    },
+    {
+     "id": "est-t06-03",
+     "numero": "22",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 6,
+     "enunciado": "El tributo que se exige por obtener un beneficio o un aumento de valor de los bienes como consecuencia de obras o servicios públicos locales es:",
+     "opciones": {
+      "a": "La contribución especial.",
+      "b": "La tasa.",
+      "c": "El impuesto."
+     },
+     "correcta": "a",
+     "explicacion": "Art. 28 TRLRHL."
+    },
+    {
+     "id": "est-t07-01",
+     "numero": "23",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 7,
+     "enunciado": "Según el artículo 9.2 del TREBEP, el ejercicio de funciones que impliquen la participación directa o indirecta en el ejercicio de las potestades públicas corresponde:",
+     "opciones": {
+      "a": "A funcionarios y personal laboral fijo indistintamente.",
+      "b": "Exclusivamente a los funcionarios públicos.",
+      "c": "Preferentemente a los funcionarios públicos."
+     },
+     "correcta": "b",
+     "explicacion": "Art. 9.2 TREBEP: «exclusivamente»."
+    },
+    {
+     "id": "est-t07-02",
+     "numero": "24",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 7,
+     "enunciado": "Según el artículo 95.2 del TREBEP, el abandono del servicio es una falta:",
+     "opciones": {
+      "a": "Grave.",
+      "b": "Leve.",
+      "c": "Muy grave."
+     },
+     "correcta": "c",
+     "explicacion": "El art. 95.2 enumera las faltas muy graves, y la letra c) es el abandono del servicio. Corrige al cuadernillo, que la clasificaba como grave."
+    },
+    {
+     "id": "est-t07-03",
+     "numero": "25",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 7,
+     "enunciado": "Según el artículo 97 del TREBEP, las infracciones graves prescriben a los:",
+     "opciones": {
+      "a": "Dos años.",
+      "b": "Tres años.",
+      "c": "Seis meses."
+     },
+     "correcta": "a",
+     "explicacion": "Art. 97: muy graves a los 3 años, graves a los 2 años y leves a los 6 meses."
+    },
+    {
+     "id": "est-t07-04",
+     "numero": "26",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 7,
+     "enunciado": "El deber de abstenerse en aquellos asuntos en los que se tenga un interés personal figura en el TREBEP entre:",
+     "opciones": {
+      "a": "Los derechos individuales (art. 14).",
+      "b": "Los principios éticos (art. 53).",
+      "c": "Los principios de conducta (art. 54)."
+     },
+     "correcta": "b",
+     "explicacion": "Art. 53.5 TREBEP. Corrige al cuadernillo, que lo situaba en el art. 54."
+    },
+    {
+     "id": "est-t07-05",
+     "numero": "27",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 7,
+     "enunciado": "Según el artículo 20.2 del TREBEP, los sistemas de evaluación del desempeño se adecuarán a criterios de:",
+     "opciones": {
+      "a": "Mérito, capacidad, igualdad y publicidad.",
+      "b": "Eficacia, eficiencia y jerarquía.",
+      "c": "Transparencia, objetividad, imparcialidad y no discriminación."
+     },
+     "correcta": "c",
+     "explicacion": "Art. 20.2 TREBEP. Mérito y capacidad son los principios de acceso al empleo público."
+    },
+    {
+     "id": "est-t07-06",
+     "numero": "28",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 7,
+     "enunciado": "Según el artículo 12 del TREBEP, el personal que solo realiza funciones expresamente calificadas como de confianza o asesoramiento especial es:",
+     "opciones": {
+      "a": "El personal eventual.",
+      "b": "El personal laboral temporal.",
+      "c": "El funcionario interino."
+     },
+     "correcta": "a",
+     "explicacion": "Art. 12 TREBEP: personal eventual, que cesa cuando cesa la autoridad a la que presta la función de confianza."
+    },
+    {
+     "id": "est-t08-01",
+     "numero": "29",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 8,
+     "enunciado": "Según el artículo 11.1 de la Ley 7/1985, Reguladora de las Bases del Régimen Local, el Municipio:",
+     "opciones": {
+      "a": "Es una circunscripción administrativa de la provincia sin personalidad jurídica propia.",
+      "b": "Es la entidad local básica de la organización territorial del Estado, con personalidad jurídica y plena capacidad para el cumplimiento de sus fines.",
+      "c": "Es una entidad local con personalidad jurídica, pero sin plena capacidad para el cumplimiento de sus fines."
+     },
+     "correcta": "b",
+     "explicacion": "Art. 11.1 LRBRL."
+    },
+    {
+     "id": "est-t08-02",
+     "numero": "30",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 8,
+     "enunciado": "Según el artículo 12.1 de la Ley 7/1985, Reguladora de las Bases del Régimen Local, el término municipal es el territorio:",
+     "opciones": {
+      "a": "En que el ayuntamiento presta sus servicios.",
+      "b": "En que reside la población empadronada.",
+      "c": "En que el ayuntamiento ejerce sus competencias."
+     },
+     "correcta": "c",
+     "explicacion": "Art. 12.1 LRBRL. En el examen de 2024 se anuló una pregunta por citar el art. 11.2 en lugar del 12.1."
+    },
+    {
+     "id": "est-t08-03",
+     "numero": "31",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 8,
+     "enunciado": "El régimen de organización de los municipios de gran población (Título X de la Ley 7/1985) se aplica, entre otros, a los municipios cuya población supere los:",
+     "opciones": {
+      "a": "250.000 habitantes.",
+      "b": "150.000 habitantes.",
+      "c": "500.000 habitantes."
+     },
+     "correcta": "a",
+     "explicacion": "Art. 121.1.a) LRBRL."
+    },
+    {
+     "id": "est-t08-04",
+     "numero": "32",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 8,
+     "enunciado": "Según el artículo 15.1 de la Ley 31/1995, de Prevención de Riesgos Laborales, el primer principio de la acción preventiva es:",
+     "opciones": {
+      "a": "Dar las debidas instrucciones a los trabajadores.",
+      "b": "Evitar los riesgos.",
+      "c": "Evaluar los riesgos que no se puedan evitar."
+     },
+     "correcta": "b",
+     "explicacion": "Art. 15.1.a) LPRL. Después vienen: evaluar los que no se puedan evitar, combatirlos en su origen, etc."
+    },
+    {
+     "id": "est-t08-05",
+     "numero": "33",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 8,
+     "enunciado": "Según la Ley 31/1995, de Prevención de Riesgos Laborales, en la acción preventiva el empresario adoptará medidas que antepongan:",
+     "opciones": {
+      "a": "La protección individual a la colectiva.",
+      "b": "Los equipos de protección individual a la formación.",
+      "c": "La protección colectiva a la individual."
+     },
+     "correcta": "c",
+     "explicacion": "Art. 15.1.h) LPRL."
+    },
+    {
+     "id": "est-t08-06",
+     "numero": "34",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 8,
+     "enunciado": "Según el artículo 29 de la Ley 31/1995, cooperar con el empresario para que pueda garantizar unas condiciones de trabajo seguras es, para los trabajadores:",
+     "opciones": {
+      "a": "Una obligación.",
+      "b": "Un derecho renunciable.",
+      "c": "Una facultad voluntaria."
+     },
+     "correcta": "a",
+     "explicacion": "Art. 29.2 LPRL: obligaciones de los trabajadores en materia de prevención."
+    },
+    {
+     "id": "est-t08-07",
+     "numero": "35",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 8,
+     "enunciado": "Los funcionarios de Administración Local que desempeñan las funciones de Secretaría e Intervención-Tesorería son:",
+     "opciones": {
+      "a": "Personal eventual del Alcalde.",
+      "b": "Funcionarios con habilitación de carácter nacional.",
+      "c": "Funcionarios de la Escala de Administración Especial."
+     },
+     "correcta": "b",
+     "explicacion": "Art. 92 bis LRBRL."
+    },
+    {
+     "id": "est-t09-01",
+     "numero": "36",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 9,
+     "enunciado": "¿Qué memoria caché está integrada en cada núcleo, es la más rápida y la de menor tamaño?",
+     "opciones": {
+      "a": "L2.",
+      "b": "L3.",
+      "c": "L1."
+     },
+     "correcta": "c",
+     "explicacion": "La L3 suele ser la mayor y está compartida entre núcleos."
+    },
+    {
+     "id": "est-t09-02",
+     "numero": "37",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 9,
+     "enunciado": "¿Qué función de UEFI verifica la firma digital del cargador del sistema operativo antes de arrancarlo?",
+     "opciones": {
+      "a": "Secure Boot.",
+      "b": "CSM (Compatibility Support Module).",
+      "c": "POST."
+     },
+     "correcta": "a",
+     "explicacion": "El CSM es el modo de compatibilidad con BIOS (legacy). El POST es la autocomprobación del hardware."
+    },
+    {
+     "id": "est-t09-03",
+     "numero": "38",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 9,
+     "enunciado": "Frente al esquema de particiones MBR, GPT permite:",
+     "opciones": {
+      "a": "Un máximo de cuatro particiones primarias en discos de cualquier tamaño.",
+      "b": "Discos de más de 2 TB y más de cuatro particiones primarias.",
+      "c": "Solo discos de hasta 2 TB, pero con arranque más rápido."
+     },
+     "correcta": "b",
+     "explicacion": "MBR está limitado a 2 TB y a 4 particiones primarias."
+    },
+    {
+     "id": "est-t09-04",
+     "numero": "39",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 9,
+     "enunciado": "¿Qué interfaz conecta un SSD directamente al bus PCIe, con velocidades muy superiores a SATA?",
+     "opciones": {
+      "a": "IDE.",
+      "b": "SAS.",
+      "c": "NVMe."
+     },
+     "correcta": "c"
+    },
+    {
+     "id": "est-t10-01",
+     "numero": "40",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 10,
+     "enunciado": "¿En qué capa del modelo OSI trabaja un switch convencional?",
+     "opciones": {
+      "a": "Capa 2 (enlace de datos).",
+      "b": "Capa 3 (red).",
+      "c": "Capa 1 (física)."
+     },
+     "correcta": "a",
+     "explicacion": "El switch aprende direcciones MAC (capa 2); el router encamina por IP (capa 3)."
+    },
+    {
+     "id": "est-t10-02",
+     "numero": "41",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 10,
+     "enunciado": "¿Qué topología de red LAN es la dominante hoy, porque el fallo de un cable solo afecta a un equipo?",
+     "opciones": {
+      "a": "Anillo.",
+      "b": "Estrella.",
+      "c": "Bus."
+     },
+     "correcta": "b"
+    },
+    {
+     "id": "est-t10-03",
+     "numero": "42",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 10,
+     "enunciado": "Ordenados de más a menos seguro, los mecanismos de cifrado WiFi son:",
+     "opciones": {
+      "a": "WPA2, WPA3, WEP.",
+      "b": "WEP, WPA2, WPA3.",
+      "c": "WPA3, WPA2, WEP."
+     },
+     "correcta": "c",
+     "explicacion": "WEP está obsoleto y es inseguro."
+    },
+    {
+     "id": "est-t11-01",
+     "numero": "43",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 11,
+     "enunciado": "En Windows de 64 bits, ¿en qué carpeta se almacenan las bibliotecas del sistema para aplicaciones de 32 bits?",
+     "opciones": {
+      "a": "C:\\Windows\\SysWOW64",
+      "b": "C:\\Windows\\System32",
+      "c": "C:\\Windows\\System64"
+     },
+     "correcta": "a",
+     "explicacion": "A pesar del nombre, System32 contiene las de 64 bits. SysWOW64 contiene las de 32 bits."
+    },
+    {
+     "id": "est-t11-02",
+     "numero": "44",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 11,
+     "enunciado": "¿Qué es WOW6432Node en Windows de 64 bits?",
+     "opciones": {
+      "a": "Un directorio del sistema para controladores de 32 bits.",
+      "b": "Una clave del registro que redirige el acceso de las aplicaciones de 32 bits.",
+      "c": "Una variable de entorno con la ruta de los programas de 32 bits."
+     },
+     "correcta": "b"
+    },
+    {
+     "id": "est-t11-03",
+     "numero": "45",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 11,
+     "enunciado": "¿Cuál es el puerto TCP por defecto del Escritorio Remoto de Windows (RDP)?",
+     "opciones": {
+      "a": "22",
+      "b": "5900",
+      "c": "3389"
+     },
+     "correcta": "c",
+     "explicacion": "El 22 es SSH y el 5900 es VNC."
+    },
+    {
+     "id": "est-t11-04",
+     "numero": "46",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 11,
+     "enunciado": "En un dominio Windows, la herramienta que permite aplicar configuraciones de forma centralizada a usuarios y equipos es:",
+     "opciones": {
+      "a": "Las directivas de grupo (GPO).",
+      "b": "El Registro de Windows.",
+      "c": "El Programador de tareas."
+     },
+     "correcta": "a"
+    },
+    {
+     "id": "est-t11-05",
+     "numero": "47",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 11,
+     "enunciado": "¿Qué comando muestra la configuración IP de un equipo Windows?",
+     "opciones": {
+      "a": "netconfig",
+      "b": "ipconfig",
+      "c": "ifconfig"
+     },
+     "correcta": "b",
+     "explicacion": "ifconfig es de Linux/Unix. Es una trampa habitual intercambiarlos."
+    },
+    {
+     "id": "est-t12-01",
+     "numero": "48",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 12,
+     "enunciado": "En Linux, el permiso octal 640 sobre un fichero significa:",
+     "opciones": {
+      "a": "El propietario lee, escribe y ejecuta, el grupo lee y el resto no tiene permisos.",
+      "b": "Todos pueden leer, y solo el propietario escribir.",
+      "c": "El propietario lee y escribe, el grupo solo lee y el resto no tiene permisos."
+     },
+     "correcta": "c",
+     "explicacion": "r=4, w=2, x=1. Por tanto 6=rw-, 4=r-- y 0=---."
+    },
+    {
+     "id": "est-t12-02",
+     "numero": "49",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 12,
+     "enunciado": "En un sistema CUPS, si se crea la impresora PRINTER1, su fichero PPD se encuentra en:",
+     "opciones": {
+      "a": "/etc/cups/ppd/PRINTER1.ppd",
+      "b": "/etc/cups/PRINTER1.ppd",
+      "c": "/var/spool/cups/PRINTER1.ppd"
+     },
+     "correcta": "a",
+     "explicacion": "Corrige al cuadernillo: la ruta incluye el subdirectorio ppd/."
+    },
+    {
+     "id": "est-t12-03",
+     "numero": "50",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 12,
+     "enunciado": "¿Qué gestor de paquetes se utiliza de forma nativa en Debian y Ubuntu?",
+     "opciones": {
+      "a": "zypper",
+      "b": "apt",
+      "c": "dnf"
+     },
+     "correcta": "b",
+     "explicacion": "dnf/yum: Red Hat y Fedora. zypper: openSUSE."
+    },
+    {
+     "id": "est-t12-04",
+     "numero": "51",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 12,
+     "enunciado": "¿Qué directorio de Linux contiene principalmente los ficheros de configuración del sistema?",
+     "opciones": {
+      "a": "/var",
+      "b": "/home",
+      "c": "/etc"
+     },
+     "correcta": "c",
+     "explicacion": "/var contiene datos variables (logs) y /home las carpetas personales."
+    },
+    {
+     "id": "est-t12-05",
+     "numero": "52",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 12,
+     "enunciado": "¿Cuál es la carpeta personal del superusuario en Linux?",
+     "opciones": {
+      "a": "/root",
+      "b": "/",
+      "c": "/home/admin"
+     },
+     "correcta": "a",
+     "explicacion": "No hay que confundir /root con la raíz del sistema de ficheros (/)."
+    },
+    {
+     "id": "est-t13-01",
+     "numero": "53",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 13,
+     "enunciado": "El formato ODF (Open Document Format) está normalizado en la norma:",
+     "opciones": {
+      "a": "ISO/IEC 27001.",
+      "b": "ISO/IEC 26300.",
+      "c": "ISO/IEC 29500."
+     },
+     "correcta": "b",
+     "explicacion": "ISO/IEC 29500 es OOXML (Microsoft). ISO/IEC 27001 es gestión de la seguridad."
+    },
+    {
+     "id": "est-t13-02",
+     "numero": "54",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 13,
+     "enunciado": "¿Cuál de estas extensiones corresponde a una hoja de cálculo en formato ODF?",
+     "opciones": {
+      "a": ".odt",
+      "b": ".xlsx",
+      "c": ".ods"
+     },
+     "correcta": "c",
+     "explicacion": ".odt es texto y .xlsx es OOXML."
+    },
+    {
+     "id": "est-t13-03",
+     "numero": "55",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 13,
+     "enunciado": "En LibreOffice Calc, ¿qué indica el símbolo $ en la referencia $B$7?",
+     "opciones": {
+      "a": "Que es una referencia absoluta, que no cambia al copiar la fórmula.",
+      "b": "Que la celda contiene un valor monetario.",
+      "c": "Que la celda está protegida contra escritura."
+     },
+     "correcta": "a",
+     "explicacion": "Ver el supuesto de Calc del examen de 2024."
+    },
+    {
+     "id": "est-t14-01",
+     "numero": "56",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 14,
+     "enunciado": "¿Qué protocolo mantiene el correo en el servidor y sincroniza su estado entre varios dispositivos?",
+     "opciones": {
+      "a": "SMTP.",
+      "b": "IMAP.",
+      "c": "POP3."
+     },
+     "correcta": "b",
+     "explicacion": "POP3 descarga el correo y normalmente lo borra del servidor. SMTP sirve para enviar."
+    },
+    {
+     "id": "est-t14-02",
+     "numero": "57",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 14,
+     "enunciado": "Los puertos estándar de POP3 y SMTP sin cifrar son, respectivamente:",
+     "opciones": {
+      "a": "143 y 25.",
+      "b": "110 y 80.",
+      "c": "110 y 25."
+     },
+     "correcta": "c",
+     "explicacion": "143 es IMAP y 80 es HTTP."
+    },
+    {
+     "id": "est-t14-03",
+     "numero": "58",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 14,
+     "enunciado": "¿Qué puerto usa por defecto HTTPS?",
+     "opciones": {
+      "a": "443",
+      "b": "8080",
+      "c": "993"
+     },
+     "correcta": "a",
+     "explicacion": "993 es IMAPS."
+    },
+    {
+     "id": "est-t14-04",
+     "numero": "59",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 14,
+     "enunciado": "Un servidor intermediario que puede cachear contenido y filtrar el acceso a páginas web se denomina:",
+     "opciones": {
+      "a": "Gateway VoIP.",
+      "b": "Proxy.",
+      "c": "DNS."
+     },
+     "correcta": "b"
+    },
+    {
+     "id": "est-t15-01",
+     "numero": "60",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 15,
+     "enunciado": "En el modelo TCP/IP, ¿qué protocolo de transporte es orientado a conexión y garantiza la entrega ordenada?",
+     "opciones": {
+      "a": "UDP.",
+      "b": "ICMP.",
+      "c": "TCP."
+     },
+     "correcta": "c",
+     "explicacion": "UDP no garantiza la entrega. ICMP es de la capa de Internet (lo usa ping)."
+    },
+    {
+     "id": "est-t15-02",
+     "numero": "61",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 15,
+     "enunciado": "¿Qué protocolo resuelve direcciones IP en direcciones MAC dentro de una red local?",
+     "opciones": {
+      "a": "ARP.",
+      "b": "DNS.",
+      "c": "DHCP."
+     },
+     "correcta": "a"
+    },
+    {
+     "id": "est-t15-03",
+     "numero": "62",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 15,
+     "enunciado": "¿Cuántos bits tiene una dirección IPv6?",
+     "opciones": {
+      "a": "32",
+      "b": "128",
+      "c": "64"
+     },
+     "correcta": "b",
+     "explicacion": "IPv4 tiene 32 bits."
+    },
+    {
+     "id": "est-t15-04",
+     "numero": "63",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 15,
+     "enunciado": "¿Cuántas direcciones de host utilizables ofrece una subred /24?",
+     "opciones": {
+      "a": "256",
+      "b": "255",
+      "c": "254"
+     },
+     "correcta": "c",
+     "explicacion": "2^8 = 256, menos la dirección de red y la de broadcast."
+    },
+    {
+     "id": "est-t15-05",
+     "numero": "64",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 15,
+     "enunciado": "El sistema DNS se basa en una base de datos:",
+     "opciones": {
+      "a": "Distribuida y jerárquica.",
+      "b": "Centralizada en un único servidor raíz.",
+      "c": "Local en cada equipo."
+     },
+     "correcta": "a"
+    },
+    {
+     "id": "est-t16-01",
+     "numero": "65",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 16,
+     "enunciado": "¿Qué puerto usa LDAP sobre SSL/TLS (LDAPS)?",
+     "opciones": {
+      "a": "443",
+      "b": "636",
+      "c": "389"
+     },
+     "correcta": "b",
+     "explicacion": "389 es LDAP sin cifrar."
+    },
+    {
+     "id": "est-t16-02",
+     "numero": "66",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 16,
+     "enunciado": "¿Qué protocolo usa Active Directory para la autenticación?",
+     "opciones": {
+      "a": "RADIUS.",
+      "b": "NTLMv1 exclusivamente.",
+      "c": "Kerberos."
+     },
+     "correcta": "c",
+     "explicacion": "AD usa LDAP para consultas, Kerberos para autenticar y DNS para localizar servicios."
+    },
+    {
+     "id": "est-t16-03",
+     "numero": "67",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 16,
+     "enunciado": "Las siglas AAA asociadas a RADIUS significan:",
+     "opciones": {
+      "a": "Autenticación, Autorización y Contabilidad (Accounting).",
+      "b": "Acceso, Auditoría y Autenticación.",
+      "c": "Autenticación, Administración y Alta disponibilidad."
+     },
+     "correcta": "a"
+    },
+    {
+     "id": "est-t16-04",
+     "numero": "68",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 16,
+     "enunciado": "En eDirectory (NDS), el nombre completo del objeto jperez de la unidad organizativa administracion, en la organización AMA, es:",
+     "opciones": {
+      "a": "AMA/administracion/jperez",
+      "b": ".jperez.administracion.AMA",
+      "c": ".AMA.administracion.jperez"
+     },
+     "correcta": "b",
+     "explicacion": "El nombre se escribe del objeto más específico al más general, separando con puntos."
+    },
+    {
+     "id": "est-t16-05",
+     "numero": "69",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 16,
+     "enunciado": "LDAP nació como una versión simplificada del estándar de directorio:",
+     "opciones": {
+      "a": "X.509.",
+      "b": "X.25.",
+      "c": "X.500."
+     },
+     "correcta": "c",
+     "explicacion": "X.509 es el estándar de certificados digitales."
+    },
+    {
+     "id": "est-t17-01",
+     "numero": "70",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 17,
+     "enunciado": "¿Qué herramientas permiten a una organización gestionar de forma centralizada una flota de móviles (políticas, apps, borrado remoto)?",
+     "opciones": {
+      "a": "MDM (Mobile Device Management).",
+      "b": "VDI (Virtual Desktop Infrastructure).",
+      "c": "IDS (Intrusion Detection System)."
+     },
+     "correcta": "a"
+    },
+    {
+     "id": "est-t17-02",
+     "numero": "71",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 17,
+     "enunciado": "El sistema operativo Android se basa en el núcleo:",
+     "opciones": {
+      "a": "Windows NT.",
+      "b": "Linux.",
+      "c": "Darwin (XNU)."
+     },
+     "correcta": "b",
+     "explicacion": "iOS se basa en Darwin (XNU)."
+    },
+    {
+     "id": "est-t17-03",
+     "numero": "72",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 17,
+     "enunciado": "¿Qué capacidad de 5G permite dividir una red física en varias redes virtuales con características distintas?",
+     "opciones": {
+      "a": "Roaming.",
+      "b": "Tethering.",
+      "c": "Network slicing."
+     },
+     "correcta": "c"
+    },
+    {
+     "id": "est-t17-04",
+     "numero": "73",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 17,
+     "enunciado": "¿Qué estándar WiFi corresponde a WiFi 6?",
+     "opciones": {
+      "a": "IEEE 802.11ax.",
+      "b": "IEEE 802.11ac.",
+      "c": "IEEE 802.11n."
+     },
+     "correcta": "a",
+     "explicacion": "802.11ac es WiFi 5 y 802.11n es WiFi 4. Salió en el examen de 2024."
+    },
+    {
+     "id": "est-t17-05",
+     "numero": "74",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 17,
+     "enunciado": "Ante la pérdida o el robo de un móvil corporativo, la medida que ofrece un MDM para proteger la información es:",
+     "opciones": {
+      "a": "La desactivación del GPS.",
+      "b": "El borrado remoto del dispositivo.",
+      "c": "El cambio de operador de telefonía."
+     },
+     "correcta": "b"
+    },
+    {
+     "id": "est-t18-01",
+     "numero": "75",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 18,
+     "enunciado": "Según el estándar TIA-942, el nivel que permite mantenimiento concurrente sin detener el servicio es:",
+     "opciones": {
+      "a": "Tier II.",
+      "b": "Tier I.",
+      "c": "Tier III."
+     },
+     "correcta": "c",
+     "explicacion": "Tier IV añade además tolerancia a fallos."
+    },
+    {
+     "id": "est-t18-02",
+     "numero": "76",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 18,
+     "enunciado": "¿Qué agente extintor es el más adecuado en un CPD?",
+     "opciones": {
+      "a": "Gases inertes o agentes limpios.",
+      "b": "Agua pulverizada.",
+      "c": "Polvo químico seco."
+     },
+     "correcta": "a",
+     "explicacion": "Apagan el fuego sin dañar los equipos electrónicos."
+    },
+    {
+     "id": "est-t18-03",
+     "numero": "77",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 18,
+     "enunciado": "Con copias incrementales diarias y una completa el domingo, ¿qué hace falta para restaurar tras un fallo el jueves por la mañana?",
+     "opciones": {
+      "a": "Solo la incremental del miércoles.",
+      "b": "La completa del domingo y todas las incrementales del lunes, martes y miércoles.",
+      "c": "La completa del domingo y solo la incremental del miércoles."
+     },
+     "correcta": "b",
+     "explicacion": "Cada incremental guarda solo los cambios desde la copia anterior. Compara con las diferenciales del examen de 2026."
+    },
+    {
+     "id": "est-t18-04",
+     "numero": "78",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 18,
+     "enunciado": "En la climatización de un CPD, la disposición de racks que separa la entrada y la salida del aire se denomina:",
+     "opciones": {
+      "a": "Suelo técnico abierto.",
+      "b": "Refrigeración por convección libre.",
+      "c": "Pasillo frío / pasillo caliente."
+     },
+     "correcta": "c"
+    },
+    {
+     "id": "est-t19-01",
+     "numero": "79",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 19,
+     "enunciado": "¿A qué nivel presenta el almacenamiento una SAN a los servidores?",
+     "opciones": {
+      "a": "A nivel de bloque.",
+      "b": "A nivel de fichero.",
+      "c": "A nivel de objeto."
+     },
+     "correcta": "a",
+     "explicacion": "La NAS lo presenta a nivel de fichero (NFS o SMB)."
+    },
+    {
+     "id": "est-t19-02",
+     "numero": "80",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 19,
+     "enunciado": "¿Qué protocolos son propios de una SAN?",
+     "opciones": {
+      "a": "HTTP y FTP.",
+      "b": "Fibre Channel e iSCSI.",
+      "c": "NFS y SMB/CIFS."
+     },
+     "correcta": "b",
+     "explicacion": "NFS y SMB son de NAS."
+    },
+    {
+     "id": "est-t19-03",
+     "numero": "81",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 19,
+     "enunciado": "¿Qué nivel RAID duplica los datos en espejo en dos discos?",
+     "opciones": {
+      "a": "RAID 0.",
+      "b": "RAID 5.",
+      "c": "RAID 1."
+     },
+     "correcta": "c",
+     "explicacion": "RAID 0 reparte sin redundancia. RAID 5 usa paridad distribuida y necesita un mínimo de 3 discos."
+    },
+    {
+     "id": "est-t19-04",
+     "numero": "82",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 19,
+     "enunciado": "La memoria de los servidores capaz de detectar y corregir errores se denomina:",
+     "opciones": {
+      "a": "ECC.",
+      "b": "DDR sin búfer.",
+      "c": "SRAM."
+     },
+     "correcta": "a"
+    },
+    {
+     "id": "est-t20-01",
+     "numero": "83",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 20,
+     "enunciado": "¿Cuál de estos es un hipervisor de tipo 1 (bare-metal)?",
+     "opciones": {
+      "a": "VMware Workstation.",
+      "b": "VMware ESXi.",
+      "c": "VirtualBox."
+     },
+     "correcta": "b",
+     "explicacion": "Los de tipo 2 se instalan sobre un sistema operativo anfitrión."
+    },
+    {
+     "id": "est-t20-02",
+     "numero": "84",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 20,
+     "enunciado": "En VMware, mover una máquina virtual en ejecución a otro host sin cortar el servicio se denomina:",
+     "opciones": {
+      "a": "Snapshot.",
+      "b": "Clonación.",
+      "c": "vMotion."
+     },
+     "correcta": "c"
+    },
+    {
+     "id": "est-t20-03",
+     "numero": "85",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 20,
+     "enunciado": "En el modelo PaaS (Plataforma como Servicio), el proveedor ofrece:",
+     "opciones": {
+      "a": "Una plataforma para desplegar aplicaciones, sin gestionar la infraestructura subyacente.",
+      "b": "Solo máquinas virtuales, almacenamiento y red.",
+      "c": "Aplicaciones finales listas para usar."
+     },
+     "correcta": "a",
+     "explicacion": "IaaS ofrece infraestructura y SaaS ofrece aplicaciones finales."
+    },
+    {
+     "id": "est-t21-01",
+     "numero": "86",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 21,
+     "enunciado": "Un código de estado HTTP que empieza por 4 (por ejemplo, 404) indica:",
+     "opciones": {
+      "a": "Una redirección.",
+      "b": "Un error del cliente.",
+      "c": "Un error del servidor."
+     },
+     "correcta": "b",
+     "explicacion": "2xx: éxito. 3xx: redirección. 5xx: error del servidor."
+    },
+    {
+     "id": "est-t21-02",
+     "numero": "87",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 21,
+     "enunciado": "Que HTTP sea un protocolo «sin estado» significa que:",
+     "opciones": {
+      "a": "No admite cifrado.",
+      "b": "Solo admite el método GET.",
+      "c": "Cada petición es independiente y el servidor no recuerda las anteriores por sí mismo."
+     },
+     "correcta": "c",
+     "explicacion": "Por eso existen las cookies y las sesiones."
+    },
+    {
+     "id": "est-t21-03",
+     "numero": "88",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 21,
+     "enunciado": "¿Qué módulo de Apache aporta soporte HTTPS?",
+     "opciones": {
+      "a": "mod_ssl",
+      "b": "mod_rewrite",
+      "c": "mod_php"
+     },
+     "correcta": "a"
+    },
+    {
+     "id": "est-t21-04",
+     "numero": "89",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 21,
+     "enunciado": "¿Qué servidor Java es un contenedor ligero orientado sobre todo a servlets y JSP?",
+     "opciones": {
+      "a": "Oracle WebLogic.",
+      "b": "Apache Tomcat.",
+      "c": "IBM WebSphere."
+     },
+     "correcta": "b"
+    },
+    {
+     "id": "est-t22-01",
+     "numero": "90",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 22,
+     "enunciado": "En la arquitectura de tres niveles de un SGBD, las estructuras de datos que constituyen la base de datos se definen en el nivel:",
+     "opciones": {
+      "a": "Físico (interno).",
+      "b": "Externo.",
+      "c": "Lógico (conceptual)."
+     },
+     "correcta": "c"
+    },
+    {
+     "id": "est-t22-02",
+     "numero": "91",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 22,
+     "enunciado": "En Oracle, un trigger es:",
+     "opciones": {
+      "a": "Código que se ejecuta automáticamente ante un evento (INSERT, UPDATE o DELETE) sobre una tabla.",
+      "b": "Un alias de otro objeto de la base de datos.",
+      "c": "Un objeto que genera números correlativos."
+     },
+     "correcta": "a",
+     "explicacion": "El alias es un sinónimo; los números correlativos, una secuencia."
+    },
+    {
+     "id": "est-t22-03",
+     "numero": "92",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 22,
+     "enunciado": "Crear muchos índices en una tabla con muchas inserciones y actualizaciones:",
+     "opciones": {
+      "a": "No tiene ningún efecto en las escrituras.",
+      "b": "Es contraproducente, porque ralentiza las escrituras.",
+      "c": "Siempre mejora el rendimiento."
+     },
+     "correcta": "b",
+     "explicacion": "Cada escritura obliga a actualizar también todos los índices."
+    },
+    {
+     "id": "est-t23-01",
+     "numero": "93",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 23,
+     "enunciado": "Las «3 V» que caracterizan el Big Data son:",
+     "opciones": {
+      "a": "Valor, Veracidad y Visibilidad.",
+      "b": "Volumen, Validez y Versión.",
+      "c": "Volumen, Velocidad y Variedad."
+     },
+     "correcta": "c"
+    },
+    {
+     "id": "est-t23-02",
+     "numero": "94",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 23,
+     "enunciado": "¿Cuál de estas herramientas es un Sistema de Información Geográfica (GIS) libre?",
+     "opciones": {
+      "a": "QGIS.",
+      "b": "Alfresco.",
+      "c": "Hadoop."
+     },
+     "correcta": "a",
+     "explicacion": "Alfresco es un gestor documental y Hadoop una herramienta de Big Data."
+    },
+    {
+     "id": "est-t23-03",
+     "numero": "95",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 23,
+     "enunciado": "El análisis multidimensional de grandes volúmenes de datos históricos propio del Business Intelligence se denomina:",
+     "opciones": {
+      "a": "ETL.",
+      "b": "OLAP.",
+      "c": "OLTP."
+     },
+     "correcta": "b",
+     "explicacion": "OLTP es el procesamiento transaccional. ETL es extraer, transformar y cargar."
+    },
+    {
+     "id": "est-t24-01",
+     "numero": "96",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 24,
+     "enunciado": "En el modelo relacional, el número de atributos (columnas) de una relación se denomina:",
+     "opciones": {
+      "a": "Cardinalidad.",
+      "b": "Dominio.",
+      "c": "Grado."
+     },
+     "correcta": "c",
+     "explicacion": "La cardinalidad es el número de tuplas (filas)."
+    },
+    {
+     "id": "est-t24-02",
+     "numero": "97",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 24,
+     "enunciado": "Una tabla está en 1ª Forma Normal si:",
+     "opciones": {
+      "a": "Todos sus atributos contienen valores atómicos.",
+      "b": "No hay dependencias transitivas.",
+      "c": "Todos los atributos no clave dependen de toda la clave primaria."
+     },
+     "correcta": "a",
+     "explicacion": "Las otras dos opciones son las condiciones de la 3FN y de la 2FN."
+    },
+    {
+     "id": "est-t24-03",
+     "numero": "98",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 24,
+     "enunciado": "En el álgebra relacional, la operación que filtra filas según una condición es:",
+     "opciones": {
+      "a": "El producto cartesiano.",
+      "b": "La selección.",
+      "c": "La proyección."
+     },
+     "correcta": "b",
+     "explicacion": "La proyección filtra columnas."
+    },
+    {
+     "id": "est-t24-04",
+     "numero": "99",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 24,
+     "enunciado": "Una relación N:M del modelo entidad-relación se transforma en el modelo relacional en:",
+     "opciones": {
+      "a": "Una clave foránea en cualquiera de las dos tablas.",
+      "b": "La fusión de ambas tablas en una sola.",
+      "c": "Una nueva tabla intermedia con las claves de ambas entidades."
+     },
+     "correcta": "c"
+    },
+    {
+     "id": "est-t25-01",
+     "numero": "100",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 25,
+     "enunciado": "¿A qué sublenguaje SQL pertenece la sentencia REVOKE?",
+     "opciones": {
+      "a": "DCL.",
+      "b": "DDL.",
+      "c": "DML."
+     },
+     "correcta": "a",
+     "explicacion": "GRANT y REVOKE son DCL. CREATE, ALTER y DROP son DDL."
+    },
+    {
+     "id": "est-t25-02",
+     "numero": "101",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 25,
+     "enunciado": "¿Qué propiedad ACID garantiza que una transacción se ejecuta completa o no se ejecuta nada?",
+     "opciones": {
+      "a": "Durabilidad.",
+      "b": "Atomicidad.",
+      "c": "Consistencia."
+     },
+     "correcta": "b"
+    },
+    {
+     "id": "est-t25-03",
+     "numero": "102",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 25,
+     "enunciado": "¿Qué sentencia marca un punto intermedio de una transacción al que se puede volver sin deshacerla entera?",
+     "opciones": {
+      "a": "COMMIT",
+      "b": "CHECKPOINT",
+      "c": "SAVEPOINT"
+     },
+     "correcta": "c"
+    },
+    {
+     "id": "est-t25-04",
+     "numero": "103",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 25,
+     "enunciado": "¿Qué tipo de JOIN devuelve todas las filas de la tabla izquierda, tengan o no coincidencia en la derecha?",
+     "opciones": {
+      "a": "LEFT JOIN.",
+      "b": "INNER JOIN.",
+      "c": "CROSS JOIN."
+     },
+     "correcta": "a"
+    },
+    {
+     "id": "est-t25-05",
+     "numero": "104",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 25,
+     "enunciado": "Para filtrar el resultado de una función de agregación (por ejemplo, COUNT(*) > 5) se usa la cláusula:",
+     "opciones": {
+      "a": "ORDER BY.",
+      "b": "HAVING.",
+      "c": "WHERE."
+     },
+     "correcta": "b"
+    },
+    {
+     "id": "est-t25-06",
+     "numero": "105",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 25,
+     "enunciado": "En PL/SQL, para recorrer fila a fila el resultado de una consulta que devuelve varias filas se usa:",
+     "opciones": {
+      "a": "Una secuencia.",
+      "b": "Un sinónimo.",
+      "c": "Un cursor."
+     },
+     "correcta": "c"
+    },
+    {
+     "id": "est-t26-01",
+     "numero": "106",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 26,
+     "enunciado": "¿Qué modelo de ciclo de vida, propuesto por Boehm, incorpora el análisis de riesgos en cada iteración?",
+     "opciones": {
+      "a": "El modelo en espiral.",
+      "b": "El modelo en cascada.",
+      "c": "El modelo en V."
+     },
+     "correcta": "a"
+    },
+    {
+     "id": "est-t26-02",
+     "numero": "107",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 26,
+     "enunciado": "En Métrica v3, el proceso en el que se detallan los requisitos del sistema es:",
+     "opciones": {
+      "a": "CSI (Construcción del Sistema de Información).",
+      "b": "ASI (Análisis del Sistema de Información).",
+      "c": "DSI (Diseño del Sistema de Información)."
+     },
+     "correcta": "b",
+     "explicacion": "Los procesos de Métrica v3 son PSI, EVS, ASI, DSI, CSI, IAS y MSI."
+    },
+    {
+     "id": "est-t26-03",
+     "numero": "108",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 26,
+     "enunciado": "En Scrum, ¿quién es responsable de maximizar el valor del producto y priorizar el Product Backlog?",
+     "opciones": {
+      "a": "El Scrum Master.",
+      "b": "El equipo de desarrollo.",
+      "c": "El Product Owner."
+     },
+     "correcta": "c"
+    },
+    {
+     "id": "est-t26-04",
+     "numero": "109",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 26,
+     "enunciado": "En Scrum, el evento en el que se planifica el trabajo del siguiente sprint es:",
+     "opciones": {
+      "a": "Sprint Planning.",
+      "b": "Sprint Review.",
+      "c": "Sprint Retrospective."
+     },
+     "correcta": "a",
+     "explicacion": "La Review inspecciona el incremento y la Retrospective mejora el proceso del equipo."
+    },
+    {
+     "id": "est-t27-01",
+     "numero": "110",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 27,
+     "enunciado": "En el patrón MVC, el componente que recibe las acciones del usuario y coordina el Modelo y la Vista es:",
+     "opciones": {
+      "a": "La Vista.",
+      "b": "El Controlador.",
+      "c": "El Modelo."
+     },
+     "correcta": "b"
+    },
+    {
+     "id": "est-t27-02",
+     "numero": "111",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 27,
+     "enunciado": "En una arquitectura de tres capas, las reglas de negocio residen en la capa:",
+     "opciones": {
+      "a": "De presentación.",
+      "b": "De datos.",
+      "c": "De negocio (lógica de aplicación)."
+     },
+     "correcta": "c"
+    },
+    {
+     "id": "est-t27-03",
+     "numero": "112",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 27,
+     "enunciado": "Un inconveniente del modelo cliente-servidor de dos capas con la lógica en el cliente es que:",
+     "opciones": {
+      "a": "Un cambio en la lógica obliga a actualizar todos los clientes.",
+      "b": "No permite usar bases de datos.",
+      "c": "Solo funciona en redes WiFi."
+     },
+     "correcta": "a"
+    },
+    {
+     "id": "est-t28-01",
+     "numero": "113",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 28,
+     "enunciado": "¿Qué diagrama UML muestra los estados por los que pasa un objeto a lo largo de su ciclo de vida?",
+     "opciones": {
+      "a": "Diagrama de despliegue.",
+      "b": "Diagrama de estados.",
+      "c": "Diagrama de clases."
+     },
+     "correcta": "b"
+    },
+    {
+     "id": "est-t28-02",
+     "numero": "114",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 28,
+     "enunciado": "En el análisis estructurado, la herramienta que representa cómo circula la información entre procesos, almacenes y entidades externas es:",
+     "opciones": {
+      "a": "El diagrama de clases.",
+      "b": "El diagrama de secuencia.",
+      "c": "El diagrama de flujo de datos (DFD)."
+     },
+     "correcta": "c"
+    },
+    {
+     "id": "est-t28-03",
+     "numero": "115",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 28,
+     "enunciado": "¿Cuál de los siguientes NO es un tipo de diagrama de UML 2?",
+     "opciones": {
+      "a": "Diagrama de mensajes.",
+      "b": "Diagrama de secuencia.",
+      "c": "Diagrama de despliegue."
+     },
+     "correcta": "a",
+     "explicacion": "El «diagrama de mensajes» es un distractor que ya ha salido en exámenes."
+    },
+    {
+     "id": "est-t29-01",
+     "numero": "116",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 29,
+     "enunciado": "La verificación del software responde a la pregunta:",
+     "opciones": {
+      "a": "¿Está el producto listo para su venta?",
+      "b": "¿Estamos construyendo el producto correctamente?",
+      "c": "¿Estamos construyendo el producto correcto?"
+     },
+     "correcta": "b",
+     "explicacion": "La validación responde a la otra: ¿estamos construyendo el producto correcto?"
+    },
+    {
+     "id": "est-t29-02",
+     "numero": "117",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 29,
+     "enunciado": "Las pruebas en las que se diseñan los casos conociendo el código interno se denominan:",
+     "opciones": {
+      "a": "De caja negra.",
+      "b": "De aceptación.",
+      "c": "De caja blanca."
+     },
+     "correcta": "c"
+    },
+    {
+     "id": "est-t29-03",
+     "numero": "118",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 29,
+     "enunciado": "Según la norma ISO/IEC 14764, el mantenimiento que adapta el software a cambios en su entorno (nuevo sistema operativo, cambio normativo) es el:",
+     "opciones": {
+      "a": "Mantenimiento adaptativo.",
+      "b": "Mantenimiento correctivo.",
+      "c": "Mantenimiento perfectivo."
+     },
+     "correcta": "a",
+     "explicacion": "Los tipos de la ISO/IEC 14764 son correctivo, adaptativo, perfectivo y preventivo."
+    },
+    {
+     "id": "est-t29-04",
+     "numero": "119",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 29,
+     "enunciado": "Las pruebas que realiza el usuario o cliente para confirmar que el sistema cumple sus necesidades son:",
+     "opciones": {
+      "a": "Pruebas de integración.",
+      "b": "Pruebas de aceptación.",
+      "c": "Pruebas unitarias."
+     },
+     "correcta": "b"
+    },
+    {
+     "id": "est-t30-01",
+     "numero": "120",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 30,
+     "enunciado": "¿Qué paradigma de programación evita el estado mutable y los efectos secundarios?",
+     "opciones": {
+      "a": "La programación estructurada.",
+      "b": "La programación orientada a objetos.",
+      "c": "La programación funcional."
+     },
+     "correcta": "c",
+     "explicacion": "Ejemplos: Haskell y Lisp."
+    },
+    {
+     "id": "est-t30-02",
+     "numero": "121",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 30,
+     "enunciado": "Un lenguaje de tipado estático es aquel que:",
+     "opciones": {
+      "a": "Comprueba los tipos en tiempo de compilación.",
+      "b": "Comprueba los tipos en tiempo de ejecución.",
+      "c": "No utiliza tipos de datos."
+     },
+     "correcta": "a",
+     "explicacion": "Ver la pregunta 32 del examen de 2024."
+    },
+    {
+     "id": "est-t30-03",
+     "numero": "122",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 30,
+     "enunciado": "Java se caracteriza por compilarse a:",
+     "opciones": {
+      "a": "JavaScript, que ejecuta el navegador.",
+      "b": "Bytecode, que ejecuta la máquina virtual (JVM).",
+      "c": "Código máquina nativo de cada procesador."
+     },
+     "correcta": "b"
+    },
+    {
+     "id": "est-t31-01",
+     "numero": "123",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 31,
+     "enunciado": "¿A qué familia de patrones GoF pertenece el patrón Observer?",
+     "opciones": {
+      "a": "Creacional.",
+      "b": "Estructural.",
+      "c": "De comportamiento."
+     },
+     "correcta": "c"
+    },
+    {
+     "id": "est-t31-02",
+     "numero": "124",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 31,
+     "enunciado": "¿Qué patrón de diseño adapta la interfaz de una clase existente a la que espera el cliente?",
+     "opciones": {
+      "a": "Adapter.",
+      "b": "Singleton.",
+      "c": "Strategy."
+     },
+     "correcta": "a"
+    },
+    {
+     "id": "est-t31-03",
+     "numero": "125",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 31,
+     "enunciado": "En la implementación típica del patrón Singleton, el constructor de la clase es:",
+     "opciones": {
+      "a": "Abstracto.",
+      "b": "Privado.",
+      "c": "Público."
+     },
+     "correcta": "b",
+     "explicacion": "Así se impide crear instancias con new desde fuera; se usa getInstance()."
+    },
+    {
+     "id": "est-t31-04",
+     "numero": "126",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 31,
+     "enunciado": "¿Qué patrón permite intercambiar algoritmos en tiempo de ejecución sin modificar el código que los usa?",
+     "opciones": {
+      "a": "Facade.",
+      "b": "Builder.",
+      "c": "Strategy."
+     },
+     "correcta": "c"
+    },
+    {
+     "id": "est-t32-01",
+     "numero": "127",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 32,
+     "enunciado": "¿Qué incluye el JDK que no incluye el JRE?",
+     "opciones": {
+      "a": "El compilador (javac) y otras herramientas de desarrollo.",
+      "b": "La máquina virtual (JVM).",
+      "c": "Las bibliotecas estándar de ejecución."
+     },
+     "correcta": "a"
+    },
+    {
+     "id": "est-t32-02",
+     "numero": "128",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 32,
+     "enunciado": "En Java, definir en una misma clase mostrar(int x) y mostrar(int x, float y) es un ejemplo de:",
+     "opciones": {
+      "a": "Herencia múltiple.",
+      "b": "Sobrecarga (overloading).",
+      "c": "Sobrescritura (overriding)."
+     },
+     "correcta": "b"
+    },
+    {
+     "id": "est-t32-03",
+     "numero": "129",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 32,
+     "enunciado": "En Java, si obj1 y obj2 son dos objetos distintos creados con new y con los mismos datos, obj1 == obj2 devuelve:",
+     "opciones": {
+      "a": "true",
+      "b": "Un error de compilación",
+      "c": "false"
+     },
+     "correcta": "c",
+     "explicacion": "El operador == compara referencias. Para comparar el contenido se usa equals()."
+    },
+    {
+     "id": "est-t32-04",
+     "numero": "130",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 32,
+     "enunciado": "En Java, una clase puede:",
+     "opciones": {
+      "a": "Heredar de una sola clase e implementar varias interfaces.",
+      "b": "Heredar de varias clases e implementar una sola interfaz.",
+      "c": "Heredar de varias clases y de varias interfaces."
+     },
+     "correcta": "a",
+     "explicacion": "Java no permite herencia múltiple de clases."
+    },
+    {
+     "id": "est-t32-05",
+     "numero": "131",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 32,
+     "enunciado": "¿Cuál de estos NO es un ámbito (scope) válido de un Managed Bean en JSF?",
+     "opciones": {
+      "a": "session",
+      "b": "response",
+      "c": "request"
+     },
+     "correcta": "b",
+     "explicacion": "Son válidos request, view, session y application, entre otros."
+    },
+    {
+     "id": "est-t32-06",
+     "numero": "132",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 32,
+     "enunciado": "¿Qué API estándar de Java se usa para conectar con bases de datos relacionales y ejecutar SQL?",
+     "opciones": {
+      "a": "JNDI.",
+      "b": "JMS.",
+      "c": "JDBC."
+     },
+     "correcta": "c",
+     "explicacion": "JNDI: servicios de directorio. JMS: mensajería."
+    },
+    {
+     "id": "est-t33-01",
+     "numero": "133",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 33,
+     "enunciado": "¿Cuál de estas etiquetas HTML5 tiene significado semántico?",
+     "opciones": {
+      "a": "<nav>",
+      "b": "<div>",
+      "c": "<span>"
+     },
+     "correcta": "a",
+     "explicacion": "<div> y <span> son contenedores genéricos sin significado."
+    },
+    {
+     "id": "est-t33-02",
+     "numero": "134",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 33,
+     "enunciado": "La técnica que permite actualizar parte de una página web comunicándose con el servidor en segundo plano, sin recargarla, se denomina:",
+     "opciones": {
+      "a": "SSI.",
+      "b": "Ajax.",
+      "c": "CGI."
+     },
+     "correcta": "b"
+    },
+    {
+     "id": "est-t33-03",
+     "numero": "135",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 33,
+     "enunciado": "Las pautas internacionales de accesibilidad para el contenido web son:",
+     "opciones": {
+      "a": "Las RFC.",
+      "b": "Las OWASP Top 10.",
+      "c": "Las WCAG."
+     },
+     "correcta": "c",
+     "explicacion": "Las OWASP Top 10 tratan de seguridad web."
+    },
+    {
+     "id": "est-t33-04",
+     "numero": "136",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 33,
+     "enunciado": "En Spring, la técnica central que reduce el acoplamiento entre clases es:",
+     "opciones": {
+      "a": "La inyección de dependencias.",
+      "b": "La herencia múltiple.",
+      "c": "La compilación anticipada."
+     },
+     "correcta": "a"
+    },
+    {
+     "id": "est-t33-05",
+     "numero": "137",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 33,
+     "enunciado": "En CSS, ¿qué selector tiene mayor especificidad?",
+     "opciones": {
+      "a": "Un selector de etiqueta (a).",
+      "b": "Un selector de id (#enlace).",
+      "c": "Un selector de clase (.enlace)."
+     },
+     "correcta": "b",
+     "explicacion": "Ver la pregunta 19 del segundo ejercicio de 2024."
+    },
+    {
+     "id": "est-t34-01",
+     "numero": "138",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 34,
+     "enunciado": "¿Qué lenguaje recomienda actualmente Google como preferente para el desarrollo nativo en Android?",
+     "opciones": {
+      "a": "Swift.",
+      "b": "Objective-C.",
+      "c": "Kotlin."
+     },
+     "correcta": "c",
+     "explicacion": "Swift y Objective-C son de iOS."
+    },
+    {
+     "id": "est-t34-02",
+     "numero": "139",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 34,
+     "enunciado": "Flutter es un framework multiplataforma que utiliza el lenguaje:",
+     "opciones": {
+      "a": "Dart.",
+      "b": "JavaScript.",
+      "c": "Kotlin."
+     },
+     "correcta": "a",
+     "explicacion": "React Native usa JavaScript."
+    },
+    {
+     "id": "est-t34-03",
+     "numero": "140",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 34,
+     "enunciado": "En Android, ¿qué fichero declara los componentes de la aplicación y los permisos que necesita?",
+     "opciones": {
+      "a": "strings.xml",
+      "b": "AndroidManifest.xml",
+      "c": "build.gradle"
+     },
+     "correcta": "b"
+    },
+    {
+     "id": "est-t34-04",
+     "numero": "141",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 34,
+     "enunciado": "Una aplicación web que se puede instalar y funcionar sin conexión, sin pasar por las tiendas de aplicaciones, es una:",
+     "opciones": {
+      "a": "App nativa.",
+      "b": "App híbrida de Xamarin.",
+      "c": "PWA (Progressive Web App)."
+     },
+     "correcta": "c"
+    },
+    {
+     "id": "est-t34-05",
+     "numero": "142",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 34,
+     "enunciado": "En el ciclo de vida de una Activity de Android, ¿qué método se ejecuta en primer lugar al crearla?",
+     "opciones": {
+      "a": "onCreate()",
+      "b": "onResume()",
+      "c": "onStart()"
+     },
+     "correcta": "a",
+     "explicacion": "El orden es onCreate, onStart y onResume."
+    },
+    {
+     "id": "est-t35-01",
+     "numero": "143",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 35,
+     "enunciado": "A diferencia de SVN, Git es un sistema de control de versiones:",
+     "opciones": {
+      "a": "Sin historial de cambios.",
+      "b": "Distribuido: cada copia local contiene el historial completo.",
+      "c": "Centralizado: todo depende de un único servidor."
+     },
+     "correcta": "b"
+    },
+    {
+     "id": "est-t35-02",
+     "numero": "144",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 35,
+     "enunciado": "¿Qué comando de Git crea una copia local de un repositorio remoto?",
+     "opciones": {
+      "a": "git init",
+      "b": "git fetch",
+      "c": "git clone"
+     },
+     "correcta": "c"
+    },
+    {
+     "id": "est-t35-03",
+     "numero": "145",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 35,
+     "enunciado": "¿Qué herramienta genera documentación técnica a partir de comentarios especiales en el código Java?",
+     "opciones": {
+      "a": "Javadoc.",
+      "b": "Maven.",
+      "c": "JUnit."
+     },
+     "correcta": "a"
+    },
+    {
+     "id": "est-t35-04",
+     "numero": "146",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 35,
+     "enunciado": "¿Qué comando de Git integra los cambios de una rama en la rama actual?",
+     "opciones": {
+      "a": "git commit",
+      "b": "git merge",
+      "c": "git branch"
+     },
+     "correcta": "b"
+    },
+    {
+     "id": "est-t36-01",
+     "numero": "147",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 36,
+     "enunciado": "Para firmar electrónicamente un documento, el emisor utiliza:",
+     "opciones": {
+      "a": "Su propia clave pública.",
+      "b": "La clave pública del receptor.",
+      "c": "Su propia clave privada."
+     },
+     "correcta": "c",
+     "explicacion": "El receptor verifica la firma con la clave pública del emisor."
+    },
+    {
+     "id": "est-t36-02",
+     "numero": "148",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 36,
+     "enunciado": "Para cifrar un mensaje de modo que solo el receptor pueda leerlo, el emisor utiliza:",
+     "opciones": {
+      "a": "La clave pública del receptor.",
+      "b": "La clave privada del receptor.",
+      "c": "Su propia clave privada."
+     },
+     "correcta": "a",
+     "explicacion": "Cifrar y firmar usan las claves en sentido opuesto."
+    },
+    {
+     "id": "est-t36-03",
+     "numero": "149",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 36,
+     "enunciado": "La firma electrónica que tiene un efecto jurídico equivalente al de la firma manuscrita es la:",
+     "opciones": {
+      "a": "Firma electrónica simple.",
+      "b": "Firma electrónica cualificada.",
+      "c": "Firma electrónica avanzada."
+     },
+     "correcta": "b",
+     "explicacion": "Art. 25.2 del Reglamento eIDAS."
+    },
+    {
+     "id": "est-t36-04",
+     "numero": "150",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 36,
+     "enunciado": "La Ley 59/2003, de firma electrónica, fue derogada por:",
+     "opciones": {
+      "a": "La Ley 39/2015.",
+      "b": "La Ley Orgánica 3/2018.",
+      "c": "La Ley 6/2020, reguladora de determinados aspectos de los servicios electrónicos de confianza."
+     },
+     "correcta": "c",
+     "explicacion": "Es un dato importante porque en exámenes antiguos se pregunta por la Ley 59/2003."
+    },
+    {
+     "id": "est-t37-01",
+     "numero": "151",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 37,
+     "enunciado": "El reglamento europeo que da validez en toda la UE a la identificación electrónica y a los servicios de confianza es:",
+     "opciones": {
+      "a": "El Reglamento eIDAS (UE) 910/2014.",
+      "b": "El Reglamento (UE) 2016/679.",
+      "c": "La Directiva NIS2."
+     },
+     "correcta": "a",
+     "explicacion": "El Reglamento (UE) 2016/679 es el RGPD."
+    },
+    {
+     "id": "est-t37-02",
+     "numero": "152",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 37,
+     "enunciado": "El Esquema Nacional de Interoperabilidad se desarrolla mediante documentos específicos denominados:",
+     "opciones": {
+      "a": "Instrucciones Técnicas de Seguridad.",
+      "b": "Normas Técnicas de Interoperabilidad (NTI).",
+      "c": "Guías CCN-STIC."
+     },
+     "correcta": "b",
+     "explicacion": "Las guías CCN-STIC están relacionadas con el ENS."
+    },
+    {
+     "id": "est-t37-03",
+     "numero": "153",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 37,
+     "enunciado": "Según el artículo 4 del Real Decreto 4/2010 (ENI), ¿cuál de estos es un principio específico de la interoperabilidad?",
+     "opciones": {
+      "a": "La seguridad como proceso integral.",
+      "b": "La gestión de la seguridad basada en los riesgos.",
+      "c": "El enfoque de soluciones multilaterales."
+     },
+     "correcta": "c",
+     "explicacion": "Confirmado por la plantilla oficial de 2023. Corrige al cuadernillo: «seguridad como proceso integral» es un principio del ENS, no del ENI."
+    },
+    {
+     "id": "est-t37-04",
+     "numero": "154",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 37,
+     "enunciado": "Según el artículo 14.2 de la Ley 39/2015, ¿quiénes están obligados a relacionarse electrónicamente con las Administraciones?",
+     "opciones": {
+      "a": "Las personas jurídicas, entre otros sujetos.",
+      "b": "Todas las personas físicas mayores de edad.",
+      "c": "Solo los empleados públicos."
+     },
+     "correcta": "a"
+    },
+    {
+     "id": "est-t38-01",
+     "numero": "155",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 38,
+     "enunciado": "El malware que mantiene un acceso privilegiado a un sistema ocultando su presencia se denomina:",
+     "opciones": {
+      "a": "Adware.",
+      "b": "Rootkit.",
+      "c": "Keylogger."
+     },
+     "correcta": "b"
+    },
+    {
+     "id": "est-t38-02",
+     "numero": "156",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 38,
+     "enunciado": "Un exploit es:",
+     "opciones": {
+      "a": "Un antivirus heurístico.",
+      "b": "Un tipo de cortafuegos de aplicación.",
+      "c": "Un fragmento de código o secuencia de acciones que aprovecha una vulnerabilidad."
+     },
+     "correcta": "c"
+    },
+    {
+     "id": "est-t38-03",
+     "numero": "157",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 38,
+     "enunciado": "Un sistema que vigila el tráfico o los equipos en busca de comportamientos sospechosos se denomina:",
+     "opciones": {
+      "a": "IDS (Intrusion Detection System).",
+      "b": "DNS.",
+      "c": "VPN."
+     },
+     "correcta": "a"
+    },
+    {
+     "id": "est-t38-04",
+     "numero": "158",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 38,
+     "enunciado": "El engaño por correo electrónico que suplanta a una entidad para obtener credenciales se denomina:",
+     "opciones": {
+      "a": "Ransomware.",
+      "b": "Phishing.",
+      "c": "Spoofing de ARP."
+     },
+     "correcta": "b"
+    },
+    {
+     "id": "est-t39-01",
+     "numero": "159",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 39,
+     "enunciado": "El Esquema Nacional de Seguridad vigente está regulado por:",
+     "opciones": {
+      "a": "El Real Decreto 3/2010.",
+      "b": "El Real Decreto 4/2010.",
+      "c": "El Real Decreto 311/2022."
+     },
+     "correcta": "c",
+     "explicacion": "El RD 3/2010 era el ENS anterior. El RD 4/2010 es el ENI."
+    },
+    {
+     "id": "est-t39-02",
+     "numero": "160",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 39,
+     "enunciado": "¿Cuáles son las cinco dimensiones de seguridad del ENS?",
+     "opciones": {
+      "a": "Confidencialidad, Integridad, Trazabilidad, Autenticidad y Disponibilidad.",
+      "b": "Confidencialidad, Información, Trazabilidad, Autenticidad y Disponibilidad.",
+      "c": "Confidencialidad, Integridad, Transparencia, Accesibilidad y Disponibilidad."
+     },
+     "correcta": "a",
+     "explicacion": "Se recuerdan como DICAT. «Información» no es una dimensión (salió en el examen de 2024)."
+    },
+    {
+     "id": "est-t39-03",
+     "numero": "161",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 39,
+     "enunciado": "En el ENS, un incidente que causa un perjuicio muy grave corresponde al nivel de seguridad:",
+     "opciones": {
+      "a": "Bajo.",
+      "b": "Alto.",
+      "c": "Medio."
+     },
+     "correcta": "b",
+     "explicacion": "Perjuicio limitado: bajo. Grave: medio. Muy grave: alto."
+    },
+    {
+     "id": "est-t39-04",
+     "numero": "162",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 39,
+     "enunciado": "¿Cuál de estos es un principio básico del ENS, y no un requisito mínimo?",
+     "opciones": {
+      "a": "El análisis y gestión de los riesgos.",
+      "b": "La gestión de personal.",
+      "c": "La existencia de líneas de defensa."
+     },
+     "correcta": "c",
+     "explicacion": "Principios básicos: seguridad integral, gestión basada en riesgos, prevención/detección/respuesta/conservación, líneas de defensa, vigilancia continua y diferenciación de responsabilidades."
+    },
+    {
+     "id": "est-t39-05",
+     "numero": "163",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 39,
+     "enunciado": "Las medidas de seguridad del ENS se organizan en:",
+     "opciones": {
+      "a": "Marco organizativo, marco operacional y medidas de protección.",
+      "b": "Medidas preventivas, detectivas y correctivas.",
+      "c": "Medidas físicas, lógicas y administrativas."
+     },
+     "correcta": "a",
+     "explicacion": "Salió en el examen de 2026."
+    },
+    {
+     "id": "est-t40-01",
+     "numero": "164",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 40,
+     "enunciado": "Según el artículo 33 del RGPD, una violación de seguridad de los datos personales debe notificarse a la autoridad de control:",
+     "opciones": {
+      "a": "Solo si afecta a más de 1.000 personas.",
+      "b": "Sin dilación indebida y, a ser posible, en un máximo de 72 horas.",
+      "c": "En un plazo de un mes."
+     },
+     "correcta": "b"
+    },
+    {
+     "id": "est-t40-02",
+     "numero": "165",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 40,
+     "enunciado": "El principio que obliga al responsable a poder demostrar que cumple la normativa de protección de datos es el de:",
+     "opciones": {
+      "a": "Minimización de datos.",
+      "b": "Limitación de la finalidad.",
+      "c": "Responsabilidad proactiva."
+     },
+     "correcta": "c",
+     "explicacion": "Art. 5.2 RGPD."
+    },
+    {
+     "id": "est-t40-03",
+     "numero": "166",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 40,
+     "enunciado": "Según el RGPD, el Delegado de Protección de Datos (DPD/DPO) es obligatorio:",
+     "opciones": {
+      "a": "Cuando el tratamiento lo lleve a cabo una autoridad u organismo público.",
+      "b": "Solo en empresas de más de 250 trabajadores.",
+      "c": "Nunca; es siempre voluntario."
+     },
+     "correcta": "a",
+     "explicacion": "Art. 37.1.a) RGPD."
+    },
+    {
+     "id": "est-t40-04",
+     "numero": "167",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 40,
+     "enunciado": "Con carácter general, el plazo para responder a una solicitud de ejercicio de derechos (acceso, rectificación…) es de:",
+     "opciones": {
+      "a": "Tres meses.",
+      "b": "Un mes, prorrogable dos meses más.",
+      "c": "Diez días hábiles."
+     },
+     "correcta": "b",
+     "explicacion": "Art. 12.3 RGPD."
+    },
+    {
+     "id": "est-t40-05",
+     "numero": "168",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 40,
+     "enunciado": "La autoridad de control independiente en materia de protección de datos a nivel estatal en España es:",
+     "opciones": {
+      "a": "El Centro Criptológico Nacional (CCN).",
+      "b": "INCIBE.",
+      "c": "La Agencia Española de Protección de Datos (AEPD)."
+     },
+     "correcta": "c"
+    }
+   ]
+  }
+ ]
+}

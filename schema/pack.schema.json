@@ -1,0 +1,196 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/LeslieGV25/estudio-app/schema/pack.schema.json",
+  "title": "Pack de estudio",
+  "description": "Formato de intercambio de packs (temario + preguntas + reglas de simulacro). Versión de formato 1.",
+  "type": "object",
+  "required": ["formato", "version_formato", "pack", "temario", "fuentes", "preguntas"],
+  "additionalProperties": false,
+  "properties": {
+    "formato": { "const": "estudio-pack" },
+    "version_formato": { "const": 1 },
+
+    "pack": {
+      "type": "object",
+      "required": ["id", "nombre", "version", "tipo", "idioma"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/$defs/slug", "description": "Identificador estable del pack. No cambia entre versiones." },
+        "nombre": { "type": "string", "minLength": 1 },
+        "descripcion": { "type": "string" },
+        "version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$", "description": "Versión semántica del contenido del pack." },
+        "tipo": { "enum": ["oposicion", "curso", "certificacion", "otro"] },
+        "idioma": { "type": "string", "pattern": "^[a-z]{2}(-[A-Z]{2})?$" },
+        "autor": { "type": "string" },
+        "actualizado": { "type": "string", "format": "date" }
+      }
+    },
+
+    "temario": {
+      "type": "object",
+      "required": ["bloques", "temas"],
+      "additionalProperties": false,
+      "properties": {
+        "bloques": {
+          "type": "array", "minItems": 1,
+          "items": {
+            "type": "object", "required": ["id", "nombre"], "additionalProperties": false,
+            "properties": { "id": { "type": "integer", "minimum": 0 }, "nombre": { "type": "string" } }
+          }
+        },
+        "temas": {
+          "type": "array", "minItems": 1,
+          "items": {
+            "type": "object", "required": ["id", "bloque", "titulo"], "additionalProperties": false,
+            "properties": {
+              "id": { "type": "integer", "minimum": 1 },
+              "bloque": { "type": "integer", "minimum": 0 },
+              "titulo": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+
+    "simulacro": {
+      "type": "object",
+      "description": "Reglas del examen real. Opcional: si falta, la app usa valores por defecto editables.",
+      "additionalProperties": false,
+      "properties": {
+        "nota": { "type": "string" },
+        "ejercicios": {
+          "type": "array", "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["id", "nombre", "num_preguntas", "num_opciones"],
+            "additionalProperties": false,
+            "properties": {
+              "id": { "$ref": "#/$defs/slug" },
+              "nombre": { "type": "string" },
+              "num_preguntas": { "type": "integer", "minimum": 1 },
+              "num_reserva": { "type": "integer", "minimum": 0, "default": 0 },
+              "num_opciones": { "type": "integer", "minimum": 2, "maximum": 6 },
+              "duracion_min": { "type": ["integer", "null"], "minimum": 1 },
+              "con_supuestos": { "type": "boolean", "default": false },
+              "puntuacion": {
+                "type": "object", "additionalProperties": false,
+                "required": ["modo"],
+                "description": "fijo: nota = aciertos·acierto + fallos·fallo + blancos·blanco. proporcional: acierto = nota_maxima / preguntas valorables (sin anuladas no sustituidas); fallo = -acierto·factor_fallo.",
+                "properties": {
+                  "modo": { "enum": ["fijo", "proporcional"] },
+                  "acierto": { "type": "number" },
+                  "fallo": { "type": "number", "maximum": 0 },
+                  "blanco": { "type": "number" },
+                  "nota_maxima": { "type": "number", "exclusiveMinimum": 0 },
+                  "factor_fallo": { "type": "number", "minimum": 0, "maximum": 1 },
+                  "nota_minima": { "type": "number", "minimum": 0, "description": "Nota para aprobar el ejercicio." },
+                  "decimales": { "type": "integer", "minimum": 0, "maximum": 6, "description": "Redondeo aritmético simétrico (half-up)." }
+                },
+                "allOf": [
+                  { "if": { "properties": { "modo": { "const": "fijo" } } }, "then": { "required": ["acierto", "fallo"] } },
+                  { "if": { "properties": { "modo": { "const": "proporcional" } } }, "then": { "required": ["nota_maxima", "factor_fallo"] } }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "fuentes": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "tipo", "nombre", "oficial"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "$ref": "#/$defs/slug" },
+          "tipo": { "enum": ["examen", "estudio"] },
+          "nombre": { "type": "string" },
+          "oficial": { "type": "boolean", "description": "true solo si las respuestas vienen de una plantilla oficial." },
+          "fecha": { "type": ["string", "null"], "format": "date" },
+          "convocatoria": { "type": "string" },
+          "turno": { "type": "string" },
+          "respuestas": { "enum": ["plantilla_definitiva", "plantilla_provisional", "marcadas_en_examen", "elaboracion_propia"] },
+          "ejercicios": {
+            "type": "array",
+            "items": {
+              "type": "object", "required": ["id", "nombre", "num_opciones"], "additionalProperties": false,
+              "properties": {
+                "id": { "$ref": "#/$defs/slug" },
+                "nombre": { "type": "string" },
+                "num_opciones": { "type": "integer", "minimum": 2, "maximum": 6 },
+                "simulacro": { "$ref": "#/$defs/slug", "description": "Id del ejercicio de simulacro al que equivale." }
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "contextos": {
+      "type": "array",
+      "description": "Enunciados compartidos por varias preguntas (supuestos prácticos).",
+      "items": {
+        "type": "object", "required": ["id", "titulo", "enunciado"], "additionalProperties": false,
+        "properties": {
+          "id": { "$ref": "#/$defs/slug" },
+          "titulo": { "type": "string" },
+          "enunciado": { "type": "string" },
+          "codigo": { "type": "string" },
+          "lenguaje": { "type": "string" }
+        }
+      }
+    },
+
+    "preguntas": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "fuente", "tema", "enunciado", "opciones", "correcta"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "$ref": "#/$defs/slug", "description": "Estable entre versiones del pack: el progreso del usuario se asocia a este id." },
+          "fuente": { "$ref": "#/$defs/slug" },
+          "ejercicio": { "$ref": "#/$defs/slug" },
+          "numero": { "type": "string" },
+          "tema": { "type": "integer", "minimum": 1 },
+          "contexto": { "anyOf": [{ "$ref": "#/$defs/slug" }, { "type": "null" }] },
+          "enunciado": { "type": "string", "minLength": 1 },
+          "opciones": {
+            "type": "object", "minProperties": 2, "maxProperties": 6,
+            "propertyNames": { "pattern": "^[a-f]$" },
+            "additionalProperties": { "type": "string", "minLength": 1 }
+          },
+          "correcta": { "anyOf": [{ "type": "string", "pattern": "^[a-f]$" }, { "type": "null" }] },
+          "reserva": { "type": "boolean", "default": false },
+          "anulada": { "type": "boolean", "default": false },
+          "correcta_provisional": { "type": "string", "pattern": "^[a-f]$" },
+          "obsoleta": { "type": "boolean", "default": false },
+          "explicacion": { "type": "string" },
+          "notas": { "type": "string" },
+          "etiquetas": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+
+    "apuntes": {
+      "type": "array",
+      "description": "Resúmenes y tips por tema (Markdown).",
+      "items": {
+        "type": "object", "required": ["id", "tema", "titulo", "contenido"], "additionalProperties": false,
+        "properties": {
+          "id": { "$ref": "#/$defs/slug" },
+          "tema": { "type": "integer", "minimum": 1 },
+          "titulo": { "type": "string" },
+          "contenido": { "type": "string" },
+          "oficial": { "type": "boolean", "default": false }
+        }
+      }
+    }
+  },
+
+  "$defs": {
+    "slug": { "type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]*$" }
+  }
+}

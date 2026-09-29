@@ -1,0 +1,1289 @@
+{
+ "version": 1,
+ "id": "zgz-tai-2024-tl",
+ "organismo": "Ayuntamiento de Zaragoza",
+ "plaza": "Técnica/o Auxiliar Informática",
+ "convocatoria": "OEP 2023 · Turno libre (TL - TLRDIS - TLRVGEN)",
+ "turno": "turno_libre",
+ "fecha_examen": "2024-11-26",
+ "fuente_respuestas": "plantilla_definitiva",
+ "ejercicios": [
+  {
+   "id": "e1",
+   "nombre": "Primer ejercicio",
+   "num_opciones": 3,
+   "contextos": [],
+   "preguntas": [
+    {
+     "id": "2024-e1-01",
+     "numero": "1",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 1,
+     "enunciado": "¿Qué título de la Constitución española tiene como epígrafe \"Del Gobierno y de la Administración\"?",
+     "opciones": {
+      "a": "El Título IV.",
+      "b": "El Título V.",
+      "c": "El Título VI."
+     },
+     "correcta": "a"
+    },
+    {
+     "id": "2024-e1-02",
+     "numero": "2",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 4,
+     "enunciado": "De acuerdo con el artículo 54 de la Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas, los procedimientos podrán iniciarse:",
+     "opciones": {
+      "a": "De oficio o por denuncia.",
+      "b": "De oficio o a solicitud del interesado.",
+      "c": "A petición razonada de otros órganos o a solicitud del interesado."
+     },
+     "correcta": "b"
+    },
+    {
+     "id": "2024-e1-03",
+     "numero": "3",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 4,
+     "enunciado": "De acuerdo con el artículo 80.1 de la Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas, salvo disposición expresa en contrario, los informes serán:",
+     "opciones": {
+      "a": "Facultativos y no vinculantes.",
+      "b": "Preceptivos.",
+      "c": "Vinculantes."
+     },
+     "correcta": "a"
+    },
+    {
+     "id": "2024-e1-04",
+     "numero": "4",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 4,
+     "enunciado": "De acuerdo con el artículo 82 (Trámite de audiencia) de la Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas, los interesados podrán alegar y presentar los documentos y justificaciones que estimen pertinentes en un plazo no inferior a diez días ni superior a:",
+     "opciones": {
+      "a": "Quince.",
+      "b": "Veinte.",
+      "c": "Treinta."
+     },
+     "correcta": "a"
+    },
+    {
+     "id": "2024-e1-05",
+     "numero": "5",
+     "reserva": false,
+     "anulada": true,
+     "contexto": null,
+     "tema": 4,
+     "enunciado": "De acuerdo con el artículo 100 (Medios de ejecución forzosa) de la Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas, si fuese necesario entrar en el domicilio del afectado o en los restantes lugares que requieran la autorización de su titular:",
+     "opciones": {
+      "a": "Las Administraciones Públicas deberán obtener el consentimiento del mismo.",
+      "b": "Las Administraciones Públicas deberán obtener la oportuna autorización judicial.",
+      "c": "Las Administraciones Públicas deberán obtener el consentimiento del mismo o, en su defecto, la oportuna autorización judicial."
+     },
+     "correcta": null,
+     "notas": "Anulada en la plantilla definitiva."
+    },
+    {
+     "id": "2024-e1-06",
+     "numero": "6",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 3,
+     "enunciado": "De acuerdo con el artículo 71.6ª del Estatuto de Autonomía de Aragón, en materia de organización territorial propia de la Comunidad corresponde a la Comunidad Autónoma la competencia:",
+     "opciones": {
+      "a": "Exclusiva.",
+      "b": "Compartida.",
+      "c": "Ejecutiva."
+     },
+     "correcta": "a"
+    },
+    {
+     "id": "2024-e1-07",
+     "numero": "7",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 5,
+     "enunciado": "De acuerdo con el artículo 11.2 de la Ley 7/1985, de 2 de abril, reguladora de las bases del Régimen Local, son elementos del municipio el territorio, la población y:",
+     "opciones": {
+      "a": "El poder.",
+      "b": "La organización.",
+      "c": "La competencia."
+     },
+     "correcta": "b"
+    },
+    {
+     "id": "2024-e1-08",
+     "numero": "8",
+     "reserva": false,
+     "anulada": true,
+     "contexto": null,
+     "tema": 5,
+     "enunciado": "De acuerdo con el artículo 11.2 de la Ley 7/1985, de 2 de abril, reguladora de las bases del Régimen Local, el término municipal es el territorio:",
+     "opciones": {
+      "a": "En que el ayuntamiento presta sus servicios.",
+      "b": "En que el ayuntamiento ejerce sus competencias.",
+      "c": "En que reside la población del municipio."
+     },
+     "correcta": null,
+     "notas": "Anulada en la plantilla definitiva. El término municipal se define en el art. 12.1, no en el 11.2."
+    },
+    {
+     "id": "2024-e1-09",
+     "numero": "9",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 6,
+     "enunciado": "De acuerdo con el artículo 59 del Real Decreto Legislativo 2/2004, de 5 de marzo, que aprueba el texto refundido de la Ley Reguladora de las Haciendas Locales, el Impuesto sobre Bienes Inmuebles es un impuesto que los Ayuntamientos:",
+     "opciones": {
+      "a": "No existe dicho impuesto.",
+      "b": "No podrán establecer y exigir.",
+      "c": "Exigirán."
+     },
+     "correcta": "c"
+    },
+    {
+     "id": "2024-e1-10",
+     "numero": "10",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 6,
+     "enunciado": "De acuerdo con el artículo 2 del Real Decreto Legislativo 2/2004, de 5 de marzo, que aprueba el texto refundido de la Ley Reguladora de las Haciendas Locales, entre los recursos de la hacienda de las entidades locales se encuentran:",
+     "opciones": {
+      "a": "Las participaciones en los tributos del Estado.",
+      "b": "Las participaciones en los tributos de las comunidades autónomas.",
+      "c": "Las respuestas a) y b) son correctas."
+     },
+     "correcta": "c"
+    },
+    {
+     "id": "2024-e1-11",
+     "numero": "11",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 10,
+     "enunciado": "Indique cuál de los siguientes es el estándar de WiFi 6.",
+     "opciones": {
+      "a": "IEEE 802.3ab.",
+      "b": "IEEE 802.11ac.",
+      "c": "IEEE 802.11ax."
+     },
+     "correcta": "c"
+    },
+    {
+     "id": "2024-e1-12",
+     "numero": "12",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 18,
+     "enunciado": "¿Cuál es el estándar que clasifica los DataCenter en 4 niveles de disponibilidad TIER?",
+     "opciones": {
+      "a": "ISO-27001.",
+      "b": "TIE-924.",
+      "c": "TIA-942."
+     },
+     "correcta": "c"
+    },
+    {
+     "id": "2024-e1-13",
+     "numero": "13",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 19,
+     "enunciado": "Un servidor tipo Blade contiene:",
+     "opciones": {
+      "a": "Microprocesador, memoria y buses.",
+      "b": "Microprocesador, alimentación y memoria.",
+      "c": "Microprocesador, memoria, buses y almacenamiento."
+     },
+     "correcta": "a"
+    },
+    {
+     "id": "2024-e1-14",
+     "numero": "14",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 32,
+     "enunciado": "Señale cuál es una Interfaz de Programación de Aplicaciones de Java para servicios de directorio.",
+     "opciones": {
+      "a": "JMS.",
+      "b": "JNDI.",
+      "c": "JTA."
+     },
+     "correcta": "b"
+    },
+    {
+     "id": "2024-e1-15",
+     "numero": "15",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 22,
+     "enunciado": "Los ficheros Redo Log de una base de datos Oracle:",
+     "opciones": {
+      "a": "Protegen la base de datos de la pérdida de integridad en casos de fallos causados por suministro eléctrico y errores en discos duros.",
+      "b": "Contienen datos e información de control para una instancia de Oracle Database.",
+      "c": "Contiene datos e información de control exclusivamente para uso de un proceso Oracle."
+     },
+     "correcta": "a"
+    },
+    {
+     "id": "2024-e1-16",
+     "numero": "16",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 24,
+     "enunciado": "Decimos que una entidad está en 3ª Forma Normal:",
+     "opciones": {
+      "a": "Si está en 2ª Forma Normal y si no hay ninguna dependencia transitiva de ningún atributo no clave sobre la clave primaria.",
+      "b": "Si está en 2ª Forma Normal y si todos sus atributos no clave dependen completamente de la clave primaria.",
+      "c": "Si está en 2ª Forma Normal y cada entrada es atómica y única."
+     },
+     "correcta": "a"
+    },
+    {
+     "id": "2024-e1-17",
+     "numero": "17",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 22,
+     "enunciado": "En una base de datos Oracle se ha creado la secuencia SQ1, ¿cuál es la forma correcta de recuperar el siguiente valor de dicha secuencia?",
+     "opciones": {
+      "a": "SQ1.NEXTVALUE",
+      "b": "SQ1.NEXTVAL",
+      "c": "SQ1.NEXT"
+     },
+     "correcta": "b"
+    },
+    {
+     "id": "2024-e1-18",
+     "numero": "18",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 32,
+     "enunciado": "¿Cuál es la frase INCORRECTA sobre EJBs?",
+     "opciones": {
+      "a": "Los EJBs proporcionan un modelo de componentes distribuido estándar del lado del cliente.",
+      "b": "Los EJBs pueden facilitar la ejecución de transacciones.",
+      "c": "Los EJBs se disponen en un contenedor EJB dentro del servidor de aplicaciones."
+     },
+     "correcta": "a"
+    },
+    {
+     "id": "2024-e1-19",
+     "numero": "19",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 25,
+     "enunciado": "Indique a qué lenguaje de SGBD pertenece la instrucción SQL GRANT.",
+     "opciones": {
+      "a": "DDL.",
+      "b": "DML.",
+      "c": "DCL."
+     },
+     "correcta": "c"
+    },
+    {
+     "id": "2024-e1-20",
+     "numero": "20",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 27,
+     "enunciado": "Señale cuáles son las siglas del catálogo de negocios de Internet que es uno de los estándares básicos de los servicios Web basados en SOAP.",
+     "opciones": {
+      "a": "IBC.",
+      "b": "UDDI.",
+      "c": "WSDL."
+     },
+     "correcta": "b"
+    },
+    {
+     "id": "2024-e1-21",
+     "numero": "21",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 28,
+     "enunciado": "¿Qué diagrama ofrece una visión general de los actores involucrados en un sistema, las diferentes funciones que necesitan esos actores y cómo interactúan estas diferentes funciones?",
+     "opciones": {
+      "a": "Diagrama de objetos.",
+      "b": "Diagrama de flujo.",
+      "c": "Diagrama de casos de uso."
+     },
+     "correcta": "c"
+    },
+    {
+     "id": "2024-e1-22",
+     "numero": "22",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 16,
+     "enunciado": "¿Cuál es el objetivo principal de configurar un dominio en un entorno de red?",
+     "opciones": {
+      "a": "Proporcionar acceso a los recursos compartidos.",
+      "b": "Controlar y supervisar las actividades de los usuarios.",
+      "c": "Unificar la autenticación y autorización de usuarios para acceder a recursos del dominio."
+     },
+     "correcta": "c"
+    },
+    {
+     "id": "2024-e1-23",
+     "numero": "23",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 12,
+     "enunciado": "¿Cuál es la diferencia entre un proceso y una sesión en Linux?",
+     "opciones": {
+      "a": "Un proceso es una unidad independiente de ejecución, mientras que una sesión es una colección de procesos y recursos relacionados.",
+      "b": "Una sesión es un conjunto de procesos compartiendo la misma ID de sesión, mientras que un proceso es una instancia del mismo.",
+      "c": "Un proceso es un programa ejecutándose, mientras que una sesión es un contexto de usuario."
+     },
+     "correcta": "a"
+    },
+    {
+     "id": "2024-e1-24",
+     "numero": "24",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 12,
+     "enunciado": "¿Cuál es la diferencia entre un grupo de controladores de dispositivo (driver) y una tabla de gestión de dispositivos (DM)?",
+     "opciones": {
+      "a": "Un driver es una capa de abstracción entre el software y el hardware, mientras que la DM gestiona la asignación de recursos a los dispositivos.",
+      "b": "Una DM se utiliza para emular discos virtuales, mientras que un driver se utiliza para interactuar con dispositivos reales.",
+      "c": "Un driver se encarga de manejar los dispositivos hardware, mientras que la DM se encarga de gestionar las particiones."
+     },
+     "correcta": "a"
+    },
+    {
+     "id": "2024-e1-25",
+     "numero": "25",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 16,
+     "enunciado": "¿Cuál es el protocolo utilizado para autenticar y autorizar usuarios en una red?",
+     "opciones": {
+      "a": "SSH.",
+      "b": "SSL/TLS.",
+      "c": "RADIUS."
+     },
+     "correcta": "c"
+    },
+    {
+     "id": "2024-e1-26",
+     "numero": "26",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 16,
+     "enunciado": "¿Cuál es una herramienta común utilizada para gestionar directorios y servicios de autenticación?",
+     "opciones": {
+      "a": "PowerShell.",
+      "b": "ADUC.",
+      "c": "System Manager."
+     },
+     "correcta": "b"
+    },
+    {
+     "id": "2024-e1-27",
+     "numero": "27",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 16,
+     "enunciado": "¿Cuál es la diferencia clave entre un atributo estándar y un atributo personalizado en un directorio LDAP?",
+     "opciones": {
+      "a": "Un atributo estándar es requerido para todas las entidades, mientras que un atributo personalizado es opcional.",
+      "b": "Un atributo estándar tiene una definición fija, mientras que un atributo personalizado se define según las necesidades específicas de la organización.",
+      "c": "Un atributo estándar se puede utilizar en múltiples directorios, mientras que un atributo personalizado es exclusivo de un solo directorio."
+     },
+     "correcta": "b"
+    },
+    {
+     "id": "2024-e1-28",
+     "numero": "28",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 20,
+     "enunciado": "¿Qué servicios ofrece una plataforma de Cloud?",
+     "opciones": {
+      "a": "Almacenamiento en línea y procesamiento de datos.",
+      "b": "Acceso remoto a aplicaciones y recursos desde cualquier ubicación.",
+      "c": "Ambas opciones anteriores."
+     },
+     "correcta": "c"
+    },
+    {
+     "id": "2024-e1-29",
+     "numero": "29",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 23,
+     "enunciado": "¿Cuál es la principal diferencia entre Business Intelligence y Data Mining?",
+     "opciones": {
+      "a": "El tipo de datos que se analizan (estructurados vs. no estructurados).",
+      "b": "La finalidad del análisis (informada vs. predictiva).",
+      "c": "La complejidad de los algoritmos utilizados."
+     },
+     "correcta": "b"
+    },
+    {
+     "id": "2024-e1-30",
+     "numero": "30",
+     "reserva": false,
+     "anulada": true,
+     "contexto": null,
+     "tema": 26,
+     "enunciado": "¿Qué es lo que diferencia la metodología Métrica v3 del modelo en cascada?",
+     "opciones": {
+      "a": "La utilización de métricas para evaluar progreso.",
+      "b": "El enfoque iterativo en lugar de lineal.",
+      "c": "La capacidad para adaptarse a cambios durante el desarrollo."
+     },
+     "correcta": null,
+     "notas": "Anulada en la plantilla definitiva."
+    },
+    {
+     "id": "2024-e1-31",
+     "numero": "31",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 31,
+     "enunciado": "¿Cuál es una ventaja importante del uso de objetos en lenguajes de programación orientados a objetos?",
+     "opciones": {
+      "a": "Mejora significativa en la velocidad de ejecución.",
+      "b": "Menor complejidad del código.",
+      "c": "Abstracción y encapsulación de datos."
+     },
+     "correcta": "c"
+    },
+    {
+     "id": "2024-e1-32",
+     "numero": "32",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 30,
+     "enunciado": "¿Cuál es la diferencia principal entre un lenguaje de programación dinámico y un lenguaje de programación estático?",
+     "opciones": {
+      "a": "La capacidad para realizar depuración en tiempo de ejecución.",
+      "b": "La capacidad para verificar tipos de datos en tiempo de compilación.",
+      "c": "La capacidad para modificar el estado del programa durante la ejecución."
+     },
+     "correcta": "b"
+    },
+    {
+     "id": "2024-e1-33",
+     "numero": "33",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 39,
+     "enunciado": "El ENS está constituido por los principios básicos y requisitos mínimos necesarios para una protección adecuada de la información tratada y los servicios prestados por las entidades de su ámbito de aplicación, con objeto de:",
+     "opciones": {
+      "a": "Asegurar solamente el acceso, la confidencialidad y la integridad.",
+      "b": "Asegurar el acceso, la confidencialidad, la integridad, la trazabilidad, la autenticidad, la disponibilidad y la conservación de los datos, la información y los servicios utilizados por medios electrónicos que gestionen en el ejercicio de sus competencias.",
+      "c": "Asegurar únicamente el acceso."
+     },
+     "correcta": "b"
+    },
+    {
+     "id": "2024-e1-34",
+     "numero": "34",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 34,
+     "enunciado": "¿Cuál es el propósito del 'ActivityManager' en Android y cómo se utiliza?",
+     "opciones": {
+      "a": "El ActivityManager es una clase que gestiona las actividades en ejecución y permite al desarrollador controlar la vida de una actividad.",
+      "b": "El ActivityManager es una interfaz que proporciona acceso a los servicios del sistema, como la lista de aplicaciones en ejecución.",
+      "c": "El ActivityManager es un servicio que se utiliza para realizar operaciones asíncronas en segundo plano."
+     },
+     "correcta": "b"
+    },
+    {
+     "id": "2024-e1-35",
+     "numero": "35",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 27,
+     "enunciado": "¿Qué es \"RESTful\" en el contexto de servicios web?",
+     "opciones": {
+      "a": "Un protocolo de comunicación para transferir datos entre sistemas.",
+      "b": "Un patrón arquitectónico que describe cómo los recursos son identificados, accedidos y manipulados mediante una interfaz de programación de aplicaciones.",
+      "c": "Una biblioteca de utilidades para codificar y decodificar formatos de intercambio de datos."
+     },
+     "correcta": "b"
+    },
+    {
+     "id": "2024-e1-36",
+     "numero": "36",
+     "reserva": false,
+     "anulada": true,
+     "contexto": null,
+     "tema": 37,
+     "enunciado": "¿Cuál es el papel del Estado en la gestión de la sociedad de la información según la Ley 39/2015?",
+     "opciones": {
+      "a": "El Estado debe garantizar la neutralidad del espectro radioeléctrico.",
+      "b": "El Estado tiene la competencia exclusiva para regular las comunicaciones electrónicas.",
+      "c": "El Estado debe promover la innovación y el desarrollo tecnológico en todos los sectores."
+     },
+     "correcta": null,
+     "notas": "Anulada en la plantilla definitiva."
+    },
+    {
+     "id": "2024-e1-37",
+     "numero": "37",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 39,
+     "enunciado": "De acuerdo con lo dispuesto en el Real Decreto 311/2022, de 3 de mayo, por el que se regula el Esquema Nacional de Seguridad, en su artículo 26:",
+     "opciones": {
+      "a": "Los sistemas dispondrán de copias de seguridad semanales y se establecerán los mecanismos necesarios para garantizar la continuidad de las operaciones en caso de pérdida de los medios habituales.",
+      "b": "Los sistemas dispondrán de copias de seguridad mensuales y se establecerán los mecanismos necesarios para garantizar la continuidad de las operaciones en caso de pérdida de los medios habituales.",
+      "c": "Los sistemas dispondrán de copias de seguridad y se establecerán los mecanismos necesarios para garantizar la continuidad de las operaciones en caso de pérdida de los medios habituales."
+     },
+     "correcta": "c"
+    },
+    {
+     "id": "2024-e1-38",
+     "numero": "38",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 38,
+     "enunciado": "¿Cuál es el propósito de un sistema de gestión de riesgos (SGR) en un entorno de sistemas de información?",
+     "opciones": {
+      "a": "Identificar y mitigar riesgos potenciales que puedan afectar la disponibilidad y el acceso a los sistemas.",
+      "b": "Proporcionar procedimientos de recuperación ante incidentes para minimizar el tiempo de inactividad.",
+      "c": "Establecer límites de acceso para todos los empleados."
+     },
+     "correcta": "a"
+    },
+    {
+     "id": "2024-e1-39",
+     "numero": "39",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 36,
+     "enunciado": "¿Cuál de las siguientes frases es INCORRECTA?",
+     "opciones": {
+      "a": "Para firmar electrónicamente un documento se usa la clave privada del emisor de la firma.",
+      "b": "El receptor utiliza su clave privada para descifrar mensajes que le han enviado cifrados con criptografía simétrica.",
+      "c": "El emisor de un mensaje en un sistema de clave asimétrico cifra el mensaje con la clave pública del receptor."
+     },
+     "correcta": "b"
+    },
+    {
+     "id": "2024-e1-40",
+     "numero": "40",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 40,
+     "enunciado": "A efectos del Reglamento (UE) 2016/679 (Reglamento general de protección de datos), el tratamiento de datos solo será lícito si se cumple al menos una de las siguientes condiciones:",
+     "opciones": {
+      "a": "El tratamiento es necesario para el cumplimiento de una obligación legal aplicable al responsable del tratamiento.",
+      "b": "El tratamiento es necesario para proteger intereses vitales del interesado o de otra persona física.",
+      "c": "La respuesta a y b son correctas."
+     },
+     "correcta": "c"
+    },
+    {
+     "id": "2024-e1-41",
+     "numero": "41",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 9,
+     "enunciado": "¿Cuál de estos conectores no es adecuado en la conexión de pantallas para transmitir la señal de vídeo?",
+     "opciones": {
+      "a": "HDMI.",
+      "b": "DIMM.",
+      "c": "DisplayPort."
+     },
+     "correcta": "b"
+    },
+    {
+     "id": "2024-e1-42",
+     "numero": "42",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 10,
+     "enunciado": "Una red de área local (LAN):",
+     "opciones": {
+      "a": "Requiere acceso a Internet para funcionar.",
+      "b": "Solo pueden cubrir un área de hasta 10 metros de distancia.",
+      "c": "Conecta dispositivos dentro de un área geográfica limitada, como una casa, oficina o edificio."
+     },
+     "correcta": "c"
+    },
+    {
+     "id": "2024-e1-43",
+     "numero": "43",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 14,
+     "enunciado": "¿Cuál de las siguientes opciones no es un software de control remoto?",
+     "opciones": {
+      "a": "MyDesk.",
+      "b": "TeamViewer.",
+      "c": "VNC."
+     },
+     "correcta": "a"
+    },
+    {
+     "id": "2024-e1-44",
+     "numero": "44",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 14,
+     "enunciado": "En cuanto a protocolos de mensajería instantánea:",
+     "opciones": {
+      "a": "XMPP y SIMPLE son protocolos basados en estándares propietarios o cerrados.",
+      "b": "XMPP y SIMPLE son protocolos basados en estándares abiertos.",
+      "c": "XMPP y SIMPLE no se refieren a protocolos de mensajería instantánea."
+     },
+     "correcta": "b"
+    },
+    {
+     "id": "2024-e1-45",
+     "numero": "45",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 12,
+     "enunciado": "¿Cuál de estas características del superusuario en Linux es falsa?",
+     "opciones": {
+      "a": "No puede cambiar la configuración de la red o las interfaces de red.",
+      "b": "Puede instalar, actualizar o eliminar paquetes de software en el sistema.",
+      "c": "Puede modificar cualquier archivo del sistema, independientemente de su propietario."
+     },
+     "correcta": "a"
+    },
+    {
+     "id": "2024-e1-46",
+     "numero": "46",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 12,
+     "enunciado": "Según la estructura estándar de directorios en Linux definida por el Filesystem Hierarchy Standard (FHS):",
+     "opciones": {
+      "a": "El directorio /bin contiene archivos estáticos del cargador de arranque.",
+      "b": "El directorio /bin debe estar disponible para programas que requieren archivos temporales.",
+      "c": "No debe haber subdirectorios en /bin."
+     },
+     "correcta": "c"
+    },
+    {
+     "id": "2024-e1-47",
+     "numero": "47",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 12,
+     "enunciado": "Si se tiene un archivo llamado notepad.exe (el Bloc de notas de Windows) en el directorio actual de Linux, se puede ejecutar con el siguiente comando de Wine:",
+     "opciones": {
+      "a": "wine notepad.exe",
+      "b": "wine -cf notepad.exe",
+      "c": "wine -x notepad.exe"
+     },
+     "correcta": "a"
+    },
+    {
+     "id": "2024-e1-48",
+     "numero": "48",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 9,
+     "enunciado": "UEFI (Unified Extensible Firmware Interface):",
+     "opciones": {
+      "a": "Carece de compatibilidad con BIOS.",
+      "b": "Está limitado a discos duros de tamaño máximo 2 TB.",
+      "c": "Utiliza GPT."
+     },
+     "correcta": "c"
+    },
+    {
+     "id": "2024-e1-49",
+     "numero": "49",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 39,
+     "enunciado": "Lo dispuesto en el Real Decreto 311/2022, de 3 de mayo, por el que se regula el Esquema Nacional de Seguridad, por cuanto afecta a los sistemas de información utilizados para la prestación de los servicios públicos, deberá considerarse comprendido en los recursos y procedimientos integrantes del Sistema de Seguridad Nacional recogidos en:",
+     "opciones": {
+      "a": "La Ley 40/2015, de 27 de septiembre, de Seguridad Nacional.",
+      "b": "La Ley 39/2015, de 28 de septiembre, de Seguridad Nacional.",
+      "c": "La Ley 36/2015, de 28 de septiembre, de Seguridad Nacional."
+     },
+     "correcta": "c"
+    },
+    {
+     "id": "2024-e1-50",
+     "numero": "50",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 10,
+     "enunciado": "Los puntos de acceso inalámbricos Wi-Fi (o Access Point, AP):",
+     "opciones": {
+      "a": "Pueden incluir opciones de autenticación como RADIUS.",
+      "b": "Pueden incluir opciones de seguridad con encriptación como WPA2, WPA3.",
+      "c": "Las dos respuestas anteriores son correctas."
+     },
+     "correcta": "c"
+    },
+    {
+     "id": "2024-e1-R1",
+     "numero": "R1",
+     "reserva": true,
+     "anulada": false,
+     "contexto": null,
+     "tema": 35,
+     "enunciado": "Señale cuál de las siguientes opciones NO es un sistema de control de versiones.",
+     "opciones": {
+      "a": "VND.",
+      "b": "Mercurial.",
+      "c": "BitKeeper."
+     },
+     "correcta": "a"
+    },
+    {
+     "id": "2024-e1-R2",
+     "numero": "R2",
+     "reserva": true,
+     "anulada": false,
+     "contexto": null,
+     "tema": 9,
+     "enunciado": "De los siguientes dispositivos de almacenamiento, señale cuál podría tener un fallo de funcionamiento debido a sus elementos móviles:",
+     "opciones": {
+      "a": "Una memoria USB.",
+      "b": "Un disco duro de estado sólido SSD interno.",
+      "c": "Un disco duro HDD."
+     },
+     "correcta": "c"
+    },
+    {
+     "id": "2024-e1-R3",
+     "numero": "R3",
+     "reserva": true,
+     "anulada": false,
+     "contexto": null,
+     "tema": 12,
+     "enunciado": "KDE en el sistema operativo Linux es:",
+     "opciones": {
+      "a": "Un sistema operativo.",
+      "b": "Un entorno gráfico de escritorio.",
+      "c": "Un gestor de arranque."
+     },
+     "correcta": "b"
+    },
+    {
+     "id": "2024-e1-R4",
+     "numero": "R4",
+     "reserva": true,
+     "anulada": false,
+     "contexto": null,
+     "tema": 7,
+     "enunciado": "De acuerdo con los artículos 23 y 24 del Real Decreto Legislativo 5/2015, de 30 de octubre, que aprueba el texto refundido de la Ley del Estatuto Básico del Empleado Público, el sueldo y los trienios son:",
+     "opciones": {
+      "a": "Retribuciones básicas.",
+      "b": "Retribuciones complementarias.",
+      "c": "El sueldo es una retribución básica y los trienios son una retribución complementaria."
+     },
+     "correcta": "a"
+    },
+    {
+     "id": "2024-e1-R5",
+     "numero": "R5",
+     "reserva": true,
+     "anulada": false,
+     "contexto": null,
+     "tema": 7,
+     "enunciado": "De acuerdo con el artículo 39.1 del Real Decreto Legislativo 5/2015, de 30 de octubre, que aprueba el texto refundido de la Ley del Estatuto Básico del Empleado Público, los órganos específicos de representación de los funcionarios son:",
+     "opciones": {
+      "a": "Los Delegados de Personal.",
+      "b": "Las Juntas de Personal.",
+      "c": "Los Delegados de Personal y las Juntas de Personal."
+     },
+     "correcta": "c"
+    }
+   ]
+  },
+  {
+   "id": "e2",
+   "nombre": "Segundo ejercicio",
+   "num_opciones": 4,
+   "contextos": [
+    {
+     "id": "s1",
+     "titulo": "Supuesto teórico-práctico n.º 1",
+     "enunciado": "Como Técnico Auxiliar Informática del Ayuntamiento de Zaragoza se le solicitan las siguientes cuestiones sobre Python 3:"
+    },
+    {
+     "id": "s2",
+     "titulo": "Supuesto teórico-práctico n.º 2",
+     "enunciado": "Se dispone de un servidor de desarrollo con Ubuntu 20.04 y se necesita implementar un sistema de versiones de código y contenedores. Se decide utilizar Git como sistema de versiones y Docker como plataforma de contenedores. Se crea un repositorio Git para almacenar el código fuente de la aplicación y se configura un servidor Git en el servidor de desarrollo. Luego, se crea una imagen Docker para la aplicación y se configura un contenedor Docker para ejecutar la aplicación. El contenedor Docker se configura para que se reinicie automáticamente en caso de fallo. Se necesita implementar un sistema de autenticación para el servidor Git y se decide utilizar SSL/TLS para cifrar la comunicación entre el servidor Git y los clientes. Se genera un certificado autofirmado para el servidor Git y se configura el servidor Git para que utilice el certificado."
+    },
+    {
+     "id": "s3",
+     "titulo": "Supuesto teórico-práctico n.º 3",
+     "enunciado": "Disponemos de un SGBDR ORACLE con las siguientes tablas:",
+     "lenguaje": "sql",
+     "codigo": "CREATE TABLE ALUMNO (\n    A_ID_ALUMNO NUMBER NOT NULL,\n    A_NOMBRE    VARCHAR2(200) NOT NULL,\n    A_TELEFONO  VARCHAR2(15),\n    A_CLASE     VARCHAR2(1) NOT NULL,\n    CONSTRAINT ALUMNO_PK PRIMARY KEY (A_ID_ALUMNO)\n);\n\nCREATE TABLE CALIFICACION (\n    C_ID_ASIGNATURA NUMBER NOT NULL,\n    C_ID_ALUMNO     NUMBER NOT NULL,\n    C_NOTA          NUMBER NOT NULL,\n    CONSTRAINT CALIFICACION_PK PRIMARY KEY (C_ID_ASIGNATURA, C_ID_ALUMNO)\n);"
+    },
+    {
+     "id": "s4",
+     "titulo": "Supuesto teórico-práctico n.º 4",
+     "enunciado": "Usted es Técnica/o Auxiliar Informático y está trabajando en un equipo de desarrollo software y se le plantean las siguientes cuestiones:"
+    },
+    {
+     "id": "s5",
+     "titulo": "Supuesto teórico-práctico n.º 5",
+     "enunciado": "Como Técnica/o Auxiliar Informático se encuentra desarrollando un programa informático. Previamente, y antes de iniciar la programación del mismo, con la finalidad de comprobar y adoptar las medidas de seguridad necesarias de conformidad con el ENS en relación con el programa que está desarrollando, se le plantean las siguientes preguntas. Posteriormente se le solicita que trabaje con la herramienta LibreOffice Calc."
+    }
+   ],
+   "preguntas": [
+    {
+     "id": "2024-e2-01",
+     "numero": "1",
+     "reserva": false,
+     "anulada": false,
+     "contexto": "s1",
+     "tema": 30,
+     "enunciado": "¿Cuál es la salida del siguiente código en Python?\n\ns = 'zaragoza.es'\nindex = s.find('es')\nprint(index)",
+     "opciones": {
+      "a": "8",
+      "b": "10",
+      "c": "9",
+      "d": "-1"
+     },
+     "correcta": "c"
+    },
+    {
+     "id": "2024-e2-02",
+     "numero": "2",
+     "reserva": false,
+     "anulada": false,
+     "contexto": "s1",
+     "tema": 30,
+     "enunciado": "¿Cuál es la salida del siguiente código en Python?\n\ndef func(x=[]):\n    x.append(1)\n    return x\n\nprint(func())\nprint(func())",
+     "opciones": {
+      "a": "[1]\n[1]",
+      "b": "[1]\n[1, 1]",
+      "c": "[1]\n[2]",
+      "d": "Error"
+     },
+     "correcta": "b"
+    },
+    {
+     "id": "2024-e2-03",
+     "numero": "3",
+     "reserva": false,
+     "anulada": false,
+     "contexto": "s1",
+     "tema": 30,
+     "enunciado": "¿Cuál es la salida del siguiente código en Python?\n\nstring1 = 'hello'\nstring1_unicode = 'hell\\u00f6'\nprint(string1 != string1_unicode)",
+     "opciones": {
+      "a": "True",
+      "b": "False",
+      "c": "Error",
+      "d": "None"
+     },
+     "correcta": "a"
+    },
+    {
+     "id": "2024-e2-04",
+     "numero": "4",
+     "reserva": false,
+     "anulada": false,
+     "contexto": "s1",
+     "tema": 30,
+     "enunciado": "¿Cuál es la salida del siguiente código en Python?\n\nset1 = {1, 1, 2}\nset2 = {2, 3, 4}\nresult = set1 ^ set2\nprint(result)",
+     "opciones": {
+      "a": "{1, 1, 2, 2, 3, 4}",
+      "b": "{1, 3, 4}",
+      "c": "{1, 2, 3, 4}",
+      "d": "{1, 1, 2, 3, 4}"
+     },
+     "correcta": "b"
+    },
+    {
+     "id": "2024-e2-05",
+     "numero": "5",
+     "reserva": false,
+     "anulada": false,
+     "contexto": "s1",
+     "tema": 30,
+     "enunciado": "¿Cuál es la salida del siguiente código en Python?\n\ndef fun(x, y):\n    if x == 0:\n        return y\n    else:\n        return fun(x - 1, x * y)\n\nprint(fun(4, 2))",
+     "opciones": {
+      "a": "48",
+      "b": "96",
+      "c": "16",
+      "d": "32"
+     },
+     "correcta": "a"
+    },
+    {
+     "id": "2024-e2-06",
+     "numero": "6",
+     "reserva": false,
+     "anulada": true,
+     "contexto": "s2",
+     "tema": 20,
+     "enunciado": "¿Cuál es el comando para crear un contenedor Docker que se reinicie automáticamente en caso de fallo?",
+     "opciones": {
+      "a": "docker run -d --restart=always",
+      "b": "docker run --restart=on-failure",
+      "c": "docker run -d --restart=on-failure",
+      "d": "docker run --restart=unless-stopped"
+     },
+     "correcta": null,
+     "notas": "Anulada en la plantilla definitiva."
+    },
+    {
+     "id": "2024-e2-07",
+     "numero": "7",
+     "reserva": false,
+     "anulada": true,
+     "contexto": "s2",
+     "tema": 35,
+     "enunciado": "¿Cuál es el comando para configurar el servidor Git para que utilice un certificado autofirmado?",
+     "opciones": {
+      "a": "git config --global http.sslCertificate server.crt",
+      "b": "git config --global http.sslKey server.key",
+      "c": "git config --global http.sslCertificate server.crt; git config --global http.sslKey server.key",
+      "d": "git config --global http.sslVerify false"
+     },
+     "correcta": null,
+     "notas": "Anulada en la plantilla definitiva."
+    },
+    {
+     "id": "2024-e2-08",
+     "numero": "8",
+     "reserva": false,
+     "anulada": false,
+     "contexto": "s2",
+     "tema": 35,
+     "enunciado": "¿Cuál es el comando para crear un repositorio Git vacío?",
+     "opciones": {
+      "a": "git init --bare",
+      "b": "git init --non-bare",
+      "c": "git init --empty",
+      "d": "git init --template=empty"
+     },
+     "correcta": "a"
+    },
+    {
+     "id": "2024-e2-09",
+     "numero": "9",
+     "reserva": false,
+     "anulada": false,
+     "contexto": "s2",
+     "tema": 20,
+     "enunciado": "¿Cuál es el comando para crear una imagen Docker a partir de un contenedor?",
+     "opciones": {
+      "a": "docker save",
+      "b": "docker commit",
+      "c": "docker load",
+      "d": "docker export"
+     },
+     "correcta": "b"
+    },
+    {
+     "id": "2024-e2-10",
+     "numero": "10",
+     "reserva": false,
+     "anulada": false,
+     "contexto": "s2",
+     "tema": 20,
+     "enunciado": "¿Cuál es el comando para crear un volumen Docker que se pueda utilizar para persistir datos en un contenedor?",
+     "opciones": {
+      "a": "docker volume create",
+      "b": "docker volume mount",
+      "c": "docker volume attach",
+      "d": "docker volume detach"
+     },
+     "correcta": "a"
+    },
+    {
+     "id": "2024-e2-11",
+     "numero": "11",
+     "reserva": false,
+     "anulada": false,
+     "contexto": "s3",
+     "tema": 24,
+     "enunciado": "Se quiere añadir que el campo C_ID_ALUMNO de la tabla CALIFICACION sea clave ajena y tenga valores que ya existen en el campo A_ID_ALUMNO de ALUMNO. ¿Qué opción de las siguientes es la CORRECTA para hacerlo?",
+     "opciones": {
+      "a": "ALTER TABLE CALIFICACION ADD CONSTRAINT FK1 FOREIGN KEY (C_ID_ALUMNO)\n  REFERENCES ALUMNO (A_ID_ALUMNO);",
+      "b": "ALTER TABLE ALUMNO ADD CONSTRAINT FK1 FOREIGN KEY (A_ID_ALUMNO)\n  REFERENCES CALIFICACION (C_ID_ALUMNO);",
+      "c": "ALTER TABLE CALIFICACION ADD CONSTRAINT FK1 FOREIGN KEY (A_ID_ALUMNO)\n  REFERENCES ALUMNO (C_ID_ALUMNO);",
+      "d": "ALTER TABLE ALUMNO ADD CONSTRAINT FK1 FOREIGN KEY (C_ID_ALUMNO)\n  REFERENCES CALIFICACION (A_ID_ALUMNO);"
+     },
+     "correcta": "a"
+    },
+    {
+     "id": "2024-e2-12",
+     "numero": "12",
+     "reserva": false,
+     "anulada": false,
+     "contexto": "s3",
+     "tema": 25,
+     "enunciado": "Se necesita una lista de los nombres de los alumnos que no tienen asociado ningún registro en la tabla CALIFICACION. ¿Qué opción de las siguientes obtiene esta información CORRECTAMENTE?",
+     "opciones": {
+      "a": "SELECT A_NOMBRE\nFROM ALUMNO, CALIFICACION\nWHERE A_ID_ALUMNO = C_ID_ALUMNO (+) AND C_ID_ASIGNATURA IS NULL;",
+      "b": "SELECT A_NOMBRE\nFROM ALUMNO LEFT JOIN CALIFICACION ON A_ID_ALUMNO = C_ID_ALUMNO\nWHERE C_ID_ALUMNO IS NULL;",
+      "c": "SELECT A_NOMBRE\nFROM ALUMNO\nWHERE NOT EXISTS (SELECT 1 FROM CALIFICACION WHERE A_ID_ALUMNO = C_ID_ALUMNO);",
+      "d": "Las opciones a, b y c son correctas."
+     },
+     "correcta": "d"
+    },
+    {
+     "id": "2024-e2-13",
+     "numero": "13",
+     "reserva": false,
+     "anulada": true,
+     "contexto": "s3",
+     "tema": 25,
+     "enunciado": "Se necesita una lista de alumnos que tengan calificaciones con asignaturas suspendidas (considerando igual o mayor de 5 como aprobado), mostrando nombre, teléfono y el número de asignaturas suspendidas, sin que se repitan alumnos. ¿Qué opción de las siguientes obtiene esta información CORRECTAMENTE?",
+     "opciones": {
+      "a": "SELECT A_NOMBRE, A_TELEFONO, COUNT(*)\nFROM ALUMNO, CALIFICACION\nWHERE A_ID_ALUMNO = C_ID_ALUMNO\nGROUP BY A_NOMBRE, A_TELEFONO\nHAVING NOTA<5;",
+      "b": "SELECT A_NOMBRE, A_TELEFONO, COUNT(*)\nFROM ALUMNO, CALIFICACION\nWHERE A_ID_ALUMNO = C_ID_ALUMNO AND NOTA<5\nGROUP BY A_NOMBRE, A_TELEFONO;",
+      "c": "SELECT DISTINCT A_NOMBRE, A_TELEFONO, COUNT(*)\nFROM ALUMNO, CALIFICACION\nWHERE A_ID_ALUMNO = C_ID_ALUMNO AND NOTA<5;",
+      "d": "Las opciones a y b son correctas."
+     },
+     "correcta": null,
+     "notas": "Anulada en la plantilla definitiva. La columna se llama C_NOTA, no NOTA."
+    },
+    {
+     "id": "2024-e2-14",
+     "numero": "14",
+     "reserva": false,
+     "anulada": true,
+     "contexto": "s3",
+     "tema": 25,
+     "enunciado": "Se ha creado una función: FUNCTION MEDIA_CLASE (CLASE IN VARCHAR2) RETURN NUMBER que calcula la calificación media de la clase pasada como parámetro de entrada. En un procedimiento PL/SQL, señale cuál es la forma CORRECTA de asignar a la variable MEDIA el valor de la media de la clase A.",
+     "opciones": {
+      "a": "SELECT MEDIA_CLASE('A') INTO MEDIA FROM DUAL;",
+      "b": "MEDIA := MEDIA_CLASE(A);",
+      "c": "SELECT MEDIA_CLASE('A') INTO MEDIA;",
+      "d": "MEDIA = MEDIA_CLASE('A');"
+     },
+     "correcta": null,
+     "notas": "Anulada en la plantilla definitiva."
+    },
+    {
+     "id": "2024-e2-15",
+     "numero": "15",
+     "reserva": false,
+     "anulada": false,
+     "contexto": "s3",
+     "tema": 25,
+     "enunciado": "Dada la función MEDIA_CLASE de la pregunta anterior, se quiere obtener un listado de clases de la tabla alumno, con la media de esa clase, sin que se repitan filas. ¿Qué opción de las siguientes obtiene esta información CORRECTAMENTE?",
+     "opciones": {
+      "a": "SELECT DISTINCT A_CLASE, MEDIA_CLASE(A_CLASE)\nFROM ALUMNO;",
+      "b": "SELECT A_CLASE, MEDIA_CLASE(A_CLASE)\nFROM ALUMNO\nGROUP BY A_CLASE;",
+      "c": "Las opciones a y b son correctas.",
+      "d": "Las opciones a y b son incorrectas."
+     },
+     "correcta": "c"
+    },
+    {
+     "id": "2024-e2-16",
+     "numero": "16",
+     "reserva": false,
+     "anulada": false,
+     "contexto": "s4",
+     "tema": 32,
+     "enunciado": "Dada la siguiente interfaz en Java:\n\npublic interface Vehiculo {...}\n\nIndique cuál de los siguientes usos es CORRECTO.",
+     "opciones": {
+      "a": "public class Coche extends Vehiculo {...}",
+      "b": "public class Coche implements Vehiculo {...}",
+      "c": "Vehiculo veh = new Vehiculo();",
+      "d": "public class Coche extend Vehiculo {...}"
+     },
+     "correcta": "b"
+    },
+    {
+     "id": "2024-e2-17",
+     "numero": "17",
+     "reserva": false,
+     "anulada": false,
+     "contexto": "s4",
+     "tema": 32,
+     "enunciado": "En JAVA, ¿cuál de las siguientes opciones es CORRECTA para comentar un texto?",
+     "opciones": {
+      "a": "<!-- texto -->",
+      "b": "# texto",
+      "c": "-- texto",
+      "d": "/* texto */"
+     },
+     "correcta": "d"
+    },
+    {
+     "id": "2024-e2-18",
+     "numero": "18",
+     "reserva": false,
+     "anulada": false,
+     "contexto": "s4",
+     "tema": 32,
+     "enunciado": "Una aplicación web está fallando y los logs muestran lo siguiente:\n\nCaused by: sun.security.validator.ValidatorException: No trusted certificate found\n  at sun.security.validator.SimpleValidator.buildTrustedChain(SimpleValidator.java:304)\n  at sun.security.validator.SimpleValidator.engineValidate(SimpleValidator.java:107)\n  at sun.security.validator.Validator.validate(Validator.java:203)\n  at com.sun.net.ssl.internal.ssl.X509TrustManagerImpl.checkServerTrusted(X509TrustManagerImpl.java:172)\n  at com.sun.net.ssl.internal.ssl.JsseX509TrustManager.checkServerTrusted(SSLContextImpl.java:320)\n  at com.sun.net.ssl.internal.ssl.ClientHandshaker.serverCertificate(ClientHandshaker.java:840)\n  ... 64 more\n\nIndique la afirmación CORRECTA que se deduce de dicho error.",
+     "opciones": {
+      "a": "Falta una clave privada en el almacén de certificados de confianza correspondiente.",
+      "b": "La aplicación intenta acceder a una url con https.",
+      "c": "La aplicación intenta acceder a una url con http y da error por no ser segura.",
+      "d": "La aplicación intenta acceder a una url que tiene su certificado de SSL/TLS revocado."
+     },
+     "correcta": "b"
+    },
+    {
+     "id": "2024-e2-19",
+     "numero": "19",
+     "reserva": false,
+     "anulada": false,
+     "contexto": "s4",
+     "tema": 33,
+     "enunciado": "En el siguiente código HTML:\n\n<a id=\"enlace\" href=\"destino.html\" class=\"enlace\">Enlace</a>\n\nEn una página que usa el siguiente código CSS:\n\na { color: red; }\na.enlace { color: green; }\na#enlace { color: black; }\n\nSeñale de qué color se verá el enlace.",
+     "opciones": {
+      "a": "Rojo.",
+      "b": "Verde.",
+      "c": "Negro.",
+      "d": "Azul, que es el estilo por defecto que le aplica el navegador."
+     },
+     "correcta": "c"
+    },
+    {
+     "id": "2024-e2-20",
+     "numero": "20",
+     "reserva": false,
+     "anulada": false,
+     "contexto": "s4",
+     "tema": 21,
+     "enunciado": "¿En cuál de estos ficheros podemos encontrar la configuración del puerto de escucha o el directorio raíz de un servidor Apache?",
+     "opciones": {
+      "a": "catalina.properties",
+      "b": "httpd.conf",
+      "c": "wls.properties",
+      "d": "Apache.conf"
+     },
+     "correcta": "b"
+    },
+    {
+     "id": "2024-e2-21",
+     "numero": "21",
+     "reserva": false,
+     "anulada": false,
+     "contexto": "s5",
+     "tema": 39,
+     "enunciado": "A fin de determinar el impacto que tendría sobre la organización un incidente que afectara a la seguridad de la información tratada o de los servicios prestados y, en su consecuencia, establecer la categoría de seguridad del sistema de información en cuestión, tendrá en cuenta las siguientes dimensiones de la seguridad, que se identificarán por sus correspondientes iniciales en mayúsculas. ¿Cuál de las siguientes es INCORRECTA?",
+     "opciones": {
+      "a": "Confidencialidad [C].",
+      "b": "Información [I].",
+      "c": "Disponibilidad [D].",
+      "d": "Autenticidad [A]."
+     },
+     "correcta": "b"
+    },
+    {
+     "id": "2024-e2-22",
+     "numero": "22",
+     "reserva": false,
+     "anulada": false,
+     "contexto": "s5",
+     "tema": 39,
+     "enunciado": "Se plantea un incidente de seguridad en una de las dimensiones causando un daño significativo en los activos de la organización. ¿Cómo se considerará dicho perjuicio y a qué nivel de seguridad se adscribirá?",
+     "opciones": {
+      "a": "Perjuicio grave. Nivel MEDIO.",
+      "b": "Perjuicio muy grave. Nivel ALTO.",
+      "c": "Perjuicio leve. Nivel BAJO.",
+      "d": "Perjuicio limitado. Nivel BÁSICO."
+     },
+     "correcta": "a"
+    },
+    {
+     "id": "2024-e2-23",
+     "numero": "23",
+     "reserva": false,
+     "anulada": false,
+     "contexto": "s5",
+     "tema": 13,
+     "enunciado": "Tabla de LibreOffice Calc:\n\n   | A           | B\n 1 | Barrios     | Porcentajes\n 2 | Delicias    | 14\n 3 | La Almozara | 4\n 4 | Montañana   | 1\n 5 | San José    | 9\n 6 |             |\n 7 | Factor      | 1,698\n\nSi en la celda C2 se introduce la fórmula\n=SI(Y(B2>=0; B2<=3); \"Baja\"; SI(Y(B2>3; B2<=8); \"Media\"; SI(B2>8; \"Alta\"; \"No definido\")))\ny se rellenan las celdas C3, C4 y C5 con doble clic sobre la esquina inferior derecha de C2, ¿qué valores dará como resultado?",
+     "opciones": {
+      "a": "En C2 Alta, en C3 Media, en C4 Baja y en C5 Alta.",
+      "b": "En C2 No definido, en C3 Media, en C4 Baja y en C5 Alta.",
+      "c": "La función devolverá Err:509 en las celdas C2, C3, C4 y C5.",
+      "d": "La función devolverá #¡VALOR! en las celdas C2, C3, C4 y C5."
+     },
+     "correcta": "a"
+    },
+    {
+     "id": "2024-e2-24",
+     "numero": "24",
+     "reserva": false,
+     "anulada": false,
+     "contexto": "s5",
+     "tema": 13,
+     "enunciado": "Tabla de LibreOffice Calc:\n\n   | A           | B\n 1 | Barrios     | Porcentajes\n 2 | Delicias    | 14\n 3 | La Almozara | 4\n 4 | Montañana   | 1\n 5 | San José    | 9\n 6 |             |\n 7 | Factor      | 1,698\n\nLe piden que añada en la columna D el resultado de aplicar un factor de multiplicación definido en la celda B7 a los respectivos valores de población. ¿Qué fórmula introducirá en la celda D2 para obtener el resultado de multiplicar B2 por dicho factor y que el resultado tenga dos decimales con redondeo estándar?",
+     "opciones": {
+      "a": "=REDONDEAR(B2*$B$7)",
+      "b": "=REDONDEAR(B2*$B$7;2;0)",
+      "c": "=REDONDEAR(B2*$B$7;2)",
+      "d": "=REDONDEAR(B2*$B$7;0)"
+     },
+     "correcta": "c"
+    },
+    {
+     "id": "2024-e2-25",
+     "numero": "25",
+     "reserva": false,
+     "anulada": false,
+     "contexto": "s5",
+     "tema": 13,
+     "enunciado": "En LibreOffice Calc ejecutándose en Windows o Linux, ¿qué sucede si pulsamos las teclas Ctrl+N?",
+     "opciones": {
+      "a": "Repite el último comando utilizado.",
+      "b": "Elimina el formato directo del texto u objetos seleccionados.",
+      "c": "Aplica el atributo negrita a los caracteres y al texto seleccionados.",
+      "d": "No realiza ninguna acción."
+     },
+     "correcta": "c"
+    }
+   ]
+  }
+ ]
+}

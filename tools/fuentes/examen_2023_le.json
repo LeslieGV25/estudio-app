@@ -1,0 +1,718 @@
+{
+ "version": 1,
+ "id": "zgz-tai-2023-le",
+ "organismo": "Ayuntamiento de Zaragoza",
+ "plaza": "Técnica/o Auxiliar Informática",
+ "convocatoria": "OEP 2022 · Lista de espera extraordinaria (LE)",
+ "turno": "lista_espera",
+ "fecha_examen": "2023-09-29",
+ "fuente_respuestas": "plantilla_definitiva",
+ "ejercicios": [
+  {
+   "id": "e1",
+   "nombre": "Primera prueba (teórica)",
+   "num_opciones": 3,
+   "contextos": [],
+   "preguntas": [
+    {
+     "id": "2023-e1-01",
+     "numero": "1",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 1,
+     "enunciado": "De conformidad con el artículo 103.1 CE, la Administración Pública (señale la respuesta correcta):",
+     "opciones": {
+      "a": "La Administración Pública sirve con objetividad los intereses particulares y actúa de acuerdo con los principios de eficacia, transparencia, descentralización, desconcentración y coordinación, con sometimiento pleno a la ley y al Derecho.",
+      "b": "La Administración Pública sirve con objetividad los intereses generales y actúa de acuerdo con los principios de eficacia, jerarquía, descentralización, desconcentración y coordinación, con sometimiento pleno a la ley y al Derecho.",
+      "c": "La Administración Pública sirve con objetividad los intereses generales y actúa de acuerdo con los principios de eficiencia, descentralización, colaboración y coordinación, con sometimiento pleno a la ley y al Derecho."
+     },
+     "correcta": "b"
+    },
+    {
+     "id": "2023-e1-02",
+     "numero": "2",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 37,
+     "enunciado": "Según el artículo 4 del Real Decreto 4/2010, de 8 de enero, por el que se regula el Esquema Nacional de Interoperabilidad en el ámbito de la Administración Electrónica, la aplicación del Esquema Nacional de Interoperabilidad se desarrollará de acuerdo con los principios generales establecidos en el artículo 4 de la Ley 11/2007, de 22 de junio, y con los siguientes principios específicos de la interoperabilidad: la interoperabilidad como cualidad integral, carácter multidimensional de la interoperabilidad y:",
+     "opciones": {
+      "a": "enfoque de soluciones multilaterales.",
+      "b": "seguridad como proceso integral.",
+      "c": "gestión de la seguridad basada en los riesgos."
+     },
+     "correcta": "a",
+     "notas": "El enunciado cita la Ley 11/2007, hoy derogada por las Leyes 39/2015 y 40/2015. Los principios específicos del ENI siguen siendo los mismos."
+    },
+    {
+     "id": "2023-e1-03",
+     "numero": "3",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 37,
+     "enunciado": "Según el artículo 15, apartado 2, del Real Decreto 4/2010, de 8 de enero, por el que se regula el Esquema Nacional de Interoperabilidad en el ámbito de la Administración Electrónica, la sincronización de la fecha y la hora se realizará con:",
+     "opciones": {
+      "a": "cualquier servidor SNTP disponible en el territorio español.",
+      "b": "el Real Instituto y Observatorio de la Armada.",
+      "c": "el sistema de Hora Media de Greenwich (GMT)."
+     },
+     "correcta": "b"
+    },
+    {
+     "id": "2023-e1-04",
+     "numero": "4",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 4,
+     "enunciado": "Según el artículo 14, apartado 1, de la Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas, las personas físicas podrán comunicarse con las Administraciones Públicas para el ejercicio de sus derechos y obligaciones a través de medios electrónicos o no. Salvo que estén obligadas a relacionarse a través de medios electrónicos, el medio elegido por la persona para comunicarse con las Administraciones Públicas:",
+     "opciones": {
+      "a": "podrá ser modificado por aquella en cualquier momento.",
+      "b": "no podrá ser modificado por aquella en ningún momento.",
+      "c": "no podrá ser modificado con posterioridad al trámite de alegaciones."
+     },
+     "correcta": "a"
+    },
+    {
+     "id": "2023-e1-05",
+     "numero": "5",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 4,
+     "enunciado": "Según el artículo 15, apartado 1, de la Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas, los interesados que se dirijan a los órganos de la Administración General del Estado con sede en el territorio de una Comunidad Autónoma:",
+     "opciones": {
+      "a": "únicamente podrán utilizar el castellano.",
+      "b": "únicamente podrán utilizar la lengua que sea cooficial en ella.",
+      "c": "podrán utilizar tanto el castellano como la lengua que sea cooficial en ella."
+     },
+     "correcta": "c"
+    },
+    {
+     "id": "2023-e1-06",
+     "numero": "6",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 40,
+     "enunciado": "Según el artículo 7, apartado 1, de la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales, el tratamiento de los datos personales de un menor de edad únicamente podrá fundarse en su consentimiento cuando sea:",
+     "opciones": {
+      "a": "mayor de catorce años.",
+      "b": "mayor de dieciséis años.",
+      "c": "mayor de dieciocho años."
+     },
+     "correcta": "a"
+    },
+    {
+     "id": "2023-e1-07",
+     "numero": "7",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 26,
+     "enunciado": "¿Cuál de las siguientes opciones describe mejor el papel del \"Scrum Master\" en Scrum?",
+     "opciones": {
+      "a": "Es el encargado de definir los requisitos del proyecto.",
+      "b": "Es responsable de gestionar el equipo de desarrollo y asignar tareas.",
+      "c": "Facilita el proceso Scrum, elimina obstáculos y asegura que el equipo siga las reglas y prácticas de Scrum."
+     },
+     "correcta": "c"
+    },
+    {
+     "id": "2023-e1-08",
+     "numero": "8",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 26,
+     "enunciado": "¿Cuál es el propósito principal de la \"Sprint Review\" en Scrum?",
+     "opciones": {
+      "a": "Evaluar el rendimiento individual de los miembros del equipo.",
+      "b": "Inspeccionar el incremento de trabajo y adaptar el Product Backlog si es necesario.",
+      "c": "Planificar y estimar las tareas para la próxima iteración."
+     },
+     "correcta": "b"
+    },
+    {
+     "id": "2023-e1-09",
+     "numero": "9",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 35,
+     "enunciado": "¿Cuál de las siguientes afirmaciones describe mejor el propósito de un sistema de control de versiones en el desarrollo de software?",
+     "opciones": {
+      "a": "Facilitar la comunicación entre los miembros del equipo.",
+      "b": "Registrar y controlar cambios en el código fuente y otros activos de software.",
+      "c": "Planificar y asignar tareas a los miembros del equipo."
+     },
+     "correcta": "b"
+    },
+    {
+     "id": "2023-e1-10",
+     "numero": "10",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 31,
+     "enunciado": "¿Cuál de las siguientes afirmaciones es VERDADERA acerca de una interfaz en la programación orientada a objetos?",
+     "opciones": {
+      "a": "Puede ser instanciada para crear objetos.",
+      "b": "Define un conjunto de métodos que una clase debe implementar.",
+      "c": "Solo puede ser implementada por una sola clase."
+     },
+     "correcta": "b"
+    },
+    {
+     "id": "2023-e1-11",
+     "numero": "11",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 32,
+     "enunciado": "¿Cuál de las siguientes afirmaciones es VERDADERA acerca de los Servlets en J2EE?",
+     "opciones": {
+      "a": "Los Servlets son componentes de cliente que se ejecutan en el navegador web del usuario.",
+      "b": "Los Servlets son componentes de servidor que se utilizan para procesar peticiones web en el lado del servidor.",
+      "c": "Los Servlets son componentes de middleware en J2EE."
+     },
+     "correcta": "b"
+    },
+    {
+     "id": "2023-e1-12",
+     "numero": "12",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 22,
+     "enunciado": "Hablando de bases de datos, una vista es:",
+     "opciones": {
+      "a": "La base de datos desde un enfoque descriptivo.",
+      "b": "Un subconjunto de la base de datos.",
+      "c": "El aspecto que adquiere la base de datos al aplicarle índices a sus tablas."
+     },
+     "correcta": "b"
+    },
+    {
+     "id": "2023-e1-13",
+     "numero": "13",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 24,
+     "enunciado": "En el Modelo Relacional, la cardinalidad se define como:",
+     "opciones": {
+      "a": "Número de tablas de que consta el modelo relacional.",
+      "b": "Número de tuplas de una relación.",
+      "c": "Número de atributos que forman una fila de una tabla."
+     },
+     "correcta": "b"
+    },
+    {
+     "id": "2023-e1-14",
+     "numero": "14",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 22,
+     "enunciado": "Si una transacción falla por cualquier motivo después de modificar la base de datos, para volver al estado anterior puede ser necesario realizar:",
+     "opciones": {
+      "a": "Commit.",
+      "b": "Panic.",
+      "c": "Rollback."
+     },
+     "correcta": "c"
+    },
+    {
+     "id": "2023-e1-15",
+     "numero": "15",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 22,
+     "enunciado": "En el ámbito de las bases de datos ORACLE, una constraint:",
+     "opciones": {
+      "a": "Es una cláusula que se utiliza en la creación o modificación de tablas.",
+      "b": "Permite actualizar índices en las instrucciones de modificación de tablas.",
+      "c": "Sólo permite añadir claves primarias."
+     },
+     "correcta": "a"
+    },
+    {
+     "id": "2023-e1-16",
+     "numero": "16",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 23,
+     "enunciado": "¿Qué opción NO se puede hacer en el sistema de gestión documental Alfresco desde la propia interfaz web proporcionada?",
+     "opciones": {
+      "a": "Realizar copias de seguridad de documentos individualizados.",
+      "b": "Realizar búsquedas complejas en las que se incluya información sobre el contenido del documento, categorías o metadatos.",
+      "c": "Crear estrictas jerarquías de acceso a los documentos."
+     },
+     "correcta": "a"
+    },
+    {
+     "id": "2023-e1-17",
+     "numero": "17",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 26,
+     "enunciado": "¿Qué significa ITIL en el contexto de la gestión de servicios de TI?",
+     "opciones": {
+      "a": "Información Tecnológica Integral y Lógica.",
+      "b": "Infraestructura de Tecnologías de la Información y Logística.",
+      "c": "Biblioteca de Infraestructura de Tecnologías de la Información."
+     },
+     "correcta": "c"
+    },
+    {
+     "id": "2023-e1-18",
+     "numero": "18",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 18,
+     "enunciado": "¿Qué afirmación describe mejor la función de un Centro de Atención de Usuarios (CAU)?",
+     "opciones": {
+      "a": "El CAU se enfoca en el desarrollo de software personalizado para equipos.",
+      "b": "El CAU proporciona soporte técnico y gestiona solicitudes de usuarios relacionadas con equipos y software.",
+      "c": "El CAU se encarga principalmente de la compra de hardware y licencias de software."
+     },
+     "correcta": "b"
+    },
+    {
+     "id": "2023-e1-19",
+     "numero": "19",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 11,
+     "enunciado": "¿Qué característica de Windows 10 permite a los usuarios volver a una versión anterior del sistema operativo en caso de problemas o incompatibilidades después de una actualización importante?",
+     "opciones": {
+      "a": "Windows Defender.",
+      "b": "Windows Update.",
+      "c": "Restauración del sistema."
+     },
+     "correcta": "c"
+    },
+    {
+     "id": "2023-e1-20",
+     "numero": "20",
+     "reserva": false,
+     "anulada": false,
+     "contexto": null,
+     "tema": 12,
+     "enunciado": "¿Cuál es el propósito principal de systemd en sistemas Linux?",
+     "opciones": {
+      "a": "Gestionar el sistema y los servicios, incluyendo el inicio.",
+      "b": "Gestionar la interfaz gráfica de usuario.",
+      "c": "Controlar la administración de usuarios y contraseñas."
+     },
+     "correcta": "a"
+    },
+    {
+     "id": "2023-e1-R1",
+     "numero": "R1",
+     "reserva": true,
+     "anulada": false,
+     "contexto": null,
+     "tema": 5,
+     "enunciado": "De conformidad con el artículo 11 de la Ley 7/1985, de 2 de abril, Reguladora de las Bases del Régimen Local, el Municipio (señala la respuesta INCORRECTA):",
+     "opciones": {
+      "a": "Es la entidad local básica de la organización territorial del Estado.",
+      "b": "Son elementos del Municipio el territorio, la población y la organización.",
+      "c": "Tiene personalidad jurídica pero no tiene plena capacidad para el cumplimiento de sus fines."
+     },
+     "correcta": "c"
+    },
+    {
+     "id": "2023-e1-R2",
+     "numero": "R2",
+     "reserva": true,
+     "anulada": false,
+     "contexto": null,
+     "tema": 12,
+     "enunciado": "En el contexto de la gestión de paquetes de software en sistemas Linux, ¿cuál es la principal ventaja de utilizar un sistema de gestión de paquetes en comparación con la instalación manual de software?",
+     "opciones": {
+      "a": "Automatiza la resolución de dependencias y simplifica las actualizaciones.",
+      "b": "Facilita la eliminación de software.",
+      "c": "Proporciona una mayor personalización del software."
+     },
+     "correcta": "a"
+    },
+    {
+     "id": "2023-e1-R3",
+     "numero": "R3",
+     "reserva": true,
+     "anulada": false,
+     "contexto": null,
+     "tema": 32,
+     "enunciado": "¿Qué módulo de Spring se utiliza comúnmente para la administración de dependencias y la inyección de dependencias?",
+     "opciones": {
+      "a": "Spring Core (Spring Framework).",
+      "b": "Spring MVC.",
+      "c": "Spring Security."
+     },
+     "correcta": "a"
+    }
+   ]
+  },
+  {
+   "id": "e2",
+   "nombre": "Segunda prueba (práctica)",
+   "num_opciones": 4,
+   "contextos": [
+    {
+     "id": "s1",
+     "titulo": "Supuesto práctico 1",
+     "enunciado": "Vd. está desarrollando una aplicación informática, que se va a denominar SOL, a través de la cual se podrá realizar la presentación telemática de un documento de solicitud dirigido al Ayuntamiento de Zaragoza."
+    },
+    {
+     "id": "s2",
+     "titulo": "Supuesto práctico 2",
+     "enunciado": "Vd. es el desarrollador Java de un sistema web de reservas de hotel para una cadena hotelera. Debe tomar decisiones basadas en patrones de diseño, tecnologías J2EE, Spring, servicios web y servidores de aplicaciones J2EE. A continuación, se presentan algunas preguntas relacionadas:"
+    },
+    {
+     "id": "s3",
+     "titulo": "Supuesto práctico 3",
+     "enunciado": "Disponemos de un SGBDR ORACLE con la siguiente estructura de tablas:",
+     "lenguaje": "text",
+     "codigo": "Funcionario (id, nombre, puesto, servicio)\nAccesos (id, fechahora, lugar)"
+    },
+    {
+     "id": "s4",
+     "titulo": "Supuesto práctico 4",
+     "enunciado": "Supongamos que estás trabajando en una terminal bash y deseas realizar algunas tareas. Responde las siguientes preguntas:"
+    }
+   ],
+   "preguntas": [
+    {
+     "id": "2023-e2-01",
+     "numero": "1",
+     "reserva": false,
+     "anulada": false,
+     "contexto": "s1",
+     "tema": 4,
+     "enunciado": "En aplicación del artículo 9, apartado 1, de la Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas, ¿cuál de los siguientes campos es obligatorio incluir en la aplicación informática SOL a fin de verificar la identidad del interesado en este procedimiento administrativo?",
+     "opciones": {
+      "a": "Nombre y apellidos.",
+      "b": "Dirección postal.",
+      "c": "Estado civil.",
+      "d": "Número de hijos."
+     },
+     "correcta": "a"
+    },
+    {
+     "id": "2023-e2-02",
+     "numero": "2",
+     "reserva": false,
+     "anulada": false,
+     "contexto": "s1",
+     "tema": 4,
+     "enunciado": "En el supuesto de que un ciudadano de sexo masculino y 25 años de edad esté utilizando la aplicación informática SOL para presentar una solicitud, y en aplicación del artículo 11, apartado 1, de la Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas, ¿se deberá requerir al interesado el uso obligatorio de firma en la aplicación informática SOL?",
+     "opciones": {
+      "a": "Sí, por estar formulando una solicitud.",
+      "b": "No, por ser mayor de edad.",
+      "c": "No, por ser de sexo masculino.",
+      "d": "No, por tratarse de una aplicación informática."
+     },
+     "correcta": "a",
+     "notas": "La obligación de firmar para formular solicitudes está en el art. 11.2 a) de la Ley 39/2015."
+    },
+    {
+     "id": "2023-e2-03",
+     "numero": "3",
+     "reserva": false,
+     "anulada": false,
+     "contexto": "s1",
+     "tema": 36,
+     "enunciado": "De acuerdo con el artículo 10, apartado 1, de la Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas, al constituir la aplicación informática SOL una relación con las Administraciones Públicas a través de medios electrónicos, ¿cuál de estos sistemas se considerará válido a efectos de firma?",
+     "opciones": {
+      "a": "DNIe.",
+      "b": "Certificado electrónico FNMT de ciudadano.",
+      "c": "Cl@ve Firma.",
+      "d": "Las tres anteriores son correctas."
+     },
+     "correcta": "d"
+    },
+    {
+     "id": "2023-e2-04",
+     "numero": "4",
+     "reserva": false,
+     "anulada": false,
+     "contexto": "s1",
+     "tema": 4,
+     "enunciado": "La aplicación SOL permite obtener un listado en el que se informa de la relación de las fechas en las que el interesado presentó alguna solicitud a través de la misma. De acuerdo con el artículo 26, apartado 3, de la Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas, ¿tiene que ir firmado el listado electrónicamente?",
+     "opciones": {
+      "a": "No, por ser emitido por una Administración Pública.",
+      "b": "No, por tener carácter meramente informativo.",
+      "c": "Sí, por ser emitido por una Administración Pública.",
+      "d": "Sí, por ser un listado."
+     },
+     "correcta": "b"
+    },
+    {
+     "id": "2023-e2-05",
+     "numero": "5",
+     "reserva": false,
+     "anulada": false,
+     "contexto": "s1",
+     "tema": 4,
+     "enunciado": "Una vez dictada la resolución a la solicitud presentada, la aplicación informática SOL realiza una notificación electrónica al interesado y Vd. está diseñando los campos que aparecerán en la misma. De acuerdo con el artículo 40, apartado 2, de la Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas, ¿cuál de los siguientes campos NO será necesario incluir en la notificación?",
+     "opciones": {
+      "a": "Si la resolución pone fin o no a la vía administrativa.",
+      "b": "La expresión de los recursos que procedan.",
+      "c": "El órgano ante el que hubieran de presentarse los eventuales recursos.",
+      "d": "La edad del interesado."
+     },
+     "correcta": "d"
+    },
+    {
+     "id": "2023-e2-06",
+     "numero": "6",
+     "reserva": false,
+     "anulada": false,
+     "contexto": "s2",
+     "tema": 31,
+     "enunciado": "Para garantizar que solo haya una instancia de una clase que gestiona la disponibilidad de habitaciones en cada hotel utilizo la siguiente clase:\n\npublic class DatabaseManager {\n    private static DatabaseManager instance;\n    private DatabaseManager() { /* Inicialización de la base de datos */ }\n    public static DatabaseManager getInstance() {\n        if (instance == null)\n            instance = new DatabaseManager();\n        return instance;\n    }\n    // Métodos para interactuar con la base de datos ...\n}\n\n¿Qué patrón de diseño he utilizado?",
+     "opciones": {
+      "a": "Singleton.",
+      "b": "Factory Method.",
+      "c": "Observer.",
+      "d": "Template Method."
+     },
+     "correcta": "a"
+    },
+    {
+     "id": "2023-e2-07",
+     "numero": "7",
+     "reserva": false,
+     "anulada": false,
+     "contexto": "s2",
+     "tema": 32,
+     "enunciado": "¿Qué componente de la arquitectura del supuesto planteado debe utilizarse para procesar las solicitudes HTTP de los clientes en la aplicación web de reservas de hotel?",
+     "opciones": {
+      "a": "EJB (Enterprise JavaBeans).",
+      "b": "Servlets.",
+      "c": "JPA (Java Persistence API).",
+      "d": "JMS (Java Message Service)."
+     },
+     "correcta": "b"
+    },
+    {
+     "id": "2023-e2-08",
+     "numero": "8",
+     "reserva": false,
+     "anulada": false,
+     "contexto": "s2",
+     "tema": 32,
+     "enunciado": "Necesitas un atributo que represente el precio de una habitación. ¿Cómo definirías la propiedad utilizando tipos nativos o clases predefinidas de Java para poder operar eficientemente con dicho atributo?",
+     "opciones": {
+      "a": "String precio;",
+      "b": "decimal precio;",
+      "c": "Money precio;",
+      "d": "BigDecimal precio;"
+     },
+     "correcta": "d"
+    },
+    {
+     "id": "2023-e2-09",
+     "numero": "9",
+     "reserva": false,
+     "anulada": false,
+     "contexto": "s2",
+     "tema": 32,
+     "enunciado": "Si deseas crear una instancia de la clase ReservaHotel en Java, ¿cuál de las siguientes líneas de código sería la forma correcta de hacerlo?",
+     "opciones": {
+      "a": "ReservaHotel reserva = create ReservaHotel();",
+      "b": "ReservaHotel reserva = ReservaHotel();",
+      "c": "ReservaHotel reserva = new ReservaHotel();",
+      "d": "ReservaHotel reserva = instantiate ReservaHotel();"
+     },
+     "correcta": "c"
+    },
+    {
+     "id": "2023-e2-10",
+     "numero": "10",
+     "reserva": false,
+     "anulada": false,
+     "contexto": "s2",
+     "tema": 32,
+     "enunciado": "Si tienes una clase llamada \"Cliente\" con una propiedad \"nombre\" definida como pública (public String nombre;), ¿cómo accederías al valor de la propiedad \"nombre\" en una instancia de \"Cliente\" llamada \"cliente\" en Java?",
+     "opciones": {
+      "a": "\"cliente.nombre\".",
+      "b": "\"cliente.nombre\" o \"cliente.Nombre\" indistintamente.",
+      "c": "\"cliente.nombre\" o \"Cliente.nombre\" indistintamente.",
+      "d": "Todas las formas indicadas en las opciones anteriores son correctas."
+     },
+     "correcta": "a"
+    },
+    {
+     "id": "2023-e2-11",
+     "numero": "11",
+     "reserva": false,
+     "anulada": false,
+     "contexto": "s3",
+     "tema": 25,
+     "enunciado": "La sentencia CREATE TABLE dispone de una cláusula para establecer la clave principal. ¿Cuál de las siguientes opciones muestra correctamente el uso de esta cláusula en la tabla Funcionario?",
+     "opciones": {
+      "a": "CONSTRAINT claveprincipal PRIMARY KEY (id)",
+      "b": "CONSTRAINT claveprincipal PRIMARY KEY = id",
+      "c": "CONSTRAINT claveprincipal (id PRIMARY KEY)",
+      "d": "CONSTRAINT claveprincipal MAIN KEY (id)"
+     },
+     "correcta": "a"
+    },
+    {
+     "id": "2023-e2-12",
+     "numero": "12",
+     "reserva": false,
+     "anulada": false,
+     "contexto": "s3",
+     "tema": 25,
+     "enunciado": "Si queremos obtener un listado de los puestos con más de 20 funcionarios, la sentencia correcta para obtener dicho listado sería:",
+     "opciones": {
+      "a": "SELECT puesto, COUNT(puesto) FROM Funcionario WHERE COUNT(puesto) > 20;",
+      "b": "SELECT puesto, COUNT(puesto) FROM Funcionario GROUP BY puesto WHERE COUNT(puesto) > 20;",
+      "c": "SELECT puesto, COUNT(puesto) FROM Funcionario GROUP BY puesto HAVING COUNT(puesto) > 20;",
+      "d": "SELECT puesto, COUNT(puesto) FROM Funcionario GROUP BY puesto HAVING SUM(puesto) > 20;"
+     },
+     "correcta": "c"
+    },
+    {
+     "id": "2023-e2-13",
+     "numero": "13",
+     "reserva": false,
+     "anulada": false,
+     "contexto": "s3",
+     "tema": 25,
+     "enunciado": "La sentencia SQL \"SELECT Fichaje.id, Funcionario.nombre FROM (SELECT id FROM Accesos WHERE lugar IS NOT NULL) Fichaje, Funcionario;\":",
+     "opciones": {
+      "a": "No es una sentencia SQL válida porque no se puede incluir una sentencia SELECT en la cláusula FROM.",
+      "b": "Precisa de la existencia previa de las tablas Fichaje, Funcionario y Accesos.",
+      "c": "Generará la tabla temporal Fichaje que habrá que borrar tras la ejecución de la sentencia.",
+      "d": "Devuelve el mismo resultado que la sentencia 'SELECT Accesos.id, Funcionario.nombre FROM Accesos, Funcionario WHERE Accesos.lugar IS NOT NULL;'."
+     },
+     "correcta": "d"
+    },
+    {
+     "id": "2023-e2-14",
+     "numero": "14",
+     "reserva": false,
+     "anulada": false,
+     "contexto": "s3",
+     "tema": 25,
+     "enunciado": "¿Cuál de las siguientes sentencias utilizaríamos para permitir al Usuario1 actualizar los valores de la columna puesto de la tabla Funcionario sin permitirle dar de alta nuevos funcionarios?",
+     "opciones": {
+      "a": "GRANT ALL ON Funcionario(puesto) TO Usuario1;",
+      "b": "GRANT SELECT, UPDATE (puesto) ON Funcionario TO Usuario1;",
+      "c": "GRANT ALL ON SELECT, UPDATE TO Usuario1 ONLY Funcionario(puesto);",
+      "d": "GRANT Funcionario ON SELECT, UPDATE (puesto) TO Usuario1;"
+     },
+     "correcta": "b"
+    },
+    {
+     "id": "2023-e2-15",
+     "numero": "15",
+     "reserva": false,
+     "anulada": false,
+     "contexto": "s3",
+     "tema": 25,
+     "enunciado": "¿Qué sentencia ejecutaremos para obtener el número total de funcionarios que están asignados a un servicio cualquiera?",
+     "opciones": {
+      "a": "SELECT COUNT(*) FROM Funcionario;",
+      "b": "SELECT COUNT(servicio) FROM Funcionario;",
+      "c": "SELECT COUNT(*) FROM Funcionario WHERE servicio <> NULL;",
+      "d": "Ninguna de las anteriores es válida."
+     },
+     "correcta": "b"
+    },
+    {
+     "id": "2023-e2-16",
+     "numero": "16",
+     "reserva": false,
+     "anulada": false,
+     "contexto": "s4",
+     "tema": 12,
+     "enunciado": "¿Qué comando usarías para mostrar el directorio actual en la terminal?",
+     "opciones": {
+      "a": "cd .",
+      "b": "ls -la",
+      "c": "pwd",
+      "d": "dir"
+     },
+     "correcta": "c"
+    },
+    {
+     "id": "2023-e2-17",
+     "numero": "17",
+     "reserva": false,
+     "anulada": false,
+     "contexto": "s4",
+     "tema": 12,
+     "enunciado": "Quieres crear un nuevo directorio llamado \"mi_proyecto\". ¿Cuál es el comando correcto?",
+     "opciones": {
+      "a": "md mi_proyecto",
+      "b": "mkdir mi_proyecto",
+      "c": "newdir mi_proyecto",
+      "d": "make mi_proyecto"
+     },
+     "correcta": "b"
+    },
+    {
+     "id": "2023-e2-18",
+     "numero": "18",
+     "reserva": false,
+     "anulada": false,
+     "contexto": "s4",
+     "tema": 12,
+     "enunciado": "¿Qué opción usarías para mostrar todas las líneas que comiencen con la cadena \"error\", mayúsculas y minúsculas indistintamente, de un fichero llamado \"archivo.txt\"?",
+     "opciones": {
+      "a": "grep -i '^ERROR' archivo.txt",
+      "b": "grep -v '^error$' archivo.txt",
+      "c": "grep -v --ignore-case 'error$' archivo.txt",
+      "d": "grep -E 'ERROR|error' archivo.txt"
+     },
+     "correcta": "a"
+    },
+    {
+     "id": "2023-e2-19",
+     "numero": "19",
+     "reserva": false,
+     "anulada": false,
+     "contexto": "s4",
+     "tema": 12,
+     "enunciado": "Deseas conocer las bibliotecas compartidas que utiliza un archivo ejecutable llamado \"mi_programa\". ¿Qué comando utilizarías?",
+     "opciones": {
+      "a": "ldd mi_programa",
+      "b": "depmod mi_programa",
+      "c": "library --share mi_programa",
+      "d": "Ninguna opción es correcta"
+     },
+     "correcta": "a"
+    },
+    {
+     "id": "2023-e2-20",
+     "numero": "20",
+     "reserva": false,
+     "anulada": false,
+     "contexto": "s4",
+     "tema": 12,
+     "enunciado": "Quieres ver el contenido de un archivo llamado \"notas.txt\". ¿Cuál es el comando adecuado?",
+     "opciones": {
+      "a": "./notas.txt",
+      "b": "read notas.txt",
+      "c": "show notas.txt",
+      "d": "cat notas.txt"
+     },
+     "correcta": "d"
+    }
+   ]
+  }
+ ]
+}
