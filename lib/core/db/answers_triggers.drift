@@ -1,0 +1,14 @@
+import 'tables/user_tables.dart';
+
+-- Las respuestas son eventos inmutables: solo se insertan. Lo garantiza la
+-- propia base de datos, no solo el código que la usa.
+
+CREATE TRIGGER answers_no_update BEFORE UPDATE ON answers
+BEGIN
+  SELECT RAISE(ABORT, 'answers es de solo inserción');
+END;
+
+CREATE TRIGGER answers_no_delete BEFORE DELETE ON answers
+BEGIN
+  SELECT RAISE(ABORT, 'answers es de solo inserción');
+END;
