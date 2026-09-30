@@ -55,3 +55,17 @@
 - **CI con `subosito/flutter-action`, fijando la misma versión que en local (3.47.5).** Así un fallo
   en CI es reproducible en la máquina de desarrollo. Ejecuta `build_runner`, `dart format
   --set-exit-if-changed`, `flutter analyze` y `flutter test` en cada push y pull request a `main`.
+
+## Fase 1 — Notas tomadas durante la fase
+
+- **«Reiniciar progreso» (Fase 6) se hará con una marca de reinicio, no borrando filas.** La tabla
+  `answers` es inmutable (solo INSERT; dos triggers de SQLite rechazan UPDATE y DELETE), así que
+  reiniciar un pack guardará en `settings` una marca con la fecha del reinicio por pack, y las
+  estadísticas y el repaso solo tendrán en cuenta las respuestas posteriores. Ventajas: el historial
+  no se pierde (se puede deshacer el reinicio), y en la futura sincronización no hay que propagar
+  borrados, solo un evento más.
+- **`format: date` comprobado en los dos validadores.** `jsonschema` trata `format` como anotación
+  salvo que se le pase `FORMAT_CHECKER`; ahora se activa en `tools/validate_pack.py` y el
+  `PackValidator` de Dart aplica la misma regla (forma `AAAA-MM-DD` y fecha real del calendario,
+  año ≥ 1). Los mismos casos límite (29/02 en año bisiesto y no bisiesto, año 0…) están probados en
+  Dart y comprobados a mano en Python.

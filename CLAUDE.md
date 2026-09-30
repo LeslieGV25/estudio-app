@@ -138,7 +138,7 @@ reserva=`isReserve`, apuntes=`Note`, simulacro=`ExamRules`.
 ```bash
 python3 tools/build_zgz_pack.py tools/fuentes packs/zgz-tai.pack.json  # regenerar el pack de Zaragoza
 python3 tools/validate_pack.py packs/zgz-tai.pack.json   # validar un pack
-dart run build_runner build --delete-conflicting-outputs  # generar código (drift/freezed/riverpod)
+dart run build_runner build                               # generar código (drift/freezed/riverpod)
 flutter test
 flutter run -d chrome
 ```
