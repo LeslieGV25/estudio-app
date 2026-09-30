@@ -4,10 +4,6 @@
 /// Implementa las mismas reglas que `tools/validate_pack.py`, con los mismos
 /// mensajes en las reglas de coherencia. Si se cambia una regla aquí, hay que
 /// cambiarla también allí (y en el esquema).
-///
-/// Diferencia conocida: `jsonschema` en Python no comprueba `format: date`
-/// salvo que se active un comprobador de formatos, así que aquí tampoco se
-/// comprueba (solo que sea texto).
 class PackValidator {
   const PackValidator();
 
@@ -28,6 +24,21 @@ final _slug = RegExp(r'^[A-Za-z0-9][A-Za-z0-9_.-]*$');
 final _letter = RegExp(r'^[a-f]$');
 final _semver = RegExp(r'^\d+\.\d+\.\d+$');
 final _language = RegExp(r'^[a-z]{2}(-[A-Z]{2})?$');
+final _datePattern = RegExp(r'^(\d{4})-(\d{2})-(\d{2})$');
+
+/// `format: date` igual que `jsonschema`: forma `AAAA-MM-DD` y además una
+/// fecha que exista en el calendario (año ≥ 1, sin 31 de abril ni similares).
+bool _isDate(String value) {
+  final match = _datePattern.firstMatch(value);
+  if (match == null) return false;
+  final [year, month, day] = [
+    for (var i = 1; i <= 3; i++) int.parse(match.group(i)!),
+  ];
+  // DateTime normaliza los desbordes (31/04 → 01/05): si al volver a leerla
+  // no coincide, la fecha no existía.
+  final date = DateTime.utc(year, month, day);
+  return year >= 1 && date.month == month && date.day == day;
+}
 
 /// Recorre el JSON siguiendo `pack.schema.json`. Cada método comprueba un
 /// campo solo si está presente: la obligatoriedad la comprueba [_object].
@@ -80,7 +91,7 @@ class _StructureChecker {
     });
     _string(o, 'idioma', path, pattern: _language);
     _string(o, 'autor', path);
-    _string(o, 'actualizado', path);
+    _string(o, 'actualizado', path, date: true);
   }
 
   void _syllabus(Object? value, String path) {
@@ -188,7 +199,7 @@ class _StructureChecker {
     _enum(o, 'tipo', path, const {'examen', 'estudio'});
     _string(o, 'nombre', path);
     _boolean(o, 'oficial', path);
-    _string(o, 'fecha', path, nullable: true);
+    _string(o, 'fecha', path, nullable: true, date: true);
     _string(o, 'convocatoria', path);
     _string(o, 'turno', path);
     _enum(o, 'respuestas', path, const {
@@ -374,6 +385,7 @@ class _StructureChecker {
     int minLength = 0,
     RegExp? pattern,
     bool nullable = false,
+    bool date = false,
   }) {
     if (!o.containsKey(key)) return;
     final p = _join(path, key);
@@ -385,6 +397,8 @@ class _StructureChecker {
       _error(p, 'no puede estar vacío');
     } else if (pattern != null && !pattern.hasMatch(value)) {
       _error(p, "'$value' no cumple el patrón ${pattern.pattern}");
+    } else if (date && !_isDate(value)) {
+      _error(p, "'$value' no es una fecha válida (AAAA-MM-DD)");
     }
   }
 
@@ -482,22 +496,22 @@ List<String> _coherenceErrors(_Json pack) {
     }
   }
 
-  void duplicates(String name, Iterable<_Json> items) {
+  void duplicates(String name, Iterable<_Json> items, {bool feminine = false}) {
     final seen = <Object?>{};
     final reported = <Object?>{};
     for (final item in items) {
       final id = item['id'];
       if (!seen.add(id) && reported.add(id)) {
-        errors.add('$name duplicado: $id');
+        errors.add('$name ${feminine ? 'duplicada' : 'duplicado'}: $id');
       }
     }
   }
 
   duplicates('bloque', blocks);
   duplicates('tema', topics);
-  duplicates('fuente', sources);
+  duplicates('fuente', sources, feminine: true);
   duplicates('contexto', contexts);
-  duplicates('pregunta', questions);
+  duplicates('pregunta', questions, feminine: true);
   duplicates('apunte', notes);
 
   final sourcesById = {for (final s in sources) s['id']: s};

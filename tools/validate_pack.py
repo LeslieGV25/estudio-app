@@ -22,7 +22,10 @@ def validar(pack: dict) -> list[str]:
 
     # 1. Esquema
     schema = json.loads(SCHEMA.read_text(encoding="utf-8"))
-    for e in sorted(Draft202012Validator(schema).iter_errors(pack), key=lambda e: list(e.path)):
+    # FORMAT_CHECKER activa la comprobación de `format` (p. ej. `date`), que
+    # por defecto jsonschema trata como una simple anotación.
+    validador = Draft202012Validator(schema, format_checker=Draft202012Validator.FORMAT_CHECKER)
+    for e in sorted(validador.iter_errors(pack), key=lambda e: list(e.path)):
         ruta = "/".join(str(p) for p in e.path) or "(raíz)"
         errores.append(f"[esquema] {ruta}: {e.message}")
     if errores:
@@ -35,16 +38,16 @@ def validar(pack: dict) -> list[str]:
         if t["bloque"] not in bloques:
             errores.append(f"tema {t['id']}: bloque {t['bloque']} no existe")
 
-    def duplicados(nombre, ids):
+    def duplicados(nombre, ids, femenino=False):
         for i, n in Counter(ids).items():
             if n > 1:
-                errores.append(f"{nombre} duplicado: {i}")
+                errores.append(f"{nombre} {'duplicada' if femenino else 'duplicado'}: {i}")
 
     duplicados("bloque", [b["id"] for b in pack["temario"]["bloques"]])
     duplicados("tema", [t["id"] for t in pack["temario"]["temas"]])
-    duplicados("fuente", [f["id"] for f in pack["fuentes"]])
+    duplicados("fuente", [f["id"] for f in pack["fuentes"]], femenino=True)
     duplicados("contexto", [c["id"] for c in pack.get("contextos", [])])
-    duplicados("pregunta", [p["id"] for p in pack["preguntas"]])
+    duplicados("pregunta", [p["id"] for p in pack["preguntas"]], femenino=True)
     duplicados("apunte", [a["id"] for a in pack.get("apuntes", [])])
 
     fuentes = {f["id"]: f for f in pack["fuentes"]}

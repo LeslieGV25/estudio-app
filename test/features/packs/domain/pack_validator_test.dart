@@ -42,13 +42,16 @@ const _expectedErrors = {
   'factor-fallo-mayor-que-1':
       '[esquema] simulacro/ejercicios/0/puntuacion/factor_fallo:',
   'duracion-cero': '[esquema] simulacro/ejercicios/0/duracion_min:',
+  'fecha-inexistente':
+      "[esquema] fuentes/0/fecha: '2026-02-30' no es una fecha",
+  'actualizado-formato-incorrecto': '[esquema] pack/actualizado:',
   // Coherencia
   'tema-bloque-inexistente': 'tema 1: bloque 9 no existe',
   'bloque-duplicado': 'bloque duplicado: 0',
   'tema-duplicado': 'tema duplicado: 1',
-  'fuente-duplicada': 'fuente duplicado: examen-2026',
+  'fuente-duplicada': 'fuente duplicada: examen-2026',
   'contexto-duplicado': 'contexto duplicado: supuesto-1',
-  'pregunta-duplicada': 'pregunta duplicado: e1-01',
+  'pregunta-duplicada': 'pregunta duplicada: e1-01',
   'apunte-duplicado': 'apunte duplicado: ap-redes',
   'simulacro-inexistente': "fuente examen-2026/e1: simulacro 'ej9' no existe",
   'fuente-inexistente': "e1-01: fuente 'no-existe' no existe",
@@ -115,6 +118,32 @@ void main() {
       final errors = validator.validate(pack);
       expect(errors, hasLength(1));
       expect(errors.single, startsWith('[esquema]'));
+    });
+
+    group('fechas (format: date, mismas reglas que jsonschema)', () {
+      List<String> withUpdatedOn(String date) {
+        final pack =
+            _readJson('test/fixtures/packs/valid/completo.pack.json')!
+                as Map<String, Object?>;
+        (pack['pack']! as Map)['actualizado'] = date;
+        return validator.validate(pack);
+      }
+
+      for (final date in ['2024-02-29', '0001-01-01', '9999-12-31']) {
+        test('$date es válida', () => expect(withUpdatedOn(date), isEmpty));
+      }
+      for (final date in [
+        '2023-02-29', // no bisiesto
+        '2026-04-31',
+        '2026-13-01',
+        '0000-01-01', // Python no admite el año 0
+        '2026-9-30',
+        '2026-09-30T10:00:00',
+      ]) {
+        test('$date no es válida', () {
+          expect(withUpdatedOn(date), [contains('no es una fecha válida')]);
+        });
+      }
     });
 
     test('acumula varios errores de estructura a la vez', () {

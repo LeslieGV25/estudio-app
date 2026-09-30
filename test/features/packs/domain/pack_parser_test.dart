@@ -113,7 +113,7 @@ void main() {
         () => parser.parse(
           bytesOf('test/fixtures/packs/invalid/pregunta-duplicada.pack.json'),
         ),
-        throwsA(invalidWith('pregunta duplicado: e1-01')),
+        throwsA(invalidWith('pregunta duplicada: e1-01')),
       );
     });
   });
