@@ -1,7 +1,7 @@
 import 'package:go_router/go_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import '../../home_placeholder_page.dart';
+import '../../features/packs/presentation/packs_page.dart';
 
 part 'app_router.g.dart';
 
@@ -12,8 +12,8 @@ GoRouter appRouter(Ref ref) {
     routes: [
       GoRoute(
         path: '/',
-        name: 'home',
-        builder: (context, state) => const HomePlaceholderPage(),
+        name: 'packs',
+        builder: (context, state) => const PacksPage(),
       ),
     ],
   );
