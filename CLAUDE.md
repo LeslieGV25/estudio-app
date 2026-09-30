@@ -127,7 +127,17 @@ reserva=`isReserve`, apuntes=`Note`, simulacro=`ExamRules`.
 - **Fase 4 — Simulacro**: reglas del pack, temporizador, reserva/anuladas, entrega y nota.
 - **Fase 5 — Estadísticas**: global y por tema, evolución por días, temas débiles.
 - **Fase 6 — Personalización**: editor de preguntas, importar CSV (plantilla), exportar pack,
-  exportar/importar progreso, pantalla «Crear pack con IA» que copia el prompt + esquema.
+  exportar/importar progreso, y guía **«Crear un pack con IA»**:
+  - Pasos claros para convertir temario (PDF), exámenes anteriores y sus plantillas a formato
+    pack con cualquier chat de IA (el prompt se copia junto con el esquema).
+  - Tres prompts copiables: (1) temario → preguntas de estudio y apuntes; (2) examen + plantilla →
+    preguntas oficiales con la respuesta tomada de la plantilla; (3) examen sin plantilla →
+    preguntas no oficiales.
+  - Importación por partes: añadir preguntas/fuentes a un pack ya instalado, porque la IA no
+    genera packs grandes de una vez.
+  - Errores de validación explicados, para poder pedir a la IA que los corrija.
+  - Avisos: revisar las respuestas generadas y marcar como oficial solo lo que venga de plantilla
+    oficial.
 - **Fase 7 — Publicación**: web en GitHub Pages o Cloudflare Pages; APK en GitHub Releases;
   README de portfolio con capturas y GIF.
 - **Fase 8 (opcional) — Nube**: Supabase (Auth + Postgres), `RemoteProgressRepository`, sincronización
