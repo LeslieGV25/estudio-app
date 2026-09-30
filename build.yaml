@@ -1,0 +1,14 @@
+targets:
+  $default:
+    builders:
+      json_serializable:
+        options:
+          # Los modelos del pack están anidados (pack → temario → temas…):
+          # sin esto, toJson() dejaría objetos Dart en vez de mapas.
+          explicit_to_json: true
+      drift_dev:
+        options:
+          # Fechas como texto ISO-8601 (con 'Z' si son UTC) en vez de segundos
+          # Unix: se leen a simple vista y encajan con timestamptz de Postgres
+          # para la futura sincronización.
+          store_date_time_values_as_text: true
