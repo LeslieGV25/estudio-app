@@ -14,6 +14,9 @@ Zaragoza: 192 preguntas de exámenes oficiales con plantilla definitiva y 168 de
 ## Estructura actual
 
 ```
+lib/              app Flutter (core/ + features/<x>/{domain,data,presentation})
+test/             tests (fixtures de packs válidos e inválidos en test/fixtures/)
+drift_schemas/    versiones congeladas del esquema de la base de datos
 packs/            packs de contenido (*.pack.json)
 schema/           esquema JSON del formato de pack
 tools/            validador y scripts de construcción de packs

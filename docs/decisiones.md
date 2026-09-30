@@ -56,7 +56,82 @@
   en CI es reproducible en la máquina de desarrollo. Ejecuta `build_runner`, `dart format
   --set-exit-if-changed`, `flutter analyze` y `flutter test` en cada push y pull request a `main`.
 
-## Fase 1 — Notas tomadas durante la fase
+## Fase 1 — Datos
+
+### Formato y validación
+
+- **Modelos freezed con claves en español y campos en inglés.** El JSON del pack usa el vocabulario
+  de la oposición (`preguntas`, `correcta`, `anulada`) y el código el del glosario (`Question`,
+  `correctKey`, `voided`); `@JsonKey(name: …)` traduce. Así se puede renombrar en el código sin romper
+  los packs existentes, y al revés.
+- **Primero validar, después parsear.** `PackValidator` trabaja sobre el JSON crudo y `fromJson` solo
+  se llama si no hay errores. Si se parseara directamente, un pack mal formado lanzaría un
+  `TypeError` sin decir qué campo falla; así la usuaria recibe la lista completa de problemas.
+- **Validador escrito a mano, sin paquete de JSON Schema.** Descartado `json_schema` (pub.dev): poco
+  mantenido y con mensajes genéricos en inglés. El validador sigue el esquema campo a campo con
+  mensajes en español y las mismas reglas de coherencia que `tools/validate_pack.py`.
+- **Paridad Dart ↔ Python comprobada con fixtures.** Cada fichero de
+  `test/fixtures/packs/invalid/` es el pack `completo` con un solo cambio, y los dos validadores
+  devuelven exactamente un error para cada uno. El CI, además, valida `packs/*.pack.json` con el
+  script de Python: si alguien regenera el pack de Zaragoza y lo rompe, el CI falla.
+- **Importar siempre desde bytes.** `PackParser.parse(List<int>)` sirve igual para el asset
+  incluido, `file_picker` en Android y en web (donde no hay rutas de fichero). Se acepta el BOM de
+  UTF-8 que añaden algunos editores de Windows.
+
+### Base de datos
+
+- **Dos mundos separados: contenido y usuaria.** Las tablas de contenido cuelgan de `packs` con
+  `ON DELETE CASCADE` y clave `(pack_id, id)`; las de usuaria no tienen clave foránea hacia `packs`.
+  Por eso borrar o actualizar un pack nunca puede arrastrar el progreso, y al reimportarlo las
+  respuestas se reenlazan solas por `pack_id + question_id`. Hay un test que lo comprueba.
+- **Actualizar = borrar y reinsertar en una transacción.** Más simple que calcular diferencias,
+  no deja restos si la versión nueva quita preguntas y, si algo falla a mitad, el rollback deja la
+  versión anterior intacta (probado). Se conserva `installed_at`.
+- **`PRAGMA foreign_keys = ON` al abrir.** SQLite trae las claves foráneas desactivadas; sin esta
+  línea la cascada no haría nada y los tests de borrado fallarían.
+- **Integridad garantizada por la base de datos, no solo por el código:** triggers que hacen
+  `answers` de solo inserción y un `CHECK` que limita la caja de Leitner a 0–4.
+- **JSON en columnas solo para lo que siempre se lee entero** (opciones, etiquetas, puntuación,
+  configuración de sesión). Lo que se filtra (tema, fuente, anulada…) va en columnas propias con
+  índices.
+- **Fechas como texto ISO-8601 en UTC** (`store_date_time_values_as_text`), legibles y compatibles
+  con `timestamptz` de Postgres para la Fase 8. La nota de la sesión se guarda como texto decimal
+  para no pasar por `double`.
+- **Filas `XxxRow`.** Las clases que genera Drift se llaman `QuestionRow`, `PackRow`… para no chocar
+  con las entidades del dominio; el repositorio traduce de una a otra.
+- **Esquema versionado con `drift_dev make-migrations`.** La foto de la v1 está en `drift_schemas/`;
+  al subir a v2 la herramienta genera los tests que comprueban la migración con datos reales.
+- **Web: `sqlite3.wasm` y `drift_worker.js` en `web/`**, descargados de las releases que
+  corresponden a las versiones del `pubspec.lock` (sqlite3 3.5.2, drift 2.35.0). Si se actualiza
+  drift o sqlite3, hay que actualizar también estos dos ficheros.
+
+### Casos de uso y pantalla
+
+- **Solo hay caso de uso donde hay reglas.** `ImportPack` (versión mayor → actualiza; igual o
+  menor → pide confirmación), `DeletePack` (si era el activo, activa otro) y `SeedBundledPack`
+  (pack incluido). Listar packs o activar uno no tienen reglas: la pantalla usa el repositorio
+  (su interfaz) directamente, sin clases que solo reenvían la llamada.
+- **`SemVer` propio en vez de un paquete.** Son 40 líneas y el formato del pack solo admite
+  `MAYOR.MENOR.PARCHE`. Comparar como texto fallaría (`"1.10.0" < "1.9.0"`).
+- **Pack incluido: una marca en ajustes.** Se instala una sola vez; si la usuaria lo borra, no
+  vuelve. Si una versión nueva de la app trae el pack con versión mayor, se actualiza solo si sigue
+  instalado. Nunca se instala una versión anterior a la que hay.
+- **`ImportPack` no guarda cuando necesita confirmación**: devuelve un resultado
+  `ImportNeedsConfirmation` con el documento ya validado, y la pantalla llama a `replace()` si la
+  usuaria acepta. Así el caso de uso no depende de la UI (sin callbacks de «¿seguro?») y no hay que
+  volver a leer ni validar el fichero.
+- **Resultados como `sealed class`.** `ImportOutcome` e `ImportFlowResult` obligan a la pantalla a
+  tratar todos los casos: si mañana se añade uno, el `switch` deja de compilar hasta cubrirlo.
+- **`file_picker` detrás de una interfaz (`PackFilePicker`).** Es la única forma de probar el flujo
+  de importación en tests de widgets sin abrir un diálogo nativo. Se usa `file_picker` 13
+  (mantenido, federado, soporta Android y web).
+- **Providers que exponen interfaces.** `packRepositoryProvider` devuelve `PackRepository`, no
+  `DriftPackRepository`: la capa de presentación no importa nada de Drift y los tests sustituyen la
+  base de datos por una en memoria con `overrideWithValue`.
+- **Tests de widgets con la base de datos real en memoria** en lugar de repositorios falsos:
+  comprueban la integración completa (asset real, SQLite, streams) con poco código extra.
+
+### Notas tomadas durante la fase
 
 - **«Reiniciar progreso» (Fase 6) se hará con una marca de reinicio, no borrando filas.** La tabla
   `answers` es inmutable (solo INSERT; dos triggers de SQLite rechazan UPDATE y DELETE), así que
