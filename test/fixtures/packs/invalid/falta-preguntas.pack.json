@@ -1,0 +1,133 @@
+{
+  "formato": "estudio-pack",
+  "version_formato": 1,
+  "pack": {
+    "id": "test-completo",
+    "nombre": "Pack de prueba completo",
+    "descripcion": "Usa todos los campos opcionales del formato.",
+    "version": "2.1.0",
+    "tipo": "oposicion",
+    "idioma": "es-ES",
+    "autor": "Tests",
+    "actualizado": "2026-09-30"
+  },
+  "temario": {
+    "bloques": [
+      {
+        "id": 0,
+        "nombre": "Bloque común"
+      },
+      {
+        "id": 1,
+        "nombre": "Bloque técnico"
+      }
+    ],
+    "temas": [
+      {
+        "id": 1,
+        "bloque": 0,
+        "titulo": "Constitución"
+      },
+      {
+        "id": 2,
+        "bloque": 1,
+        "titulo": "Redes"
+      },
+      {
+        "id": 3,
+        "bloque": 1,
+        "titulo": "Linux"
+      }
+    ]
+  },
+  "simulacro": {
+    "nota": "Reglas de prueba.",
+    "ejercicios": [
+      {
+        "id": "ej1",
+        "nombre": "Primer ejercicio",
+        "num_preguntas": 3,
+        "num_reserva": 1,
+        "num_opciones": 3,
+        "duracion_min": 55,
+        "con_supuestos": false,
+        "puntuacion": {
+          "modo": "proporcional",
+          "nota_maxima": 10,
+          "factor_fallo": 0.25,
+          "blanco": 0,
+          "nota_minima": 5,
+          "decimales": 3
+        }
+      },
+      {
+        "id": "ej2",
+        "nombre": "Segundo ejercicio",
+        "num_preguntas": 1,
+        "num_opciones": 4,
+        "duracion_min": null,
+        "con_supuestos": true,
+        "puntuacion": {
+          "modo": "fijo",
+          "acierto": 1,
+          "fallo": -0.33,
+          "blanco": 0,
+          "nota_minima": 0.5,
+          "decimales": 2
+        }
+      }
+    ]
+  },
+  "fuentes": [
+    {
+      "id": "examen-2026",
+      "tipo": "examen",
+      "nombre": "Examen 2026",
+      "oficial": true,
+      "fecha": "2026-04-28",
+      "convocatoria": "OEP 2025",
+      "turno": "turno_libre",
+      "respuestas": "plantilla_definitiva",
+      "ejercicios": [
+        {
+          "id": "e1",
+          "nombre": "Primer ejercicio",
+          "num_opciones": 3,
+          "simulacro": "ej1"
+        },
+        {
+          "id": "e2",
+          "nombre": "Segundo ejercicio",
+          "num_opciones": 4,
+          "simulacro": "ej2"
+        }
+      ]
+    },
+    {
+      "id": "estudio",
+      "tipo": "estudio",
+      "nombre": "Preguntas de estudio",
+      "oficial": false,
+      "fecha": null,
+      "respuestas": "elaboracion_propia"
+    }
+  ],
+  "contextos": [
+    {
+      "id": "supuesto-1",
+      "titulo": "Supuesto 1",
+      "enunciado": "Administras un servidor Linux.",
+      "codigo": "#!/bin/bash\nfor f in *.log; do gzip \"$f\"; done",
+      "lenguaje": "bash"
+    }
+  ],
+  "apuntes": [
+    {
+      "id": "ap-redes",
+      "tema": 2,
+      "titulo": "Puertos habituales",
+      "contenido": "- HTTP: 80\n- HTTPS: 443",
+      "oficial": false
+    }
+  ]
+}

@@ -1,0 +1,230 @@
+{
+  "formato": "estudio-pack",
+  "version_formato": 1,
+  "pack": {
+    "id": "test-completo",
+    "nombre": "Pack de prueba completo",
+    "descripcion": "Usa todos los campos opcionales del formato.",
+    "version": "1.0",
+    "tipo": "oposicion",
+    "idioma": "es-ES",
+    "autor": "Tests",
+    "actualizado": "2026-09-30"
+  },
+  "temario": {
+    "bloques": [
+      {
+        "id": 0,
+        "nombre": "Bloque común"
+      },
+      {
+        "id": 1,
+        "nombre": "Bloque técnico"
+      }
+    ],
+    "temas": [
+      {
+        "id": 1,
+        "bloque": 0,
+        "titulo": "Constitución"
+      },
+      {
+        "id": 2,
+        "bloque": 1,
+        "titulo": "Redes"
+      },
+      {
+        "id": 3,
+        "bloque": 1,
+        "titulo": "Linux"
+      }
+    ]
+  },
+  "simulacro": {
+    "nota": "Reglas de prueba.",
+    "ejercicios": [
+      {
+        "id": "ej1",
+        "nombre": "Primer ejercicio",
+        "num_preguntas": 3,
+        "num_reserva": 1,
+        "num_opciones": 3,
+        "duracion_min": 55,
+        "con_supuestos": false,
+        "puntuacion": {
+          "modo": "proporcional",
+          "nota_maxima": 10,
+          "factor_fallo": 0.25,
+          "blanco": 0,
+          "nota_minima": 5,
+          "decimales": 3
+        }
+      },
+      {
+        "id": "ej2",
+        "nombre": "Segundo ejercicio",
+        "num_preguntas": 1,
+        "num_opciones": 4,
+        "duracion_min": null,
+        "con_supuestos": true,
+        "puntuacion": {
+          "modo": "fijo",
+          "acierto": 1,
+          "fallo": -0.33,
+          "blanco": 0,
+          "nota_minima": 0.5,
+          "decimales": 2
+        }
+      }
+    ]
+  },
+  "fuentes": [
+    {
+      "id": "examen-2026",
+      "tipo": "examen",
+      "nombre": "Examen 2026",
+      "oficial": true,
+      "fecha": "2026-04-28",
+      "convocatoria": "OEP 2025",
+      "turno": "turno_libre",
+      "respuestas": "plantilla_definitiva",
+      "ejercicios": [
+        {
+          "id": "e1",
+          "nombre": "Primer ejercicio",
+          "num_opciones": 3,
+          "simulacro": "ej1"
+        },
+        {
+          "id": "e2",
+          "nombre": "Segundo ejercicio",
+          "num_opciones": 4,
+          "simulacro": "ej2"
+        }
+      ]
+    },
+    {
+      "id": "estudio",
+      "tipo": "estudio",
+      "nombre": "Preguntas de estudio",
+      "oficial": false,
+      "fecha": null,
+      "respuestas": "elaboracion_propia"
+    }
+  ],
+  "contextos": [
+    {
+      "id": "supuesto-1",
+      "titulo": "Supuesto 1",
+      "enunciado": "Administras un servidor Linux.",
+      "codigo": "#!/bin/bash\nfor f in *.log; do gzip \"$f\"; done",
+      "lenguaje": "bash"
+    }
+  ],
+  "preguntas": [
+    {
+      "id": "e1-01",
+      "fuente": "examen-2026",
+      "ejercicio": "e1",
+      "numero": "1",
+      "tema": 1,
+      "contexto": null,
+      "enunciado": "¿En qué año se aprobó la Constitución española?",
+      "opciones": {
+        "a": "1976",
+        "b": "1978",
+        "c": "1982"
+      },
+      "correcta": "b",
+      "explicacion": "Referéndum del 6 de diciembre de 1978."
+    },
+    {
+      "id": "e1-02",
+      "fuente": "examen-2026",
+      "ejercicio": "e1",
+      "numero": "2",
+      "tema": 2,
+      "enunciado": "¿Cuántos bits tiene una dirección IPv4?",
+      "opciones": {
+        "a": "16",
+        "b": "32",
+        "c": "64"
+      },
+      "correcta": null,
+      "anulada": true,
+      "correcta_provisional": "b",
+      "notas": "Anulada en la plantilla definitiva."
+    },
+    {
+      "id": "e1-r1",
+      "fuente": "examen-2026",
+      "ejercicio": "e1",
+      "numero": "R1",
+      "tema": 2,
+      "enunciado": "¿Qué puerto usa HTTPS por defecto?",
+      "opciones": {
+        "a": "80",
+        "b": "443",
+        "c": "8080"
+      },
+      "correcta": "b",
+      "reserva": true
+    },
+    {
+      "id": "e1-03",
+      "fuente": "examen-2026",
+      "ejercicio": "e1",
+      "numero": "3",
+      "tema": 1,
+      "enunciado": "Pregunta basada en una ley derogada.",
+      "opciones": {
+        "a": "Sí",
+        "b": "No",
+        "c": "Depende"
+      },
+      "correcta": "a",
+      "obsoleta": true,
+      "etiquetas": [
+        "normativa",
+        "derogada"
+      ]
+    },
+    {
+      "id": "e2-01",
+      "fuente": "examen-2026",
+      "ejercicio": "e2",
+      "numero": "1",
+      "tema": 3,
+      "contexto": "supuesto-1",
+      "enunciado": "¿Qué hace el script?",
+      "opciones": {
+        "a": "Borra los .log",
+        "b": "Comprime cada .log",
+        "c": "Lista los .log",
+        "d": "Nada"
+      },
+      "correcta": "b"
+    },
+    {
+      "id": "est-01",
+      "fuente": "estudio",
+      "tema": 3,
+      "enunciado": "¿Qué comando muestra el directorio actual?",
+      "opciones": {
+        "a": "cd",
+        "b": "pwd"
+      },
+      "correcta": "b",
+      "explicacion": "pwd = print working directory."
+    }
+  ],
+  "apuntes": [
+    {
+      "id": "ap-redes",
+      "tema": 2,
+      "titulo": "Puertos habituales",
+      "contenido": "- HTTP: 80\n- HTTPS: 443",
+      "oficial": false
+    }
+  ]
+}
