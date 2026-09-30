@@ -12,6 +12,21 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # Valida los packs con el validador de referencia en Python: si alguien
+      # regenera o edita un pack y lo deja inválido, el CI falla.
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - run: pip install jsonschema
+
+      - name: Validar packs
+        shell: bash
+        run: |
+          for pack in packs/*.pack.json; do
+            python tools/validate_pack.py "$pack"
+          done
+
       - uses: subosito/flutter-action@v2
         with:
           flutter-version: '3.47.5'
