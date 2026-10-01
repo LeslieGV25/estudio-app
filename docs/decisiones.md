@@ -189,3 +189,35 @@
 - **`SessionSummary` en `progress`, no en `practice`.** Repaso y simulacro mostrarán el mismo
   resumen. «Repasar estas» incluye falladas y en blanco; los porcentajes se calculan sobre las
   respuestas que cuentan (sin anuladas ni preguntas sin responder).
+- **Planificar y empezar por separado (`PracticePlan`).** Elegir las preguntas es Dart puro y
+  rápido, así que la pantalla de configuración lo recalcula con cada cambio de filtro: muestra el
+  recuento, avisa si un supuesto que no cabía entero deja la sesión más corta («Se usarán 18: un
+  supuesto no cabía entero») y «Empezar» crea la sesión con ese mismo plan. Si se eligiera al pulsar
+  «Empezar», el número anunciado y el real podrían no coincidir, porque el barajado es aleatorio.
+
+### Pantallas
+
+- **Rutas reales:** `/practice` (configuración), `/practice/session/:id` y
+  `/practice/summary/:id`. Sesión y resumen son hermanas, no anidadas: «atrás» desde el resumen
+  vuelve a la configuración y no a una sesión terminada. Con la URL de una sesión a medias se
+  continúa donde se dejó (en web, recargar la página no pierde nada).
+- **Toda la lógica en controladores y casos de uso.** `PracticeSessionController` carga la sesión
+  desde la base de datos, salta las anuladas, mide el tiempo e ignora toques repetidos;
+  `PracticeFilterController` guarda el filtro. Los widgets solo pintan y llaman.
+- **Reloj y `Random` como providers** (`clockProvider`, `practiceRandomProvider`): los tests fijan
+  la hora (para comprobar `time_ms` exacto) y la semilla (para que el barajado sea reproducible).
+- **El tiempo de respuesta se mide desde que se muestra la pregunta** hasta que se elige opción o
+  se salta; al reanudar, desde que se vuelve a mostrar.
+- **Un mismo `CodeBlock` para el código del supuesto y las opciones con saltos de línea**
+  (monoespaciado, conservando las líneas y con scroll horizontal). En el supuesto es seleccionable
+  para poder copiarlo; en una opción no, porque un texto seleccionable se quedaría el toque y no
+  dejaría elegirla.
+- **La corrección no depende solo del color:** la opción correcta y la elegida llevan icono y
+  etiqueta para lectores de pantalla («Respuesta correcta», «Tu respuesta, incorrecta»).
+- **Feedback sin huecos:** la explicación solo aparece si el pack la trae, y «Respuesta correcta:
+  …» solo si no se acertó.
+- **«Terminar» a mitad de sesión** cierra la sesión; las preguntas que falten aparecen como «sin
+  responder» en el resumen y no cuentan en los porcentajes.
+- **Tests de widgets con la base de datos real en memoria y el pack `completo` como pack
+  incluido**, con hora y semilla fijas: recorren configurar → responder → feedback → resumen →
+  «repasar estas», más el supuesto, «Saltar» y «Terminar».
