@@ -2,7 +2,9 @@ import 'package:flutter/services.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../../core/db/app_database_provider.dart';
+import '../domain/repositories/pack_content_repository.dart';
 import '../domain/repositories/pack_repository.dart';
+import 'drift_pack_content_repository.dart';
 import 'drift_pack_repository.dart';
 import 'pack_file_picker.dart';
 
@@ -17,6 +19,10 @@ const bundledPackAsset = 'packs/zgz-tai.pack.json';
 @Riverpod(keepAlive: true)
 PackRepository packRepository(Ref ref) =>
     DriftPackRepository(ref.watch(appDatabaseProvider));
+
+@Riverpod(keepAlive: true)
+PackContentRepository packContentRepository(Ref ref) =>
+    DriftPackContentRepository(ref.watch(appDatabaseProvider));
 
 @Riverpod(keepAlive: true)
 PackFilePicker packFilePicker(Ref ref) => const FilePickerPackFilePicker();
