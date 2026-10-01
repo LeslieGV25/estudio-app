@@ -112,6 +112,29 @@ void main() {
       expect(result.config.questionIds, ['e1-01']);
     });
 
+    test('omite las anuladas sin respuesta provisional', () async {
+      // Nueva versión del pack que anula e1-01 sin dar provisional.
+      final pack = loadPack(completoPath);
+      await DriftPackRepository(db).save(
+        pack.copyWith(
+          questions: [
+            for (final q in pack.questions)
+              q.id == 'e1-01' ? q.copyWith(voided: true, correctKey: null) : q,
+          ],
+        ),
+      );
+
+      final result = started(
+        await start.retry(packId, [
+          'e1-01',
+          'e1-02',
+        ], fromSessionId: 'anterior'),
+      );
+
+      // e1-02 está anulada pero tiene provisional: se puede corregir.
+      expect(result.config.questionIds, ['e1-02']);
+    });
+
     test('si no queda ninguna no crea sesión', () async {
       final result = await start.retry(packId, [
         'borrada',
