@@ -1,4 +1,5 @@
 import '../../../packs/domain/repositories/pack_content_repository.dart';
+import '../../../progress/domain/entities/study_session.dart';
 import '../../../progress/domain/progress_repository.dart';
 import '../../../progress/domain/session_summary.dart';
 import '../practice_session_config.dart';
@@ -12,8 +13,11 @@ class LoadPracticeSummary {
   final PackContentRepository _content;
   final ProgressRepository _progress;
 
+  /// La sesión (para saber su pack en «repasar estas») y su resumen;
   /// `null` si la sesión no existe.
-  Future<SessionSummary?> call(String sessionId) async {
+  Future<({StudySession session, SessionSummary summary})?> call(
+    String sessionId,
+  ) async {
     final session = await _progress.findSession(sessionId);
     if (session == null) return null;
     final config = PracticeSessionConfig.fromJson(session.config);
@@ -22,6 +26,6 @@ class LoadPracticeSummary {
       config.questionIds,
     );
     final answers = await _progress.sessionAnswers(sessionId);
-    return SessionSummary.from(questions, answers);
+    return (session: session, summary: SessionSummary.from(questions, answers));
   }
 }

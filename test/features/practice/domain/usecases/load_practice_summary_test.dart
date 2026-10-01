@@ -57,12 +57,11 @@ void main() {
       );
     }
 
-    final summary = await loadSummary(started.session.id);
+    final result = await loadSummary(started.session.id);
+    final summary = result!.summary;
 
-    expect(
-      summary!.items.map((i) => i.question.id),
-      started.config.questionIds,
-    );
+    expect(summary.items.map((i) => i.question.id), started.config.questionIds);
+    expect(result.session.id, started.session.id);
     expect(summary.unanswered, 1);
     expect(summary.items.last.outcome, AnswerOutcome.unanswered);
     expect(summary.correct + summary.wrong, questions.length - 1);

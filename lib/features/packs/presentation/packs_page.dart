@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../core/theme/theme_mode_controller.dart';
 import '../domain/entities/installed_pack.dart';
@@ -209,29 +210,46 @@ class _PackTile extends ConsumerWidget {
     final controller = ref.read(packsControllerProvider.notifier);
     final colors = Theme.of(context).colorScheme;
 
-    return Card(
-      child: ListTile(
-        leading: Icon(
-          isActive ? Icons.check_circle : Icons.radio_button_unchecked,
-          color: isActive ? colors.primary : colors.outline,
-          semanticLabel: isActive ? 'Pack activo' : null,
-        ),
-        title: Text(pack.name),
-        subtitle: Text(
-          'v${pack.version} · ${pack.questionCount} preguntas'
-          '${isActive ? ' · Activo' : ''}',
-        ),
-        onTap: isActive ? null : () => controller.activate(pack.id),
-        trailing: IconButton(
-          tooltip: 'Borrar pack',
-          icon: const Icon(Icons.delete_outline),
-          onPressed: () async {
-            if (await confirmDeletePack(context, pack.name)) {
-              await controller.delete(pack.id);
-            }
-          },
-        ),
+    final tile = ListTile(
+      leading: Icon(
+        isActive ? Icons.check_circle : Icons.radio_button_unchecked,
+        color: isActive ? colors.primary : colors.outline,
+        semanticLabel: isActive ? 'Pack activo' : null,
       ),
+      title: Text(pack.name),
+      subtitle: Text(
+        'v${pack.version} · ${pack.questionCount} preguntas'
+        '${isActive ? ' · Activo' : ''}',
+      ),
+      onTap: isActive ? null : () => controller.activate(pack.id),
+      trailing: IconButton(
+        tooltip: 'Borrar pack',
+        icon: const Icon(Icons.delete_outline),
+        onPressed: () async {
+          if (await confirmDeletePack(context, pack.name)) {
+            await controller.delete(pack.id);
+          }
+        },
+      ),
+    );
+
+    return Card(
+      child: isActive
+          ? Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                tile,
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
+                  child: FilledButton.icon(
+                    onPressed: () => context.go('/practice'),
+                    icon: const Icon(Icons.school_outlined),
+                    label: const Text('Practicar'),
+                  ),
+                ),
+              ],
+            )
+          : tile,
     );
   }
 }
