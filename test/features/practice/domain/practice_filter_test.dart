@@ -33,21 +33,14 @@ void main() {
     });
   });
 
-  group('anuladas', () {
-    const withVoided = PracticeFilter(includeVoided: true);
+  test('las anuladas no entran nunca, aunque tengan provisional', () {
+    const everything = PracticeFilter(includeObsolete: true);
 
-    test('«ver anuladas» incluye las que tienen respuesta provisional', () {
-      expect(
-        withVoided.matches(
-          studyQuestion('a', voided: true, provisionalKey: 'b'),
-        ),
-        isTrue,
-      );
-    });
-
-    test('las anuladas sin provisional no entran nunca', () {
-      expect(withVoided.matches(studyQuestion('a', voided: true)), isFalse);
-    });
+    expect(
+      everything.matches(studyQuestion('a', voided: true, provisionalKey: 'b')),
+      isFalse,
+    );
+    expect(everything.matches(studyQuestion('a', voided: true)), isFalse);
   });
 
   test('includeObsolete incluye las obsoletas', () {
@@ -106,7 +99,7 @@ void main() {
       blockIds: {2},
       sourceIds: {'examen'},
       onlyOfficial: true,
-      includeVoided: true,
+      includeObsolete: true,
       questionCount: 20,
     );
 

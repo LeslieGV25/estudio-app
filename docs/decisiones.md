@@ -144,3 +144,48 @@
   `PackValidator` de Dart aplica la misma regla (forma `AAAA-MM-DD` y fecha real del calendario,
   año ≥ 1). Los mismos casos límite (29/02 en año bisiesto y no bisiesto, año 0…) están probados en
   Dart y comprobados a mano en Python.
+
+## Fase 2 — Práctica
+
+### Dominio
+
+- **Lectura del contenido separada de la instalación.** `PackContentRepository` (solo lectura:
+  temario, fuentes y preguntas con su contexto, fuente y tema) vive en `packs` junto a
+  `PackRepository`, que instala y borra. Práctica, simulacro, repaso y estadísticas solo leen, y así
+  no ven métodos que no deben usar.
+- **`StudyQuestion` reutiliza `Question` y `QuestionContext`.** No se duplica la pregunta en otra
+  entidad: se envuelve con lo que hace falta para mostrarla y filtrarla (nombre de la fuente, si es
+  oficial, tema, bloque y posición).
+- **El filtro se aplica en Dart, no en SQL.** Se cargan las preguntas del pack (371 en el de
+  Zaragoza) y `PracticeFilter.matches` decide. Las reglas (anuladas, obsoletas, oficiales,
+  temario y fuentes) están en un solo sitio, se prueban sin base de datos y la pantalla usa el mismo
+  método para el contador en vivo. Descartado: un `WHERE` en el repositorio, que obligaría a repetir
+  las reglas en SQL y en Dart. El coste (tener el pack en memoria) es despreciable a este tamaño.
+- **Temas o bloques (O), fuentes (Y).** Elegir un bloque equivale a elegir todos sus temas; las
+  fuentes restringen sobre lo anterior.
+- **Barajar por grupos.** Las preguntas de un mismo supuesto van juntas y en su orden original; se
+  barajan los grupos. Al recortar al nº pedido no se parte un supuesto: el que no cabe se salta, y
+  la sesión puede quedar más corta (la pantalla de configuración lo avisa). Solo si no cabe ningún
+  grupo entero se corta el primero. `Random` se inyecta para que los tests sean deterministas.
+- **Al filtrar por tema, un supuesto puede quedar partido.** Si sus preguntas son de temas
+  distintos, solo entran las del tema elegido (con el contexto encima). Se prefirió respetar el
+  filtro antes que traer preguntas de otros temas.
+- **Las anuladas no se practican nunca**, ni en práctica ni en «repasar estas» (y tampoco entrarán
+  en el repaso de fallos). Se descartó una opción «ver anuladas» con la respuesta provisional:
+  practicar con una respuesta que el tribunal retiró no ayuda a aprobar. Siguen en la base de datos
+  porque el simulacro (Fase 4) las necesita para aplicar las reservas. Hay tres defensas: el filtro,
+  `retry` y `AnswerPracticeQuestion`, que rechaza responder una anulada (por si el pack se actualiza
+  a mitad de sesión). Una respuesta antigua a una pregunta anulada después se guarda igual (los
+  eventos son inmutables), pero el resumen la marca «no cuenta».
+- **La sesión guarda sus preguntas ya elegidas y en orden** en `sessions.config`
+  (`PracticeSessionConfig`). Con eso y los eventos de `answers` se puede reanudar una sesión (la
+  siguiente pregunta es la primera sin respuesta) y reconstruir el resumen días después, sin estado
+  en memoria. No hizo falta cambiar el esquema.
+- **Una respuesta por pregunta y sesión.** El feedback es inmediato, así que no se puede cambiar.
+  Lo comprueba el caso de uso, no la base de datos: un `UNIQUE (session_id, question_id)` exigiría
+  una migración y estorbaría al simulacro, donde se puede cambiar de opción antes de entregar.
+- **El pack de una respuesta se toma de su sesión** (`recordAnswer` no recibe `packId`): imposible
+  guardar una respuesta con un pack distinto al de su sesión.
+- **`SessionSummary` en `progress`, no en `practice`.** Repaso y simulacro mostrarán el mismo
+  resumen. «Repasar estas» incluye falladas y en blanco; los porcentajes se calculan sobre las
+  respuestas que cuentan (sin anuladas ni preguntas sin responder).

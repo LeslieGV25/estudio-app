@@ -22,6 +22,8 @@ void main() {
   final q2 = studyQuestion('q2', topicId: 1);
   final q3 = studyQuestion('q3', topicId: 2);
   final q4 = studyQuestion('q4', topicId: 2);
+  // En práctica ya no se puede responder una anulada; esta respuesta es de
+  // antes de que una actualización del pack la anulara.
   final anulada = studyQuestion(
     'anulada',
     topicId: 2,
@@ -67,7 +69,7 @@ void main() {
     ]);
   });
 
-  test('una anulada acertada sigue sin contar', () {
+  test('una pregunta anulada después de acertarla no cuenta', () {
     final item = summary.items.singleWhere((i) => i.question.id == 'anulada');
 
     expect(item.answer!.isCorrect, isTrue);

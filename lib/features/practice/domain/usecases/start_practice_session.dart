@@ -4,7 +4,6 @@ import '../../../../core/domain/session_mode.dart';
 import '../../../packs/domain/repositories/pack_content_repository.dart';
 import '../../../progress/domain/entities/study_session.dart';
 import '../../../progress/domain/progress_repository.dart';
-import '../grading.dart';
 import '../practice_filter.dart';
 import '../practice_session_config.dart';
 import '../question_order.dart';
@@ -55,9 +54,8 @@ class StartPracticeSession {
   }
 
   /// «Repasar estas»: sesión nueva con [questionIds] en el mismo orden.
-  /// Se omiten las que ya no existan en el pack y las que no se pueden
-  /// corregir (anuladas sin respuesta provisional, p. ej. porque una
-  /// actualización del pack anuló una pregunta que se había fallado).
+  /// Se omiten las que ya no existan en el pack y las anuladas (p. ej. porque
+  /// una actualización del pack anuló una pregunta que se había fallado).
   Future<PracticeStart> retry(
     String packId,
     List<String> questionIds, {
@@ -69,7 +67,7 @@ class StartPracticeSession {
       PracticeSessionConfig(
         questionIds: [
           for (final q in existing)
-            if (practiceKey(q.question) != null) q.id,
+            if (!q.question.voided) q.id,
         ],
         retryOf: fromSessionId,
       ),

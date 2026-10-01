@@ -85,8 +85,9 @@ reserva=`isReserve`, apuntes=`Note`, simulacro=`ExamRules`.
 
 ## Reglas de negocio
 
-- **Anuladas**: nunca puntúan ni aparecen en simulacro. En práctica, solo si se activa «ver anuladas» y
-  mostrando `correcta_provisional` con aviso.
+- **Anuladas**: nunca puntúan ni aparecen en práctica, simulacro ni «repasar estas» (tampoco en el repaso
+  de fallos). Se guardan en la BD porque el simulacro las necesita para aplicar las reservas. Si una
+  respuesta antigua apunta a una pregunta que después se anuló, el resumen la marca «no cuenta».
 - **Reserva**: en simulacro solo entran para sustituir anuladas del mismo ejercicio. En práctica, normales.
 - **Obsoletas**: excluidas por defecto (filtro para incluirlas).
 - **Oficial vs estudio**: filtro en práctica y en estadísticas; el simulacro usa por defecto solo oficiales.

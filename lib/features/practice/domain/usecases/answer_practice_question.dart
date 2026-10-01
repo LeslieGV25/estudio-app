@@ -15,7 +15,7 @@ class AnswerPracticeQuestion {
   final ProgressRepository _progress;
 
   /// [chosen] `null` = en blanco («Saltar»). Lanza [StateError] si la
-  /// pregunta no es de la sesión o ya se respondió.
+  /// pregunta no es de la sesión, está anulada o ya se respondió.
   Future<Answer> call({
     required StudySession session,
     required StudyQuestion question,
@@ -25,6 +25,11 @@ class AnswerPracticeQuestion {
     final config = PracticeSessionConfig.fromJson(session.config);
     if (!config.questionIds.contains(question.id)) {
       throw StateError('La pregunta ${question.id} no es de esta sesión');
+    }
+    if (question.question.voided) {
+      // Solo pasa si el pack se actualizó a mitad de sesión y anuló esta
+      // pregunta: la pantalla ya la salta, esto es la última defensa.
+      throw StateError('La pregunta ${question.id} está anulada');
     }
     final previous = await _progress.sessionAnswers(session.id);
     if (previous.any((a) => a.questionId == question.id)) {

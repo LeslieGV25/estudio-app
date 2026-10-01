@@ -26,9 +26,7 @@ abstract class PracticeFilter with _$PracticeFilter {
     /// Solo preguntas de fuentes con plantilla oficial.
     @Default(false) bool onlyOfficial,
 
-    /// «Ver anuladas»: se muestran con aviso y se corrigen con la respuesta
-    /// provisional.
-    @Default(false) bool includeVoided,
+    /// Incluir las preguntas marcadas como obsoletas (fuera por defecto).
     @Default(false) bool includeObsolete,
 
     /// Máximo de preguntas de la sesión; `null` = todas las que cumplan.
@@ -40,11 +38,9 @@ abstract class PracticeFilter with _$PracticeFilter {
 
   bool matches(StudyQuestion q) {
     final question = q.question;
-    if (question.voided) {
-      // Una anulada sin respuesta provisional no se puede corregir: no entra
-      // nunca, aunque se pida «ver anuladas».
-      if (!includeVoided || question.provisionalKey == null) return false;
-    }
+    // Las anuladas no se practican nunca. Siguen en la base de datos porque
+    // el simulacro las necesita para sustituirlas por las de reserva.
+    if (question.voided) return false;
     if (question.obsolete && !includeObsolete) return false;
     if (onlyOfficial && !q.isOfficial) return false;
     if (sourceIds.isNotEmpty && !sourceIds.contains(question.sourceId)) {

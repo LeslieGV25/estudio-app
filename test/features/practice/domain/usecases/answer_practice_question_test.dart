@@ -67,15 +67,12 @@ void main() {
     expect(result.isCorrect, isFalse);
   });
 
-  test('una anulada se guarda corregida con la provisional', () async {
-    final result = await answer(
-      session: session,
-      question: voided,
-      chosen: 'c',
-      timeMs: 1,
+  test('una anulada no se puede responder en práctica', () async {
+    expect(
+      () => answer(session: session, question: voided, chosen: 'c', timeMs: 1),
+      throwsStateError,
     );
-
-    expect(result.isCorrect, isTrue);
+    expect(await progress.sessionAnswers(session.id), isEmpty);
   });
 
   test('no se puede responder dos veces la misma pregunta', () async {

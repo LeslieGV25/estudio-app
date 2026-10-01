@@ -40,7 +40,8 @@ void main() {
   test('crea una sesión de práctica con las preguntas que cumplen', () async {
     final result = started(await start(packId, const PracticeFilter()));
 
-    // Por defecto quedan fuera la anulada (e1-02) y la obsoleta (e1-03).
+    // Quedan fuera la anulada (e1-02, siempre) y la obsoleta (e1-03, por
+    // defecto).
     expect(
       result.config.questionIds,
       unorderedEquals(['e1-01', 'e1-r1', 'e2-01', 'est-01']),
@@ -67,14 +68,6 @@ void main() {
     );
 
     expect(result.config.questionIds, hasLength(2));
-  });
-
-  test('con «ver anuladas» entra la anulada con provisional', () async {
-    final result = started(
-      await start(packId, const PracticeFilter(includeVoided: true)),
-    );
-
-    expect(result.config.questionIds, contains('e1-02'));
   });
 
   test('si nada cumple el filtro no crea sesión', () async {
@@ -112,8 +105,9 @@ void main() {
       expect(result.config.questionIds, ['e1-01']);
     });
 
-    test('omite las anuladas sin respuesta provisional', () async {
-      // Nueva versión del pack que anula e1-01 sin dar provisional.
+    test('omite las anuladas, aunque tengan provisional', () async {
+      // e1-02 ya viene anulada; una versión nueva del pack anula además
+      // e1-01, que la usuaria pudo haber fallado antes.
       final pack = loadPack(completoPath);
       await DriftPackRepository(db).save(
         pack.copyWith(
@@ -128,11 +122,11 @@ void main() {
         await start.retry(packId, [
           'e1-01',
           'e1-02',
+          'est-01',
         ], fromSessionId: 'anterior'),
       );
 
-      // e1-02 está anulada pero tiene provisional: se puede corregir.
-      expect(result.config.questionIds, ['e1-02']);
+      expect(result.config.questionIds, ['est-01']);
     });
 
     test('si no queda ninguna no crea sesión', () async {

@@ -36,7 +36,7 @@ void main() {
       content,
       progress,
       random: Random(1),
-    )(packId, const PracticeFilter(includeVoided: true)) as PracticeStarted;
+    )(packId, const PracticeFilter()) as PracticeStarted;
     final questions = await content.questionsByIds(
       packId,
       started.config.questionIds,
@@ -60,10 +60,7 @@ void main() {
     );
     expect(summary.unanswered, 1);
     expect(summary.items.last.outcome, AnswerOutcome.unanswered);
-    expect(
-      summary.correct + summary.wrong + summary.notCounted,
-      questions.length - 1,
-    );
+    expect(summary.correct + summary.wrong, questions.length - 1);
   });
 
   test('devuelve null si la sesión no existe', () async {
