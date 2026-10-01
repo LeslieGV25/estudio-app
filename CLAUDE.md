@@ -122,7 +122,7 @@ reserva=`isReserve`, apuntes=`Note`, simulacro=`ExamRules`.
   `packs/zgz-tai.pack.json` (declarado tal cual en `pubspec.yaml`, sin copiarlo a `assets/`: es la
   misma fuente que usan `tools/validate_pack.py` y `tools/build_zgz_pack.py`); pantalla de packs
   (lista, activar, importar desde fichero, borrar).
-- **Fase 2 — Práctica**: elegir tema/bloque/fuente y nº de preguntas; pantalla de pregunta con
+- **Fase 2 — Práctica** ✅: elegir tema/bloque/fuente y nº de preguntas; pantalla de pregunta con
   contexto y código; feedback y explicación; guardar cada respuesta como evento.
 - **Fase 3 — Repaso**: Leitner, contador de «pendientes hoy», sesión de repaso.
 - **Fase 4 — Simulacro**: reglas del pack, temporizador, reserva/anuladas, entrega y nota.
