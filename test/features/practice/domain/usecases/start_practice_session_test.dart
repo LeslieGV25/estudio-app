@@ -5,6 +5,7 @@ import 'package:estudio_app/core/domain/session_mode.dart';
 import 'package:estudio_app/features/packs/data/drift_pack_content_repository.dart';
 import 'package:estudio_app/features/packs/data/drift_pack_repository.dart';
 import 'package:estudio_app/features/practice/domain/practice_filter.dart';
+import 'package:estudio_app/features/practice/domain/practice_plan.dart';
 import 'package:estudio_app/features/practice/domain/practice_session_config.dart';
 import 'package:estudio_app/features/practice/domain/usecases/start_practice_session.dart';
 import 'package:estudio_app/features/progress/data/drift_progress_repository.dart';
@@ -15,6 +16,7 @@ import '../../../../helpers/test_database.dart';
 
 void main() {
   late AppDatabase db;
+  late DriftPackContentRepository content;
   late DriftProgressRepository progress;
   late StartPracticeSession start;
 
@@ -23,14 +25,21 @@ void main() {
   setUp(() async {
     db = newTestDatabase();
     await DriftPackRepository(db).save(loadPack(completoPath));
+    content = DriftPackContentRepository(db);
     progress = DriftProgressRepository(db);
-    start = StartPracticeSession(
-      DriftPackContentRepository(db),
-      progress,
-      random: Random(42),
-    );
+    start = StartPracticeSession(content, progress);
   });
   tearDown(() => db.close());
+
+  /// Planifica con [filter] como lo hace la pantalla y empieza la sesión.
+  Future<PracticeStart> startWith(PracticeFilter filter) async => start(
+    packId,
+    PracticePlan.build(
+      await content.questions(packId),
+      filter,
+      random: Random(42),
+    ),
+  );
 
   PracticeStarted started(PracticeStart result) {
     expect(result, isA<PracticeStarted>());
@@ -38,7 +47,7 @@ void main() {
   }
 
   test('crea una sesión de práctica con las preguntas que cumplen', () async {
-    final result = started(await start(packId, const PracticeFilter()));
+    final result = started(await startWith(const PracticeFilter()));
 
     // Quedan fuera la anulada (e1-02, siempre) y la obsoleta (e1-03, por
     // defecto).
@@ -53,7 +62,7 @@ void main() {
   test('guarda filtro y preguntas en la configuración de la sesión', () async {
     const filter = PracticeFilter(topicIds: {3}, questionCount: 10);
 
-    final result = started(await start(packId, filter));
+    final result = started(await startWith(filter));
 
     final saved = await progress.findSession(result.session.id);
     final config = PracticeSessionConfig.fromJson(saved!.config);
@@ -62,17 +71,28 @@ void main() {
     expect(config.questionIds, unorderedEquals(['e2-01', 'est-01']));
   });
 
+  test('usa las preguntas del plan, en su orden', () async {
+    final plan = PracticePlan.build(
+      await content.questions(packId),
+      const PracticeFilter(),
+      random: Random(7),
+    );
+
+    final result = started(await start(packId, plan));
+
+    expect(result.config.questionIds, plan.questionIds);
+  });
+
   test('respeta el nº de preguntas pedido', () async {
     final result = started(
-      await start(packId, const PracticeFilter(questionCount: 2)),
+      await startWith(const PracticeFilter(questionCount: 2)),
     );
 
     expect(result.config.questionIds, hasLength(2));
   });
 
   test('si nada cumple el filtro no crea sesión', () async {
-    final result = await start(
-      packId,
+    final result = await startWith(
       const PracticeFilter(onlyOfficial: true, sourceIds: {'estudio'}),
     );
 

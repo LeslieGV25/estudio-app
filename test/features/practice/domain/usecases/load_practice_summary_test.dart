@@ -4,6 +4,7 @@ import 'package:estudio_app/core/db/app_database.dart';
 import 'package:estudio_app/features/packs/data/drift_pack_content_repository.dart';
 import 'package:estudio_app/features/packs/data/drift_pack_repository.dart';
 import 'package:estudio_app/features/practice/domain/practice_filter.dart';
+import 'package:estudio_app/features/practice/domain/practice_plan.dart';
 import 'package:estudio_app/features/practice/domain/usecases/answer_practice_question.dart';
 import 'package:estudio_app/features/practice/domain/usecases/load_practice_summary.dart';
 import 'package:estudio_app/features/practice/domain/usecases/start_practice_session.dart';
@@ -32,11 +33,15 @@ void main() {
   tearDown(() => db.close());
 
   test('reconstruye el resumen desde la base de datos', () async {
-    final started = await StartPracticeSession(
-      content,
-      progress,
+    final plan = PracticePlan.build(
+      await content.questions(packId),
+      const PracticeFilter(),
       random: Random(1),
-    )(packId, const PracticeFilter()) as PracticeStarted;
+    );
+    final started = await StartPracticeSession(content, progress)(
+      packId,
+      plan,
+    ) as PracticeStarted;
     final questions = await content.questionsByIds(
       packId,
       started.config.questionIds,

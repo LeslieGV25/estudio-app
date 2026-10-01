@@ -1,12 +1,9 @@
-import 'dart:math';
-
 import '../../../../core/domain/session_mode.dart';
 import '../../../packs/domain/repositories/pack_content_repository.dart';
 import '../../../progress/domain/entities/study_session.dart';
 import '../../../progress/domain/progress_repository.dart';
-import '../practice_filter.dart';
+import '../practice_plan.dart';
 import '../practice_session_config.dart';
-import '../question_order.dart';
 
 sealed class PracticeStart {
   const PracticeStart();
@@ -24,34 +21,19 @@ final class NoQuestionsMatch extends PracticeStart {
   const NoQuestionsMatch();
 }
 
-/// Elige las preguntas de una sesión de práctica y la crea.
+/// Crea sesiones de práctica.
 class StartPracticeSession {
-  StartPracticeSession(this._content, this._progress, {Random? random})
-    : _random = random ?? Random();
+  const StartPracticeSession(this._content, this._progress);
 
   final PackContentRepository _content;
   final ProgressRepository _progress;
-  final Random _random;
 
-  /// Sesión nueva con las preguntas de [packId] que cumplen [filter],
-  /// barajadas por grupos de contexto (ver [practiceOrder]).
-  Future<PracticeStart> call(String packId, PracticeFilter filter) async {
-    final candidates = (await _content.questions(packId))
-        .where(filter.matches)
-        .toList();
-    final ordered = practiceOrder(
-      candidates,
-      limit: filter.questionCount,
-      random: _random,
-    );
-    return _start(
-      packId,
-      PracticeSessionConfig(
-        questionIds: [for (final q in ordered) q.id],
-        filter: filter,
-      ),
-    );
-  }
+  /// Sesión nueva de [packId] con las preguntas ya elegidas en [plan] (la
+  /// pantalla de configuración lo calcula y lo muestra antes de empezar).
+  Future<PracticeStart> call(String packId, PracticePlan plan) => _start(
+    packId,
+    PracticeSessionConfig(questionIds: plan.questionIds, filter: plan.filter),
+  );
 
   /// «Repasar estas»: sesión nueva con [questionIds] en el mismo orden.
   /// Se omiten las que ya no existan en el pack y las anuladas (p. ej. porque
