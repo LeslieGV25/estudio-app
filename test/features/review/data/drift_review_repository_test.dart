@@ -66,6 +66,13 @@ void main() {
     expect(await current('pack-b'), {'q9': state(1)});
   });
 
+  test('states lee la caché del pack de una vez', () async {
+    await repo.saveStates('pack', {'q1': state(1)});
+    await repo.saveStates('otro', {'q2': state(2)});
+
+    expect(await repo.states('pack'), {'q1': state(1)});
+  });
+
   test('watchStates emite con cada cambio', () async {
     final sizes = repo.watchStates('pack').map((s) => s.length);
     expect(sizes, emitsInOrder([0, 1, 2]));

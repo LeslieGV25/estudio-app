@@ -43,19 +43,25 @@ class DriftReviewRepository implements ReviewRepository {
       });
 
   @override
+  Future<Map<String, ReviewState>> states(String packId) async =>
+      _toStates(await _statesOf(packId).get());
+
+  @override
   Stream<Map<String, ReviewState>> watchStates(String packId) =>
-      (_db.select(
-        _db.reviewStates,
-      )..where((r) => _ofPack(r, packId))).watch().map(
-        (rows) => {
-          for (final row in rows)
-            row.questionId: ReviewState(
-              box: row.box,
-              correctStreak: row.correctStreak,
-              nextDue: row.nextDue,
-            ),
-        },
-      );
+      _statesOf(packId).watch().map(_toStates);
+
+  SimpleSelectStatement<$ReviewStatesTable, ReviewStateRow> _statesOf(
+    String packId,
+  ) => _db.select(_db.reviewStates)..where((r) => _ofPack(r, packId));
+
+  static Map<String, ReviewState> _toStates(List<ReviewStateRow> rows) => {
+    for (final row in rows)
+      row.questionId: ReviewState(
+        box: row.box,
+        correctStreak: row.correctStreak,
+        nextDue: row.nextDue,
+      ),
+  };
 
   Expression<bool> _ofPack($ReviewStatesTable r, String packId) =>
       r.userId.equals(localUserId) & r.packId.equals(packId);

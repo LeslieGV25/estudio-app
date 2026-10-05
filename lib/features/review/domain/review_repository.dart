@@ -14,5 +14,8 @@ abstract interface class ReviewRepository {
   Future<void> replaceAll(String packId, Map<String, ReviewState> states);
 
   /// Estado de cada pregunta del pack que está en el repaso, por id.
+  Future<Map<String, ReviewState>> states(String packId);
+
+  /// Como [states], y vuelve a emitir con cada cambio.
   Stream<Map<String, ReviewState>> watchStates(String packId);
 }

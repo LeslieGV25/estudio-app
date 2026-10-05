@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../core/theme/theme_mode_controller.dart';
+import '../../review/presentation/review_providers.dart';
 import '../domain/entities/installed_pack.dart';
 import '../domain/usecases/import_pack.dart';
 import 'packs_controller.dart';
@@ -241,15 +242,47 @@ class _PackTile extends ConsumerWidget {
                 tile,
                 Padding(
                   padding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
-                  child: FilledButton.icon(
-                    onPressed: () => context.go('/practice'),
-                    icon: const Icon(Icons.school_outlined),
-                    label: const Text('Practicar'),
+                  child: Wrap(
+                    spacing: 8,
+                    runSpacing: 8,
+                    alignment: WrapAlignment.end,
+                    children: [
+                      _ReviewButton(packId: pack.id),
+                      FilledButton.icon(
+                        onPressed: () => context.go('/practice'),
+                        icon: const Icon(Icons.school_outlined),
+                        label: const Text('Practicar'),
+                      ),
+                    ],
                   ),
                 ),
               ],
             )
           : tile,
+    );
+  }
+}
+
+/// «Repasar (N)» con las pendientes de hoy, en vivo. Mirar el repaso del pack
+/// activo es lo que dispara la reconstrucción de la caché al arrancar.
+class _ReviewButton extends ConsumerWidget {
+  const _ReviewButton({required this.packId});
+
+  final String packId;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final pending = ref.watch(reviewOverviewProvider(packId)).value?.due.length;
+    return OutlinedButton.icon(
+      onPressed: pending == null || pending == 0
+          ? null
+          : () => context.go('/review'),
+      icon: const Icon(Icons.replay),
+      label: Text(switch (pending) {
+        null => 'Repasar',
+        0 => 'Nada pendiente hoy',
+        final n => 'Repasar ($n)',
+      }),
     );
   }
 }

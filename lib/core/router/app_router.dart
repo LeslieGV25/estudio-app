@@ -5,12 +5,14 @@ import '../../features/packs/presentation/packs_page.dart';
 import '../../features/practice/presentation/practice_session_page.dart';
 import '../../features/practice/presentation/practice_setup_page.dart';
 import '../../features/practice/presentation/session_summary_page.dart';
+import '../../features/review/presentation/review_page.dart';
 import '../domain/session_mode.dart';
 
 part 'app_router.g.dart';
 
-// Sesión y resumen son hermanas bajo /practice (no anidadas): «atrás» desde
-// el resumen vuelve a la configuración, no a una sesión ya terminada.
+// Sesión y resumen son hermanas bajo /practice y /review (no anidadas):
+// «atrás» desde el resumen vuelve a la configuración o a la pantalla de
+// repaso, no a una sesión ya terminada.
 @riverpod
 GoRouter appRouter(Ref ref) {
   return GoRouter(
@@ -40,6 +42,29 @@ GoRouter appRouter(Ref ref) {
                 builder: (context, state) => SessionSummaryPage(
                   sessionId: state.pathParameters['sessionId']!,
                   mode: SessionMode.practice,
+                ),
+              ),
+            ],
+          ),
+          GoRoute(
+            path: 'review',
+            name: 'review',
+            builder: (context, state) => const ReviewPage(),
+            routes: [
+              GoRoute(
+                path: 'session/:sessionId',
+                name: 'review-session',
+                builder: (context, state) => PracticeSessionPage(
+                  sessionId: state.pathParameters['sessionId']!,
+                  mode: SessionMode.review,
+                ),
+              ),
+              GoRoute(
+                path: 'summary/:sessionId',
+                name: 'review-summary',
+                builder: (context, state) => SessionSummaryPage(
+                  sessionId: state.pathParameters['sessionId']!,
+                  mode: SessionMode.review,
                 ),
               ),
             ],
