@@ -5,11 +5,14 @@ import 'package:estudio_app/features/packs/data/drift_pack_content_repository.da
 import 'package:estudio_app/features/packs/data/drift_pack_repository.dart';
 import 'package:estudio_app/features/practice/domain/practice_filter.dart';
 import 'package:estudio_app/features/practice/domain/practice_plan.dart';
-import 'package:estudio_app/features/practice/domain/usecases/answer_practice_question.dart';
+import 'package:estudio_app/features/practice/domain/usecases/answer_question.dart';
 import 'package:estudio_app/features/practice/domain/usecases/load_practice_summary.dart';
 import 'package:estudio_app/features/practice/domain/usecases/start_practice_session.dart';
 import 'package:estudio_app/features/progress/data/drift_progress_repository.dart';
 import 'package:estudio_app/features/progress/domain/session_summary.dart';
+import 'package:estudio_app/features/review/data/drift_review_repository.dart';
+import 'package:estudio_app/features/review/domain/review_calendar.dart';
+import 'package:estudio_app/features/review/domain/usecases/sync_review_state.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import '../../../../helpers/packs.dart';
@@ -46,7 +49,14 @@ void main() {
       packId,
       started.config.questionIds,
     );
-    final answer = AnswerPracticeQuestion(progress);
+    final answer = AnswerQuestion(
+      progress,
+      SyncReviewState(
+        progress,
+        DriftReviewRepository(db),
+        const LocalReviewCalendar(),
+      ),
+    );
     // Responde todas con «b» menos la última, que queda sin responder.
     for (final q in questions.take(questions.length - 1)) {
       await answer(

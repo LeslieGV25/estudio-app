@@ -2,17 +2,19 @@ import '../../../packs/domain/entities/study_question.dart';
 import '../../../progress/domain/entities/answer.dart';
 import '../../../progress/domain/entities/study_session.dart';
 import '../../../progress/domain/progress_repository.dart';
+import '../../../review/domain/usecases/sync_review_state.dart';
 import '../grading.dart';
 import '../practice_session_config.dart';
 
-/// Corrige una respuesta de práctica y la guarda como evento.
+/// Corrige una respuesta con feedback inmediato (práctica y repaso), la
+/// guarda como evento y actualiza el repaso de esa pregunta.
 ///
-/// En práctica el feedback es inmediato, así que cada pregunta se responde
-/// una sola vez por sesión.
-class AnswerPracticeQuestion {
-  const AnswerPracticeQuestion(this._progress);
+/// Con feedback inmediato cada pregunta se responde una sola vez por sesión.
+class AnswerQuestion {
+  const AnswerQuestion(this._progress, this._syncReview);
 
   final ProgressRepository _progress;
+  final SyncReviewState _syncReview;
 
   /// [chosen] `null` = en blanco («Saltar»). Lanza [StateError] si la
   /// pregunta no es de la sesión, está anulada o ya se respondió.
@@ -35,12 +37,16 @@ class AnswerPracticeQuestion {
     if (previous.any((a) => a.questionId == question.id)) {
       throw StateError('La pregunta ${question.id} ya se respondió');
     }
-    return _progress.recordAnswer(
+    final answer = await _progress.recordAnswer(
       sessionId: session.id,
       questionId: question.id,
       chosen: chosen,
       isCorrect: isCorrectAnswer(question.question, chosen),
       timeMs: timeMs,
     );
+    // Si la app se cerrase justo aquí, la caché quedaría atrasada; la
+    // reconstrucción al arrancar (SyncReviewState.rebuild) la pone al día.
+    await _syncReview(session.packId, [question.id]);
+    return answer;
   }
 }

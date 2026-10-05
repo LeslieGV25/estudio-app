@@ -8,7 +8,8 @@ import '../../packs/domain/entities/study_question.dart';
 import '../../progress/data/progress_providers.dart';
 import '../../progress/domain/entities/study_session.dart';
 import '../../progress/domain/session_summary.dart';
-import '../domain/usecases/answer_practice_question.dart';
+import '../../review/presentation/review_providers.dart';
+import '../domain/usecases/answer_question.dart';
 import '../domain/usecases/load_practice_summary.dart';
 import '../domain/usecases/start_practice_session.dart';
 
@@ -21,8 +22,10 @@ StartPracticeSession startPracticeSession(Ref ref) => StartPracticeSession(
 );
 
 @riverpod
-AnswerPracticeQuestion answerPracticeQuestion(Ref ref) =>
-    AnswerPracticeQuestion(ref.watch(progressRepositoryProvider));
+AnswerQuestion answerQuestion(Ref ref) => AnswerQuestion(
+  ref.watch(progressRepositoryProvider),
+  ref.watch(syncReviewStateProvider),
+);
 
 /// Generador aleatorio para barajar; los tests ponen uno con semilla.
 @Riverpod(keepAlive: true)

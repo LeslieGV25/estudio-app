@@ -110,7 +110,7 @@ class PracticeSessionController extends _$PracticeSessionController {
     _saving = true;
     try {
       final now = ref.read(clockProvider)();
-      final saved = await ref.read(answerPracticeQuestionProvider)(
+      final saved = await ref.read(answerQuestionProvider)(
         session: current.session,
         question: current.current,
         chosen: chosen,
