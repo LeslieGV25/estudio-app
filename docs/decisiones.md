@@ -221,3 +221,62 @@
 - **Tests de widgets con la base de datos real en memoria y el pack `completo` como pack
   incluido**, con hora y semilla fijas: recorren configurar → responder → feedback → resumen →
   «repasar estas», más el supuesto, «Saltar» y «Terminar».
+
+## Fase 3 — Repaso
+
+### Reglas de Leitner
+
+- **Una pregunta entra en el repaso al fallarla o dejarla en blanco.** El blanco cuenta como fallo,
+  igual que en «repasar estas». Acertar una pregunta que nunca se ha fallado no la mete.
+- **Fallo → caja 0 siempre; acierto → sube una caja solo si ya tocaba.** Un acierto antes de tiempo
+  (practicar la misma pregunta dos veces en una tarde) no cambia nada. Si contara, se podría llegar
+  a la caja 4 y a «dominada» en un solo día, y el repaso dejaría de espaciar. La racha cuenta solo
+  los aciertos que han subido de caja.
+- **Intervalos en días de calendario locales, no en bloques de 24 h.** `next_due` es la medianoche
+  local del día que toca, guardada en UTC. Fallar a las 23:59 y volver a las 00:01 cuenta como «al
+  día siguiente», que es lo que espera la usuaria. Con la caja 0 (0 días), una pregunta fallada
+  queda pendiente ese mismo día.
+- **«Dominada» (3 aciertos seguidos) es una etiqueta, no una salida.** La pregunta sigue en el
+  repaso a 7 y 14 días para no olvidarla; si se falla, vuelve a la caja 0. Se descartó sacarla del
+  repaso: nadie volvería a preguntarla hasta el examen.
+- **Cuentan las respuestas de práctica y de repaso** (`SyncReviewState.countedModes`). Las del
+  simulacro se decidirán en la Fase 4, porque allí se puede cambiar de opción antes de entregar.
+
+### Estado derivado de los eventos
+
+- **`Leitner.replay` es una función pura** que recorre las respuestas de una pregunta y devuelve su
+  estado. Las reglas se prueban sin base de datos, con secuencias de eventos concretas.
+- **`review_state` es una caché que siempre se rehace desde `answers`**, nunca se actualiza sumando
+  sobre lo que había. Tras cada respuesta, `AnswerQuestion` recalcula esa pregunta; además,
+  `reviewRebuild` rehace la caché entera del pack una vez por arranque (provider `keepAlive`), antes
+  de enseñar el contador. Si la app se cierra entre guardar la respuesta y actualizar la caché, se
+  corrige sola. Una actualización incremental (`box + 1`) sería más barata, pero un fallo a medias
+  dejaría la caché mal para siempre.
+- **El calendario se inyecta (`ReviewCalendar`).** `LocalReviewCalendar` usa la zona horaria del
+  dispositivo; los tests usan un desfase fijo (UTC+2) y dan lo mismo en Windows que en el CI (UTC).
+- **`packAnswers(packId, modes:, questionIds:)` es genérico.** Qué modos cuentan para el repaso es
+  una regla del dominio y no se ha metido en el SQL. Las estadísticas de la Fase 5 usarán el mismo
+  método.
+- **Sin migración**: `review_state` ya estaba en el esquema v1 (con el `CHECK` de caja 0–4).
+
+### Sesión y pantallas
+
+- **Una sesión de repaso es una sesión con feedback inmediato**, igual que la práctica: reutiliza
+  `PracticeSessionConfig` (preguntas ya elegidas, en orden), el controlador, `AnswerQuestion`, la
+  pantalla de pregunta y el resumen. Lo que la distingue es `sessions.mode = review`, que separará
+  las estadísticas. La alternativa (una configuración y unas pantallas propias) duplicaba código sin
+  añadir nada.
+- **Las pantallas reciben el modo desde el router** y `SessionRoutes` da las rutas
+  (`/practice/...` o `/review/...`) y los títulos. «Repasar estas» desde un resumen de repaso sigue
+  creando una práctica.
+- **Pendientes ordenadas por atraso, luego caja más baja, luego orden del pack** (`ReviewOverview`,
+  Dart puro). Las anuladas, las obsoletas y las que ya no están en el pack conservan su estado en la
+  caché, pero no se muestran. Si una pregunta vuelve (al reimportar el pack o quitar la marca de
+  obsoleta), recupera su caja.
+- **Sesiones de 20 por defecto, con selector 10/20/50/todas.** Tras unos días sin estudiar, «todas»
+  podría ser una sesión muy larga. Al no haber azar, `StartReviewSession` vuelve a calcular las
+  pendientes al empezar y salen las mismas que anuncia la pantalla.
+- **El contador «Repasar (N)» se actualiza en vivo** porque combina el stream de `review_state` con
+  las preguntas del pack. Al terminar un repaso baja sin recargar nada.
+- **Test de widgets del flujo completo** con respuestas falladas sembradas antes de arrancar y sin
+  caché de repaso: si el contador muestra 2, la reconstrucción al arrancar funciona.
