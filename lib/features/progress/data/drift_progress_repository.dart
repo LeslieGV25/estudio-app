@@ -98,6 +98,34 @@ class DriftProgressRepository implements ProgressRepository {
   Stream<List<Answer>> watchSessionAnswers(String sessionId) =>
       _answersOf(sessionId).watch().map((rows) => rows.map(_toAnswer).toList());
 
+  @override
+  Future<List<Answer>> packAnswers(
+    String packId, {
+    required Set<SessionMode> modes,
+    Iterable<String>? questionIds,
+  }) async {
+    final answers = _db.answers;
+    final sessions = _db.sessions;
+    var filter =
+        answers.packId.equals(packId) &
+        sessions.mode.isInValues(modes) &
+        sessions.deletedAt.isNull();
+    if (questionIds != null) {
+      filter = filter & answers.questionId.isIn(questionIds);
+    }
+    final query =
+        _db.select(answers).join([
+            innerJoin(sessions, sessions.id.equalsExp(answers.sessionId)),
+          ])
+          ..where(filter)
+          ..orderBy([
+            OrderingTerm.asc(answers.answeredAt),
+            OrderingTerm.asc(answers.rowId),
+          ]);
+    final rows = await query.get();
+    return [for (final row in rows) _toAnswer(row.readTable(answers))];
+  }
+
   SimpleSelectStatement<$SessionsTable, SessionRow> _sessionById(String id) =>
       _db.select(_db.sessions)
         ..where((s) => s.id.equals(id) & s.deletedAt.isNull());

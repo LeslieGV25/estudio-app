@@ -34,4 +34,12 @@ abstract interface class ProgressRepository {
   Future<List<Answer>> sessionAnswers(String sessionId);
 
   Stream<List<Answer>> watchSessionAnswers(String sessionId);
+
+  /// Respuestas del pack [packId] dadas en sesiones de [modes] no borradas,
+  /// en orden cronológico. Con [questionIds], solo las de esas preguntas.
+  Future<List<Answer>> packAnswers(
+    String packId, {
+    required Set<SessionMode> modes,
+    Iterable<String>? questionIds,
+  });
 }

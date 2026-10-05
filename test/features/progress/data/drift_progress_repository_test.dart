@@ -182,4 +182,75 @@ void main() {
       );
     });
   });
+
+  group('packAnswers', () {
+    Future<String> start(String packId, SessionMode mode) async =>
+        (await repo.startSession(
+          packId: packId,
+          mode: mode,
+          config: const {},
+        )).id;
+
+    Future<void> answer(String sessionId, String questionId) =>
+        repo.recordAnswer(
+          sessionId: sessionId,
+          questionId: questionId,
+          chosen: 'a',
+          isCorrect: true,
+          timeMs: 1,
+        );
+
+    const studyModes = {SessionMode.practice, SessionMode.review};
+
+    test('devuelve las del pack en los modos pedidos, en orden', () async {
+      final practice = await start('pack-a', SessionMode.practice);
+      final review = await start('pack-a', SessionMode.review);
+      final exam = await start('pack-a', SessionMode.exam);
+      final otherPack = await start('pack-b', SessionMode.practice);
+
+      await answer(practice, 'q1');
+      now = now.add(const Duration(minutes: 1));
+      await answer(exam, 'q1');
+      await answer(otherPack, 'q1');
+      now = now.add(const Duration(minutes: 1));
+      await answer(review, 'q2');
+
+      final answers = await repo.packAnswers('pack-a', modes: studyModes);
+
+      expect(
+        [for (final a in answers) (a.sessionId, a.questionId)],
+        [(practice, 'q1'), (review, 'q2')],
+      );
+    });
+
+    test('filtra por preguntas', () async {
+      final id = await start('pack-a', SessionMode.practice);
+      for (final q in ['q1', 'q2', 'q3']) {
+        await answer(id, q);
+      }
+
+      final answers = await repo.packAnswers(
+        'pack-a',
+        modes: studyModes,
+        questionIds: ['q3', 'q1'],
+      );
+
+      // Mismo instante: desempata el orden de inserción.
+      expect(answers.map((a) => a.questionId), ['q1', 'q3']);
+    });
+
+    test('ignora las respuestas de sesiones borradas', () async {
+      final kept = await start('pack-a', SessionMode.practice);
+      final deleted = await start('pack-a', SessionMode.practice);
+      await answer(kept, 'q1');
+      await answer(deleted, 'q2');
+      await (db.update(db.sessions)..where((s) => s.id.equals(deleted))).write(
+        SessionsCompanion(deletedAt: Value(now)),
+      );
+
+      final answers = await repo.packAnswers('pack-a', modes: studyModes);
+
+      expect(answers.map((a) => a.questionId), ['q1']);
+    });
+  });
 }
