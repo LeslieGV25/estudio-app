@@ -2,15 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../core/domain/session_mode.dart';
+import '../../../core/router/session_routes.dart';
 import 'practice_session_controller.dart';
 import 'widgets/feedback_panel.dart';
 import 'widgets/question_view.dart';
 
-/// Una pregunta cada vez, con feedback inmediato.
+/// Una pregunta cada vez, con feedback inmediato. La usan práctica y repaso
+/// ([mode] decide la ruta del resumen y el título).
 class PracticeSessionPage extends ConsumerWidget {
-  const PracticeSessionPage({super.key, required this.sessionId});
+  const PracticeSessionPage({
+    super.key,
+    required this.sessionId,
+    required this.mode,
+  });
 
   final String sessionId;
+  final SessionMode mode;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -18,7 +26,7 @@ class PracticeSessionPage extends ConsumerWidget {
     final session = ref.watch(provider);
     final controller = ref.read(provider.notifier);
 
-    void openSummary() => context.go('/practice/summary/$sessionId');
+    void openSummary() => context.go(mode.summaryPath(sessionId));
 
     Future<void> finishEarly() async {
       await controller.finish();
@@ -36,7 +44,7 @@ class PracticeSessionPage extends ConsumerWidget {
       appBar: AppBar(
         title: Text(
           state == null || state.isEmpty
-              ? 'Práctica'
+              ? mode.label
               : 'Pregunta ${state.index + 1} de ${state.questions.length}',
         ),
         actions: [

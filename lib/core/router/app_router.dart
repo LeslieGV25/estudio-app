@@ -5,6 +5,7 @@ import '../../features/packs/presentation/packs_page.dart';
 import '../../features/practice/presentation/practice_session_page.dart';
 import '../../features/practice/presentation/practice_setup_page.dart';
 import '../../features/practice/presentation/session_summary_page.dart';
+import '../domain/session_mode.dart';
 
 part 'app_router.g.dart';
 
@@ -30,6 +31,7 @@ GoRouter appRouter(Ref ref) {
                 name: 'practice-session',
                 builder: (context, state) => PracticeSessionPage(
                   sessionId: state.pathParameters['sessionId']!,
+                  mode: SessionMode.practice,
                 ),
               ),
               GoRoute(
@@ -37,6 +39,7 @@ GoRouter appRouter(Ref ref) {
                 name: 'practice-summary',
                 builder: (context, state) => SessionSummaryPage(
                   sessionId: state.pathParameters['sessionId']!,
+                  mode: SessionMode.practice,
                 ),
               ),
             ],

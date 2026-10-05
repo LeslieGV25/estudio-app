@@ -4,6 +4,8 @@ import 'package:go_router/go_router.dart' show GoRouterHelper;
 
 import '../../packs/domain/entities/pack_document.dart';
 import '../../packs/domain/entities/pack_outline.dart';
+import '../../../core/domain/session_mode.dart';
+import '../../../core/router/session_routes.dart';
 import '../../packs/presentation/packs_providers.dart';
 import '../domain/practice_filter.dart';
 import '../domain/practice_plan.dart';
@@ -208,7 +210,7 @@ class _StartBarState extends ConsumerState<_StartBar> {
       if (!mounted) return;
       switch (result) {
         case PracticeStarted(:final session):
-          context.go('/practice/session/${session.id}');
+          context.go(SessionMode.practice.sessionPath(session.id));
         case NoQuestionsMatch():
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(

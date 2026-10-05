@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../core/domain/session_mode.dart';
+import '../../../core/router/session_routes.dart';
 import '../../progress/domain/entities/study_session.dart';
 import '../../progress/domain/session_summary.dart';
 import '../domain/usecases/start_practice_session.dart';
@@ -9,11 +11,17 @@ import 'practice_providers.dart';
 import 'question_labels.dart';
 
 /// Resumen final: porcentajes, desglose por tema y lista de falladas con
-/// «Repasar estas». Se reconstruye desde la base de datos.
+/// «Repasar estas». Se reconstruye desde la base de datos. Lo usan práctica
+/// y repaso; «Repasar estas» siempre crea una práctica.
 class SessionSummaryPage extends ConsumerWidget {
-  const SessionSummaryPage({super.key, required this.sessionId});
+  const SessionSummaryPage({
+    super.key,
+    required this.sessionId,
+    required this.mode,
+  });
 
   final String sessionId;
+  final SessionMode mode;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -27,6 +35,7 @@ class SessionSummaryPage extends ConsumerWidget {
         AsyncData(value: (:final session, :final summary)?) => _SummaryBody(
           session: session,
           summary: summary,
+          mode: mode,
         ),
         AsyncError(:final error) => Center(child: Text('Error: $error')),
         _ => const Center(child: CircularProgressIndicator()),
@@ -38,10 +47,15 @@ class SessionSummaryPage extends ConsumerWidget {
 String _percent(double value) => '${value.round()} %';
 
 class _SummaryBody extends ConsumerStatefulWidget {
-  const _SummaryBody({required this.session, required this.summary});
+  const _SummaryBody({
+    required this.session,
+    required this.summary,
+    required this.mode,
+  });
 
   final StudySession session;
   final SessionSummary summary;
+  final SessionMode mode;
 
   @override
   ConsumerState<_SummaryBody> createState() => _SummaryBodyState();
@@ -61,7 +75,7 @@ class _SummaryBodyState extends ConsumerState<_SummaryBody> {
       if (!mounted) return;
       switch (result) {
         case PracticeStarted(:final session):
-          context.go('/practice/session/${session.id}');
+          context.go(SessionMode.practice.sessionPath(session.id));
         case NoQuestionsMatch():
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(
@@ -118,8 +132,11 @@ class _SummaryBodyState extends ConsumerState<_SummaryBody> {
           ),
         const SizedBox(height: 8),
         OutlinedButton(
-          onPressed: () => context.go('/practice'),
-          child: const Text('Nueva práctica'),
+          onPressed: () => context.go(widget.mode.basePath),
+          child: Text(switch (widget.mode) {
+            SessionMode.review => 'Volver al repaso',
+            _ => 'Nueva práctica',
+          }),
         ),
       ],
     );

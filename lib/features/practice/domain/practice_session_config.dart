@@ -5,7 +5,9 @@ import 'practice_filter.dart';
 part 'practice_session_config.freezed.dart';
 part 'practice_session_config.g.dart';
 
-/// Lo que se guarda en `sessions.config` de una sesión de práctica.
+/// Lo que se guarda en `sessions.config` de una sesión con feedback
+/// inmediato: práctica y también repaso (que no tiene filtro). Lo que las
+/// distingue es `sessions.mode`.
 ///
 /// Las preguntas se guardan ya elegidas y en orden: así la sesión se puede
 /// reanudar (la siguiente es la primera sin respuesta) y el resumen se
