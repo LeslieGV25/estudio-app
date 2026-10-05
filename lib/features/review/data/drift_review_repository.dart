@@ -29,8 +29,7 @@ class DriftReviewRepository implements ReviewRepository {
               .go();
         }
         await _upsert(packId, {
-          for (final MapEntry(:key, :value) in states.entries)
-            if (value != null) key: value,
+          for (final MapEntry(:key, :value) in states.entries) key: ?value,
         });
       });
 
