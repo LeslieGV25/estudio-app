@@ -11,6 +11,7 @@ void main() {
     WidgetTester tester,
     StudyQuestion question, {
     Answer? answer,
+    String? selected,
     ValueChanged<String>? onChoose,
   }) => tester.pumpWidget(
     MaterialApp(
@@ -19,6 +20,7 @@ void main() {
           child: QuestionView(
             question: question,
             answer: answer,
+            selected: selected,
             onChoose: onChoose ?? (_) {},
           ),
         ),
@@ -98,6 +100,29 @@ void main() {
     );
     await tester.tap(find.text('Opción C'));
     expect(chosen, isNull);
+    semantics.dispose();
+  });
+
+  testWidgets('marcada (simulacro): sin corrección y se puede cambiar', (
+    tester,
+  ) async {
+    final semantics = tester.ensureSemantics();
+    String? chosen;
+    await pumpView(
+      tester,
+      studyQuestion('q', correctKey: 'b'),
+      selected: 'a',
+      onChoose: (key) => chosen = key,
+    );
+
+    expect(
+      find.bySemanticsLabel(RegExp(r'Opción A\s+Marcada')),
+      findsOneWidget,
+    );
+    // No delata cuál es la correcta.
+    expect(find.bySemanticsLabel(RegExp('Respuesta correcta')), findsNothing);
+    await tester.tap(find.text('Opción C'));
+    expect(chosen, 'c');
     semantics.dispose();
   });
 }

@@ -1,6 +1,9 @@
 import 'package:go_router/go_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
+import '../../features/exam/presentation/exam_session_page.dart';
+import '../../features/exam/presentation/exam_setup_page.dart';
+import '../../features/exam/presentation/exam_summary_page.dart';
 import '../../features/packs/presentation/packs_page.dart';
 import '../../features/practice/presentation/practice_session_page.dart';
 import '../../features/practice/presentation/practice_setup_page.dart';
@@ -42,6 +45,27 @@ GoRouter appRouter(Ref ref) {
                 builder: (context, state) => SessionSummaryPage(
                   sessionId: state.pathParameters['sessionId']!,
                   mode: SessionMode.practice,
+                ),
+              ),
+            ],
+          ),
+          GoRoute(
+            path: 'exam',
+            name: 'exam',
+            builder: (context, state) => const ExamSetupPage(),
+            routes: [
+              GoRoute(
+                path: 'session/:sessionId',
+                name: 'exam-session',
+                builder: (context, state) => ExamSessionPage(
+                  sessionId: state.pathParameters['sessionId']!,
+                ),
+              ),
+              GoRoute(
+                path: 'summary/:sessionId',
+                name: 'exam-summary',
+                builder: (context, state) => ExamSummaryPage(
+                  sessionId: state.pathParameters['sessionId']!,
                 ),
               ),
             ],

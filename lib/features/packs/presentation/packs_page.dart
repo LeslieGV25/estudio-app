@@ -248,6 +248,11 @@ class _PackTile extends ConsumerWidget {
                     alignment: WrapAlignment.end,
                     children: [
                       _ReviewButton(packId: pack.id),
+                      OutlinedButton.icon(
+                        onPressed: () => context.go('/exam'),
+                        icon: const Icon(Icons.timer_outlined),
+                        label: const Text('Simulacro'),
+                      ),
                       FilledButton.icon(
                         onPressed: () => context.go('/practice'),
                         icon: const Icon(Icons.school_outlined),
