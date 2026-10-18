@@ -1,3 +1,4 @@
+import '../entities/pack_document.dart';
 import '../entities/pack_outline.dart';
 import '../entities/study_question.dart';
 
@@ -16,4 +17,8 @@ abstract interface class PackContentRepository {
   /// Las preguntas con esos [ids], en el mismo orden. Las que ya no existan
   /// (el pack se actualizó y las quitó) se omiten.
   Future<List<StudyQuestion>> questionsByIds(String packId, List<String> ids);
+
+  /// Reglas de simulacro tal como vienen en el pack, con los ejercicios en
+  /// su orden. Sin ejercicios si el pack no trae `simulacro`.
+  Future<ExamRules> examRules(String packId);
 }

@@ -82,6 +82,34 @@ class DriftPackContentRepository implements PackContentRepository {
     return [for (final id in ids) ?byId[id]];
   }
 
+  @override
+  Future<ExamRules> examRules(String packId) async {
+    final pack = await (_db.select(
+      _db.packs,
+    )..where((p) => p.id.equals(packId))).getSingleOrNull();
+    final exercises =
+        await (_db.select(_db.examExercises)
+              ..where((e) => e.packId.equals(packId))
+              ..orderBy([(e) => OrderingTerm.asc(e.position)]))
+            .get();
+    return ExamRules(
+      note: pack?.examNote,
+      exercises: [
+        for (final e in exercises)
+          ExamExercise(
+            id: e.id,
+            name: e.name,
+            questionCount: e.questionCount,
+            reserveCount: e.reserveCount,
+            optionCount: e.optionCount,
+            durationMin: e.durationMin,
+            hasCaseStudies: e.hasCaseStudies,
+            scoring: e.scoring,
+          ),
+      ],
+    );
+  }
+
   /// Preguntas del pack con su fuente, su tema y (si lo tiene) su contexto.
   JoinedSelectStatement<HasResultSet, dynamic> _questionsOf(String packId) {
     final q = _db.questions;

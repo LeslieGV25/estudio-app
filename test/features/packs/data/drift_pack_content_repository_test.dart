@@ -121,4 +121,18 @@ void main() {
       expect(questions.map((q) => q.id), ['e1-01']);
     });
   });
+
+  group('examRules', () {
+    test('reconstruye el simulacro igual que en el fichero', () async {
+      final rules = await repo.examRules(completoId);
+
+      expect(rules, loadPack(completoPath).examRules);
+    });
+
+    test('un pack sin simulacro devuelve reglas sin ejercicios', () async {
+      final rules = await repo.examRules(loadPack(ejemploMinimoPath).info.id);
+
+      expect(rules.exercises, isEmpty);
+    });
+  });
 }
