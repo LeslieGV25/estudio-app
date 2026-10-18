@@ -8,7 +8,7 @@ import '../../progress/domain/entities/study_session.dart';
 import '../../progress/domain/session_summary.dart';
 import '../domain/usecases/start_practice_session.dart';
 import 'practice_providers.dart';
-import 'question_labels.dart';
+import 'widgets/summary_sections.dart';
 
 /// Resumen final: porcentajes, desglose por tema y lista de falladas con
 /// «Repasar estas». Se reconstruye desde la base de datos. Lo usan práctica
@@ -43,8 +43,6 @@ class SessionSummaryPage extends ConsumerWidget {
     );
   }
 }
-
-String _percent(double value) => '${value.round()} %';
 
 class _SummaryBody extends ConsumerStatefulWidget {
   const _SummaryBody({
@@ -97,23 +95,10 @@ class _SummaryBodyState extends ConsumerState<_SummaryBody> {
     return ListView(
       padding: const EdgeInsets.all(16),
       children: [
-        _Totals(summary: summary),
+        SummaryTotals(summary: summary),
         if (summary.byTopic.isNotEmpty) ...[
           const SizedBox(height: 24),
-          Text('Por tema', style: textTheme.titleMedium),
-          for (final topic in summary.byTopic)
-            ListTile(
-              contentPadding: EdgeInsets.zero,
-              title: Text('Tema ${topic.topicId} · ${topic.topicTitle}'),
-              subtitle: Text(
-                '${topic.correct} aciertos · ${topic.wrong} fallos · '
-                '${topic.blank} en blanco',
-              ),
-              trailing: Text(
-                _percent(topic.correct * 100 / topic.total),
-                style: textTheme.titleSmall,
-              ),
-            ),
+          TopicBreakdownSection(summary: summary),
         ],
         if (missed.isNotEmpty) ...[
           const SizedBox(height: 24),
@@ -121,7 +106,7 @@ class _SummaryBodyState extends ConsumerState<_SummaryBody> {
             'Falladas y en blanco (${missed.length})',
             style: textTheme.titleMedium,
           ),
-          for (final item in missed) _MissedTile(item: item),
+          for (final item in missed) MissedQuestionTile(item: item),
         ],
         const SizedBox(height: 24),
         if (missed.isNotEmpty)
@@ -138,98 +123,6 @@ class _SummaryBodyState extends ConsumerState<_SummaryBody> {
             _ => 'Nueva práctica',
           }),
         ),
-      ],
-    );
-  }
-}
-
-class _Totals extends StatelessWidget {
-  const _Totals({required this.summary});
-
-  final SessionSummary summary;
-
-  @override
-  Widget build(BuildContext context) {
-    final textTheme = Theme.of(context).textTheme;
-    final colors = Theme.of(context).colorScheme;
-    return Card(
-      margin: EdgeInsets.zero,
-      child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          children: [
-            Text(
-              _percent(summary.correctPercent),
-              style: textTheme.displaySmall?.copyWith(color: colors.primary),
-            ),
-            const Text('de aciertos'),
-            const SizedBox(height: 16),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                _Stat('Aciertos', summary.correct, summary.correctPercent),
-                _Stat('Fallos', summary.wrong, summary.wrongPercent),
-                _Stat('En blanco', summary.blank, summary.blankPercent),
-              ],
-            ),
-            if (summary.unanswered > 0) ...[
-              const SizedBox(height: 12),
-              Text('Sin responder: ${summary.unanswered}'),
-            ],
-            if (summary.notCounted > 0) ...[
-              const SizedBox(height: 4),
-              Text(
-                'No cuentan: ${summary.notCounted} '
-                '(anuladas después de responderlas)',
-              ),
-            ],
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class _Stat extends StatelessWidget {
-  const _Stat(this.label, this.count, this.percent);
-
-  final String label;
-  final int count;
-  final double percent;
-
-  @override
-  Widget build(BuildContext context) => Column(
-    children: [
-      Text('$count', style: Theme.of(context).textTheme.titleLarge),
-      Text(label),
-      Text(_percent(percent), style: Theme.of(context).textTheme.bodySmall),
-    ],
-  );
-}
-
-class _MissedTile extends StatelessWidget {
-  const _MissedTile({required this.item});
-
-  final SummaryItem item;
-
-  @override
-  Widget build(BuildContext context) {
-    final q = item.question.question;
-    final chosen = item.answer?.chosen;
-    return ExpansionTile(
-      tilePadding: EdgeInsets.zero,
-      title: Text(q.statement, maxLines: 2, overflow: TextOverflow.ellipsis),
-      subtitle: Text(questionOrigin(item.question)),
-      childrenPadding: const EdgeInsets.only(bottom: 12),
-      expandedCrossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          chosen == null
-              ? 'Tu respuesta: en blanco'
-              : 'Tu respuesta: ${optionLabel(q, chosen)}',
-        ),
-        if (q.correctKey case final key?)
-          Text('Correcta: ${optionLabel(q, key)}'),
       ],
     );
   }

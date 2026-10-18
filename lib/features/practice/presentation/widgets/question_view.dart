@@ -8,17 +8,21 @@ import 'context_card.dart';
 
 /// Pregunta completa: origen y tema, contexto (si lo hay), enunciado y
 /// opciones. Con [answer] las opciones muestran la corrección y dejan de
-/// poder tocarse.
+/// poder tocarse; con [selected] (simulacro) se marca una sin corregir.
 class QuestionView extends StatelessWidget {
   const QuestionView({
     super.key,
     required this.question,
     required this.answer,
     required this.onChoose,
+    this.selected,
   });
 
   final StudyQuestion question;
   final Answer? answer;
+
+  /// Opción marcada y aún sin corregir; se puede cambiar.
+  final String? selected;
 
   /// `null` = opciones desactivadas (ya respondida o guardando).
   final ValueChanged<String>? onChoose;
@@ -66,14 +70,16 @@ class QuestionView extends StatelessWidget {
 
   _OptionState _stateOf(String key) {
     final answer = this.answer;
-    if (answer == null) return _OptionState.idle;
+    if (answer == null) {
+      return key == selected ? _OptionState.selected : _OptionState.idle;
+    }
     if (key == question.question.correctKey) return _OptionState.correct;
     if (key == answer.chosen) return _OptionState.wrong;
     return _OptionState.dimmed;
   }
 }
 
-enum _OptionState { idle, correct, wrong, dimmed }
+enum _OptionState { idle, selected, correct, wrong, dimmed }
 
 class _OptionTile extends StatelessWidget {
   const _OptionTile({
@@ -103,6 +109,13 @@ class _OptionTile extends StatelessWidget {
         colors.error,
         Icons.cancel,
         'Tu respuesta, incorrecta',
+      ),
+      // Neutro (sin verde ni rojo): en el simulacro aún no se sabe si acierta.
+      _OptionState.selected => (
+        colors.secondaryContainer,
+        colors.secondary,
+        Icons.radio_button_checked,
+        'Marcada',
       ),
       _ => (null, colors.outlineVariant, null, null),
     };
