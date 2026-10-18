@@ -19,9 +19,14 @@ class SyncReviewState {
   final ReviewRepository _review;
   final ReviewCalendar _calendar;
 
-  /// Modos cuyas respuestas cuentan para el repaso. El simulacro se decidirá
-  /// en la Fase 4 (allí se puede cambiar de opción antes de entregar).
-  static const countedModes = {SessionMode.practice, SessionMode.review};
+  /// Modos cuyas respuestas cuentan para el repaso: todos. Del simulacro solo
+  /// llega una respuesta por pregunta, la entregada (mientras se cambia de
+  /// opción es un borrador en la configuración de la sesión, no un evento).
+  static const countedModes = {
+    SessionMode.practice,
+    SessionMode.review,
+    SessionMode.exam,
+  };
 
   /// Recalcula solo [questionIds] (tras responder una pregunta).
   Future<void> call(String packId, Iterable<String> questionIds) async {

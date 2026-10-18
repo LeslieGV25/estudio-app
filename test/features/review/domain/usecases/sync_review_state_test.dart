@@ -95,13 +95,13 @@ void main() {
       );
     });
 
-    test('las respuestas de simulacro no cuentan (Fase 4)', () async {
+    test('las respuestas de simulacro también cuentan', () async {
       final exam = await start(SessionMode.exam);
       await answer(exam, 'q1', false);
 
       await sync('pack', ['q1']);
 
-      expect(await states(), isEmpty);
+      expect(await states(), {'q1': failedToday});
     });
 
     test('es idempotente: sincronizar dos veces da lo mismo', () async {

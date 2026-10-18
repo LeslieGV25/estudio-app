@@ -67,6 +67,47 @@ void main() {
       expect(session.score, '4.750');
     });
 
+    test('startSession usa el id que se le pasa', () async {
+      final session = await repo.startSession(
+        id: 'id-fijado',
+        packId: 'pack-a',
+        mode: SessionMode.exam,
+        config: const {},
+      );
+
+      expect(session.id, 'id-fijado');
+      expect(await repo.findSession('id-fijado'), session);
+    });
+
+    test('updateSessionConfig sustituye la configuración', () async {
+      final id = await startPractice();
+      now = now.add(const Duration(minutes: 1));
+
+      await repo.updateSessionConfig(id, const {
+        'choices': {'q1': 'b'},
+      });
+
+      final session = await repo.findSession(id);
+      expect(session!.config, {
+        'choices': {'q1': 'b'},
+      });
+      final row = await (db.select(
+        db.sessions,
+      )..where((s) => s.id.equals(id))).getSingle();
+      expect(row.updatedAt, now);
+    });
+
+    test('updateSessionConfig falla si la sesión ya terminó', () async {
+      final id = await startPractice();
+      await repo.finishSession(id);
+
+      expect(() => repo.updateSessionConfig(id, const {}), throwsStateError);
+      expect(
+        () => repo.updateSessionConfig('no-existe', const {}),
+        throwsStateError,
+      );
+    });
+
     test('terminar dos veces conserva la primera hora de fin', () async {
       final id = await startPractice();
       final firstEnd = now;
@@ -180,6 +221,82 @@ void main() {
         isCorrect: true,
         timeMs: 1,
       );
+    });
+  });
+
+  group('submitSession', () {
+    test(
+      'guarda las respuestas, la configuración y la nota a la vez',
+      () async {
+        final id = await startPractice(packId: 'pack-b');
+        now = now.add(const Duration(minutes: 30));
+
+        await repo.submitSession(
+          id,
+          answers: const [
+            (questionId: 'q1', chosen: 'a', isCorrect: true, timeMs: 1000),
+            (questionId: 'q2', chosen: null, isCorrect: false, timeMs: 0),
+          ],
+          config: const {'entregada': true},
+          score: '5.000',
+        );
+
+        final session = await repo.findSession(id);
+        expect(session!.finishedAt, now);
+        expect(session.score, '5.000');
+        expect(session.config, {'entregada': true});
+        final answers = await repo.sessionAnswers(id);
+        expect(
+          [for (final a in answers) (a.questionId, a.chosen, a.packId)],
+          [('q1', 'a', 'pack-b'), ('q2', null, 'pack-b')],
+        );
+        expect(answers.map((a) => a.answeredAt), everyElement(now));
+      },
+    );
+
+    test('no se puede entregar dos veces', () async {
+      final id = await startPractice();
+      await repo.submitSession(id, answers: const [], config: const {});
+
+      await expectLater(
+        () => repo.submitSession(
+          id,
+          answers: const [
+            (questionId: 'q1', chosen: 'a', isCorrect: true, timeMs: 1),
+          ],
+          config: const {},
+        ),
+        throwsStateError,
+      );
+      expect(await repo.sessionAnswers(id), isEmpty);
+    });
+
+    test('si algo falla, no se guarda nada (transacción)', () async {
+      final id = await startPractice();
+      // Un trigger de prueba hace fallar la segunda respuesta: la primera ya
+      // se habría insertado y la sesión aún no estaría cerrada.
+      await db.customStatement(
+        'CREATE TRIGGER falla_en_q2 BEFORE INSERT ON answers '
+        "WHEN NEW.question_id = 'q2' BEGIN SELECT RAISE(ABORT, 'q2'); END",
+      );
+
+      await expectLater(
+        () => repo.submitSession(
+          id,
+          answers: const [
+            (questionId: 'q1', chosen: 'a', isCorrect: true, timeMs: 1),
+            (questionId: 'q2', chosen: 'a', isCorrect: true, timeMs: 1),
+          ],
+          config: const {'entregada': true},
+          score: '1.000',
+        ),
+        throwsA(anything),
+      );
+
+      final session = await repo.findSession(id);
+      expect(session!.isFinished, isFalse);
+      expect(session.config, isNot(containsPair('entregada', true)));
+      expect(await repo.sessionAnswers(id), isEmpty);
     });
   });
 

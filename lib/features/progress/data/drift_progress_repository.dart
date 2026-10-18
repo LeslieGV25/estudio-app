@@ -15,6 +15,7 @@ class DriftProgressRepository implements ProgressRepository {
 
   @override
   Future<StudySession> startSession({
+    String? id,
     required String packId,
     required SessionMode mode,
     required Map<String, Object?> config,
@@ -24,6 +25,7 @@ class DriftProgressRepository implements ProgressRepository {
         .into(_db.sessions)
         .insertReturning(
           SessionsCompanion.insert(
+            id: id == null ? const Value.absent() : Value(id),
             packId: packId,
             mode: mode,
             config: config,
@@ -42,22 +44,60 @@ class DriftProgressRepository implements ProgressRepository {
   }
 
   @override
+  Future<void> updateSessionConfig(
+    String sessionId,
+    Map<String, Object?> config,
+  ) => _db.transaction(() async {
+    await _openSession(sessionId);
+    await _unfinished(sessionId).write(
+      SessionsCompanion(config: Value(config), updatedAt: Value(_clock())),
+    );
+  });
+
+  @override
   Future<void> finishSession(String sessionId, {String? score}) async {
     final now = _clock();
-    await (_db.update(_db.sessions)..where(
-          (s) =>
-              s.id.equals(sessionId) &
-              s.finishedAt.isNull() &
-              s.deletedAt.isNull(),
-        ))
-        .write(
-          SessionsCompanion(
-            finishedAt: Value(now),
-            score: Value(score),
-            updatedAt: Value(now),
-          ),
-        );
+    await _unfinished(sessionId).write(
+      SessionsCompanion(
+        finishedAt: Value(now),
+        score: Value(score),
+        updatedAt: Value(now),
+      ),
+    );
   }
+
+  @override
+  Future<void> submitSession(
+    String sessionId, {
+    required List<NewAnswer> answers,
+    required Map<String, Object?> config,
+    String? score,
+  }) => _db.transaction(() async {
+    final session = await _openSession(sessionId);
+    final now = _clock();
+    await _db.batch(
+      (b) => b.insertAll(_db.answers, [
+        for (final a in answers)
+          AnswersCompanion.insert(
+            sessionId: sessionId,
+            packId: session.packId,
+            questionId: a.questionId,
+            chosen: Value(a.chosen),
+            isCorrect: a.isCorrect,
+            timeMs: a.timeMs,
+            answeredAt: Value(now),
+          ),
+      ]),
+    );
+    await _unfinished(sessionId).write(
+      SessionsCompanion(
+        config: Value(config),
+        finishedAt: Value(now),
+        score: Value(score),
+        updatedAt: Value(now),
+      ),
+    );
+  });
 
   @override
   Future<Answer> recordAnswer({
@@ -67,13 +107,7 @@ class DriftProgressRepository implements ProgressRepository {
     required bool isCorrect,
     required int timeMs,
   }) => _db.transaction(() async {
-    final session = await _sessionById(sessionId).getSingleOrNull();
-    if (session == null) {
-      throw StateError('La sesión $sessionId no existe');
-    }
-    if (session.finishedAt != null) {
-      throw StateError('La sesión $sessionId ya terminó');
-    }
+    final session = await _openSession(sessionId);
     final row = await _db
         .into(_db.answers)
         .insertReturning(
@@ -89,6 +123,26 @@ class DriftProgressRepository implements ProgressRepository {
         );
     return _toAnswer(row);
   });
+
+  /// La sesión, si existe y no ha terminado; si no, [StateError].
+  Future<SessionRow> _openSession(String sessionId) async {
+    final session = await _sessionById(sessionId).getSingleOrNull();
+    if (session == null) {
+      throw StateError('La sesión $sessionId no existe');
+    }
+    if (session.finishedAt != null) {
+      throw StateError('La sesión $sessionId ya terminó');
+    }
+    return session;
+  }
+
+  UpdateStatement<$SessionsTable, SessionRow> _unfinished(String sessionId) =>
+      _db.update(_db.sessions)..where(
+        (s) =>
+            s.id.equals(sessionId) &
+            s.finishedAt.isNull() &
+            s.deletedAt.isNull(),
+      );
 
   @override
   Future<List<Answer>> sessionAnswers(String sessionId) async =>
