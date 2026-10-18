@@ -125,7 +125,7 @@ reserva=`isReserve`, apuntes=`Note`, simulacro=`ExamRules`.
 - **Fase 2 — Práctica** ✅: elegir tema/bloque/fuente y nº de preguntas; pantalla de pregunta con
   contexto y código; feedback y explicación; guardar cada respuesta como evento.
 - **Fase 3 — Repaso** ✅: Leitner, contador de «pendientes hoy», sesión de repaso.
-- **Fase 4 — Simulacro**: reglas del pack, temporizador, reserva/anuladas, entrega y nota.
+- **Fase 4 — Simulacro** ✅: reglas del pack, temporizador, reserva/anuladas, entrega y nota.
 - **Fase 5 — Estadísticas**: global y por tema, evolución por días, temas débiles.
 - **Fase 6 — Personalización**: editor de preguntas, importar CSV (plantilla), exportar pack,
   exportar/importar progreso, y guía **«Crear un pack con IA»**:

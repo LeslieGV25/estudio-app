@@ -280,3 +280,90 @@
   las preguntas del pack. Al terminar un repaso baja sin recargar nada.
 - **Test de widgets del flujo completo** con respuestas falladas sembradas antes de arrancar y sin
   caché de repaso: si el contador muestra 2, la reconstrucción al arrancar funciona.
+
+## Fase 4 — Simulacro
+
+### Nota
+
+- **Fracciones exactas y un solo redondeo, al final.** `ScoreCalculator` opera con `Rational`
+  (paquete `rational`, el tipo que devuelve la división de `decimal`) y redondea la nota una vez.
+  Con 48 valorables el acierto vale 10/48 = 0,208333…: redondearlo antes de multiplicar da 5,564
+  donde la nota oficial es 5,573 (hay un test con ese caso). Descartado `double`: 1,0005 es en
+  binario 1,000499…, y se redondearía a 1,000.
+- **Ejemplo (examen real 2024, ej. 2):** 25 preguntas, 4 anuladas y ninguna reserva →
+  21 valorables. Acierto = 10/21; fallo = −10/21 · 1/4 = −5/42. Con 13 aciertos y 8 fallos:
+  130/21 − 20/21 = 110/21 = 5,238095… → **5,238, apto**. Con 12, 7 y 2 en blanco:
+  205/42 = 4,880952… → **4,881, no apto**; netos 10,25 de 10,5 → faltaba 1/4 de acierto neto.
+- **Half-up simétrico** con `Rational.round()`, que en el empate se aleja del cero
+  (−4,0005 → −4,001). La nota negativa no se corta en 0: las bases no lo dicen.
+- **Los `double` del pack se convierten con `toString()`**, que da el número tal como se escribió
+  en el JSON (0.33 → "0.33"), no su valor binario.
+- **APTO / NO APTO con la nota redondeada**, que es la que publica el tribunal. «Te faltaban X
+  aciertos netos» = (nota mínima − nota exacta) / valor del acierto.
+- **Sin `decimales` en el pack se usan 3.**
+
+### Plan del simulacro
+
+- **Dos modos.** *Examen real*: una fuente, sus preguntas en orden; cada anulada se sustituye por
+  la siguiente reserva disponible (no anulada), que va al final, como en el cuadernillo. Las
+  reservas que sobran no se muestran: no puntuarían. *Aleatorio*: preguntas de todas las fuentes
+  cuyo ejercicio equivale al del simulacro; las reservas entran como normales (la regla de solo
+  sustituir es del examen real) y los supuestos van enteros, con el mismo barajado por grupos que
+  la práctica.
+- **Valorables = preguntas que se muestran.** Así `ExamTally` no necesita un nº aparte: las
+  anuladas sin reserva ya no están en el ejercicio.
+- **Obsoletas fuera por defecto también en el examen real**, y restan valorables (no las
+  sustituye ninguna reserva). Por defecto, solo oficiales en aleatorio.
+- **Las reglas se copian en la sesión al empezar** (`ExamPaper`: duración y puntuación). Si el pack
+  se actualiza o, en la Fase 6, la usuaria edita las reglas, los simulacros hechos no cambian.
+- **Planificar y empezar por separado**, como en la práctica: la pantalla enseña lo que tendrá
+  cada ejercicio («Anuladas sin reserva: 4 (no puntúan; 21 valorables)») y «Empezar» usa ese plan.
+
+### Sesiones, borrador y entrega
+
+- **Una sesión por ejercicio**, enlazadas con `previousSessionId` / `nextSessionId` en
+  `sessions.config`. Así `started_at` (que marca el temporizador), `finished_at` y `score` encajan
+  por ejercicio **sin migración**. Descartado: una sola sesión para todo el simulacro, que obligaba
+  a guardar inicio, fin y nota de cada ejercicio dentro del JSON.
+- **El ej. 2 se crea al pulsar «Empezar el siguiente ejercicio»**, y su temporizador empieza ahí.
+  Su id (UUID) se reserva al entregar el ej. 1, y `StartExam.next` lo crea solo si no existe:
+  pulsar dos veces, o cerrar la app entre medias, no crea dos sesiones.
+- **Borrador en `sessions.config`, no en `answers`.** Lo marcado, el tiempo de cada pregunta y la
+  pregunta abierta se guardan con cada cambio (`updateSessionConfig`): recargar con F5 no pierde
+  nada. Al entregar, una transacción (`submitSession`) inserta una respuesta por pregunta (las no
+  marcadas, en blanco), vacía el borrador y guarda la nota; si algo falla, no se guarda nada (hay
+  un test que fuerza el fallo a mitad). Descartado: un evento por cada cambio de opción y quedarse
+  con el último, que obligaría al repaso y a las estadísticas a deduplicar.
+- **Las respuestas del simulacro cuentan para el repaso.** Como solo llega la entregada, es una
+  respuesta más; lo que se dejó pendiente en la Fase 3.
+- **Temporizador por reloj de pared:** hora límite = `started_at` + duración. Si se vuelve con el
+  tiempo vencido, el controlador entrega al cargar; si se agota en pantalla, se entrega solo.
+- **Las escrituras del borrador van en cola** (`_writes`) y entregar espera a la última, para que
+  no se entregue una opción a medio guardar.
+
+### Resultado
+
+- **La nota se recalcula al abrir el resultado** con las respuestas y el pack de hoy: si después se
+  anula una pregunta, deja de ser valorable, como cuando el tribunal publica la plantilla
+  definitiva. `sessions.score` conserva la nota de la entrega y, si no coinciden, se muestran las
+  dos: «6,000 (recalculada; al entregar: 5,875)».
+- **Ej. 1 suspendido → ej. 2 «no corregido»**: se guarda y sus respuestas se pueden revisar
+  (desplegable «Ver tus respuestas»), pero sin nota ni veredicto, como en el examen real.
+- **«Repasar estas»** junta las falladas y en blanco de todos los ejercicios en una práctica.
+- **Secciones del resumen compartidas** (`summary_sections.dart`): totales, por tema y falladas
+  se pintan igual en práctica, repaso y en cada ejercicio del simulacro.
+
+### Pantallas
+
+- **Sin feedback al marcar:** la opción marcada usa un color neutro (ni verde ni rojo) y la etiqueta
+  «Marcada» para lectores de pantalla; se puede cambiar o «Dejar en blanco».
+- **Rejilla de preguntas** plegable con marcadas / en blanco y la actual, para saltar a cualquiera.
+- **Entregar pide confirmación** con las que quedan en blanco. Entre ejercicios no se enseña la nota.
+- **Tests de widgets sin `pumpAndSettle`**: el temporizador repinta cada segundo y nunca se
+  «asienta»; los tests avanzan un tiempo fijo.
+
+### Corrección de la Fase 3
+
+- **Los repositorios usan `clockProvider`.** `progressRepositoryProvider` guardaba las respuestas
+  con la hora real aunque los tests fijaran otra, y `review_flow_test` solo pasaba el día en que se
+  escribió (5/10/2026). Se vio al ejecutarlo el 18/10.
