@@ -37,8 +37,19 @@ class ExamPartResult {
   final StudySession? session;
   final SessionSummary? summary;
 
-  /// `null` si el ejercicio no tiene puntuación o aún no se ha entregado.
+  /// Nota recalculada con el pack de hoy; `null` si el ejercicio no tiene
+  /// puntuación o aún no se ha entregado.
   final ExamScore? score;
+
+  /// Nota guardada al entregar (`sessions.score`).
+  String? get submittedScoreText => session?.score;
+
+  /// La nota de hoy no es la de la entrega (el pack anuló preguntas
+  /// después): la pantalla muestra las dos.
+  bool get scoreChangedSinceSubmit =>
+      score != null &&
+      submittedScoreText != null &&
+      score!.scoreText != submittedScoreText;
 }
 
 /// Resultado de un simulacro: todos sus ejercicios, en orden.

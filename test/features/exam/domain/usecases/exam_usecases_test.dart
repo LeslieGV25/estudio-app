@@ -216,6 +216,7 @@ void main() {
       ]);
       expect(result.parts.first.score!.scoreText, '10.000');
       expect(result.parts.first.score!.passed, isTrue);
+      expect(result.parts.first.scoreChangedSinceSubmit, isFalse);
       // Fijo: un fallo = −0,33.
       expect(result.parts.last.score!.scoreText, '-0.33');
       expect(result.parts.last.score!.passed, isFalse);
@@ -285,6 +286,8 @@ void main() {
       expect(part.summary!.notCounted, 1);
       expect(part.score!.scoreText, '10.000');
       expect((await reload(first.id)).score, '3.750');
+      expect(part.submittedScoreText, '3.750');
+      expect(part.scoreChangedSinceSubmit, isTrue);
     });
 
     test('una sesión que no existe no tiene resultado', () async {
