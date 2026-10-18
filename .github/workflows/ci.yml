@@ -6,6 +6,12 @@ on:
   pull_request:
     branches: [main]
 
+# Una sola ejecución por rama o PR: un push nuevo cancela la anterior, que ya
+# no sirve (comprueba un commit que ha quedado atrás).
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   analyze-and-test:
     runs-on: ubuntu-latest
