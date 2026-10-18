@@ -1,6 +1,7 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../../core/db/app_database_provider.dart';
+import '../../../core/utils/clock_provider.dart';
 import '../domain/review_calendar.dart';
 import '../domain/review_repository.dart';
 import 'drift_review_repository.dart';
@@ -8,8 +9,10 @@ import 'drift_review_repository.dart';
 part 'review_providers.g.dart';
 
 @Riverpod(keepAlive: true)
-ReviewRepository reviewRepository(Ref ref) =>
-    DriftReviewRepository(ref.watch(appDatabaseProvider));
+ReviewRepository reviewRepository(Ref ref) => DriftReviewRepository(
+  ref.watch(appDatabaseProvider),
+  clock: ref.watch(clockProvider),
+);
 
 /// Días según la zona horaria del dispositivo; los tests ponen uno fijo.
 @Riverpod(keepAlive: true)
