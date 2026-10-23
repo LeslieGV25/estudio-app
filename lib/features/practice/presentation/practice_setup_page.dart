@@ -18,8 +18,12 @@ const _questionCounts = <int?>[10, 20, 50, null];
 
 /// Elegir qué practicar en el pack activo: temas o bloques, fuentes,
 /// oficiales/obsoletas y nº de preguntas, con el recuento en vivo.
+///
+/// Con [topicId] empieza con ese tema marcado y su bloque desplegado.
 class PracticeSetupPage extends ConsumerWidget {
-  const PracticeSetupPage({super.key});
+  const PracticeSetupPage({super.key, this.topicId});
+
+  final int? topicId;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -28,7 +32,7 @@ class PracticeSetupPage extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('Practicar')),
       body: switch (packId) {
-        AsyncData(value: final id?) => _SetupForm(packId: id),
+        AsyncData(value: final id?) => _SetupForm(packId: id, topicId: topicId),
         AsyncData() => const Center(child: Text('No hay ningún pack activo.')),
         AsyncError(:final error) => Center(child: Text('Error: $error')),
         _ => const Center(child: CircularProgressIndicator()),
@@ -38,9 +42,10 @@ class PracticeSetupPage extends ConsumerWidget {
 }
 
 class _SetupForm extends ConsumerWidget {
-  const _SetupForm({required this.packId});
+  const _SetupForm({required this.packId, required this.topicId});
 
   final String packId;
+  final int? topicId;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -48,8 +53,10 @@ class _SetupForm extends ConsumerWidget {
     return switch (outline) {
       AsyncData(:final value) => Column(
         children: [
-          Expanded(child: _FilterList(outline: value)),
-          _StartBar(packId: packId),
+          Expanded(
+            child: _FilterList(outline: value, topicId: topicId),
+          ),
+          _StartBar(packId: packId, topicId: topicId),
         ],
       ),
       AsyncError(:final error) => Center(child: Text('Error: $error')),
@@ -59,14 +66,16 @@ class _SetupForm extends ConsumerWidget {
 }
 
 class _FilterList extends ConsumerWidget {
-  const _FilterList({required this.outline});
+  const _FilterList({required this.outline, required this.topicId});
 
   final PackOutline outline;
+  final int? topicId;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final filter = ref.watch(practiceFilterControllerProvider);
-    final controller = ref.read(practiceFilterControllerProvider.notifier);
+    final provider = practiceFilterControllerProvider(topicId: topicId);
+    final filter = ref.watch(provider);
+    final controller = ref.read(provider.notifier);
     final textTheme = Theme.of(context).textTheme;
 
     return ListView(
@@ -83,6 +92,8 @@ class _FilterList extends ConsumerWidget {
                 if (t.blockId == block.id) t,
             ],
             filter: filter,
+            controller: controller,
+            initialTopicId: topicId,
           ),
         const SizedBox(height: 16),
         Text('Fuentes', style: textTheme.titleMedium),
@@ -138,25 +149,30 @@ class _FilterList extends ConsumerWidget {
   }
 }
 
-class _BlockTile extends ConsumerWidget {
+class _BlockTile extends StatelessWidget {
   const _BlockTile({
     required this.block,
     required this.topics,
     required this.filter,
+    required this.controller,
+    required this.initialTopicId,
   });
 
   final Block block;
   final List<Topic> topics;
   final PracticeFilter filter;
+  final PracticeFilterController controller;
+  final int? initialTopicId;
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final controller = ref.read(practiceFilterControllerProvider.notifier);
+  Widget build(BuildContext context) {
     final blockSelected = filter.blockIds.contains(block.id);
     final chosenTopics = topics.where((t) => filter.topicIds.contains(t.id));
 
     return Card(
       child: ExpansionTile(
+        // Al llegar desde «Practicar este tema», se ve el tema marcado.
+        initiallyExpanded: topics.any((t) => t.id == initialTopicId),
         leading: Checkbox(
           value: blockSelected,
           semanticLabel: 'Todo el bloque ${block.name}',
@@ -189,9 +205,10 @@ class _BlockTile extends ConsumerWidget {
 
 /// Recuento en vivo, aviso de sesión más corta y botón «Empezar».
 class _StartBar extends ConsumerStatefulWidget {
-  const _StartBar({required this.packId});
+  const _StartBar({required this.packId, required this.topicId});
 
   final String packId;
+  final int? topicId;
 
   @override
   ConsumerState<_StartBar> createState() => _StartBarState();
@@ -225,7 +242,9 @@ class _StartBarState extends ConsumerState<_StartBar> {
 
   @override
   Widget build(BuildContext context) {
-    final plan = ref.watch(practicePlanProvider(widget.packId)).value;
+    final plan = ref
+        .watch(practicePlanProvider(widget.packId, topicId: widget.topicId))
+        .value;
     final notice = plan == null ? null : practicePlanNotice(plan);
     final colors = Theme.of(context).colorScheme;
 

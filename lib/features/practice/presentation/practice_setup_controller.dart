@@ -10,11 +10,16 @@ part 'practice_setup_controller.g.dart';
 const defaultQuestionCount = 20;
 
 /// Filtro que la usuaria va eligiendo en la pantalla de configuración.
+///
+/// Con [topicId] (de la URL `/practice?tema=N`, p. ej. desde «Practicar este
+/// tema» en las estadísticas) empieza con ese tema marcado. Cada valor es un
+/// filtro distinto: el valor inicial sale de la URL y no hace falta
+/// modificar el filtro desde otra pantalla antes de navegar.
 @riverpod
 class PracticeFilterController extends _$PracticeFilterController {
   @override
-  PracticeFilter build() =>
-      const PracticeFilter(questionCount: defaultQuestionCount);
+  PracticeFilter build({int? topicId}) =>
+      PracticeFilter(questionCount: defaultQuestionCount, topicIds: {?topicId});
 
   void toggleTopic(int topicId) =>
       state = state.copyWith(topicIds: _toggle(state.topicIds, topicId));
@@ -42,8 +47,12 @@ class PracticeFilterController extends _$PracticeFilterController {
 /// Preguntas que tendría la sesión con el filtro actual. Se recalcula (y se
 /// vuelve a barajar) con cada cambio; «Empezar» usa exactamente este plan.
 @riverpod
-Future<PracticePlan> practicePlan(Ref ref, String packId) async {
-  final filter = ref.watch(practiceFilterControllerProvider);
+Future<PracticePlan> practicePlan(
+  Ref ref,
+  String packId, {
+  int? topicId,
+}) async {
+  final filter = ref.watch(practiceFilterControllerProvider(topicId: topicId));
   final questions = await ref.watch(packQuestionsProvider(packId).future);
   return PracticePlan.build(
     questions,

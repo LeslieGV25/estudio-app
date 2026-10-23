@@ -29,7 +29,10 @@ GoRouter appRouter(Ref ref) {
           GoRoute(
             path: 'practice',
             name: 'practice',
-            builder: (context, state) => const PracticeSetupPage(),
+            // `?tema=N`: empieza con ese tema marcado («Practicar este tema»).
+            builder: (context, state) => PracticeSetupPage(
+              topicId: int.tryParse(state.uri.queryParameters['tema'] ?? ''),
+            ),
             routes: [
               GoRoute(
                 path: 'session/:sessionId',
