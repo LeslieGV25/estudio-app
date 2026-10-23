@@ -422,3 +422,37 @@
   entrega más reciente (las reglas se copian en cada simulacro). Solo entran los ejercicios
   corregidos: los «no corregidos» y los que están sin entregar salen en la lista, pero no tienen nota.
 - **El historial no depende del filtro de estadísticas**: un simulacro se puntúa entero.
+
+### Pantallas y gráficos
+
+- **`fl_chart` para los gráficos.** Hay al menos dos (barras diarias y línea de notas), y la línea
+  necesita huecos (`FlSpot.nullSpot`), líneas de referencia discontinuas y tooltips: dibujarlo a
+  mano con `CustomPaint` serían varios cientos de líneas propias que mantener y probar. `fl_chart`
+  está mantenido (versión 1.x en 2026), es Dart puro (funciona igual en Android y web, sin
+  dependencias nativas) y solo trae `equatable` como dependencia transitiva. Descartados:
+  `syncfusion_flutter_charts` (licencia comercial) y `graphic` (API declarativa más potente,
+  pero mucho menos usada y con menos documentación).
+- **Colores de los gráficos fuera del `ColorScheme`** (`ChartColors`). El tema sale de una sola
+  semilla teal y no da dos tonos que se distingan bien. La paleta se comprobó con un validador de
+  daltonismo en claro y en oscuro: **aciertos azul y fallos naranja, no verde y rojo**, porque
+  verde/rojo es justo la pareja que no distingue la deuteranopía (ΔE 4,1 donde hace falta ≥ 8).
+  «En blanco» va en gris neutro. El color nunca va solo: siempre hay leyenda y textos.
+- **Accesibilidad:** cada gráfico se sustituye para lectores de pantalla por un resumen en texto
+  (`daysSemantics`, `examChartSemantics`); la lista de simulacros y la pestaña «Temas» hacen de
+  tabla con los mismos datos.
+- **Eje X del gráfico de notas = simulacro (en orden), no la fecha.** Así los ejercicios de un
+  mismo simulacro quedan en la misma vertical y dos simulacros del mismo día no se pisan; la fecha
+  va en las etiquetas y en el tooltip. Un ejercicio «no corregido» deja un hueco en su línea en vez
+  de unir los puntos de al lado. Una línea discontinua por cada nota mínima distinta.
+- **Tres pestañas** (Resumen, Temas, Simulacros) en vez de una página muy larga en el móvil. El
+  filtro va en una barra encima de «Resumen» y «Temas» (los simulacros no dependen de él) y se cambia
+  en una hoja inferior. Al cambiarlo se siguen viendo los datos anteriores mientras se recalculan.
+- **«Practicar este tema» es una URL: `/practice?tema=N`.** El filtro de práctica pasa a ser un
+  provider con parámetro (`practiceFilterControllerProvider(topicId: N)`) que empieza con ese tema
+  marcado, y su bloque se abre desplegado. Descartado: modificar el filtro desde la pantalla de
+  estadísticas antes de navegar, que con un provider `autoDispose` sin nadie escuchándolo puede
+  perderse, y que Riverpod no deja hacer durante el `build`. Con la URL también funciona recargar
+  en web.
+- **Textos como funciones puras** (`stats_texts.dart`), probadas sin pantallas, igual que en el
+  simulacro. Las fechas se pasan ya en hora local; los tests de widgets no comprueban la hora porque
+  depende de la zona del dispositivo (Madrid en local, UTC en el CI).
