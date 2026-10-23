@@ -9,6 +9,7 @@ import '../../features/practice/presentation/practice_session_page.dart';
 import '../../features/practice/presentation/practice_setup_page.dart';
 import '../../features/practice/presentation/session_summary_page.dart';
 import '../../features/review/presentation/review_page.dart';
+import '../../features/stats/presentation/stats_page.dart';
 import '../domain/session_mode.dart';
 
 part 'app_router.g.dart';
@@ -72,6 +73,11 @@ GoRouter appRouter(Ref ref) {
                 ),
               ),
             ],
+          ),
+          GoRoute(
+            path: 'stats',
+            name: 'stats',
+            builder: (context, state) => const StatsPage(),
           ),
           GoRoute(
             path: 'review',

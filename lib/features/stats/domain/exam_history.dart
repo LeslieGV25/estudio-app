@@ -36,6 +36,7 @@ class ExamScorePoint {
     required this.firstSessionId,
     required this.submittedAt,
     required this.score,
+    required this.scoreText,
     required this.passed,
   });
 
@@ -43,6 +44,9 @@ class ExamScorePoint {
   final String firstSessionId;
   final DateTime submittedAt;
   final Decimal score;
+
+  /// Con los decimales del ejercicio («5.000»).
+  final String scoreText;
 
   /// `null` si el ejercicio no tiene nota mínima.
   final bool? passed;
@@ -106,6 +110,7 @@ class ExamHistory {
                 firstSessionId: entry.firstSessionId,
                 submittedAt: submittedAt,
                 score: score.rounded,
+                scoreText: score.scoreText,
                 passed: score.passed,
               ),
             );

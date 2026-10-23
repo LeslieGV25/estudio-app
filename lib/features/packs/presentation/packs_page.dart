@@ -247,6 +247,11 @@ class _PackTile extends ConsumerWidget {
                     runSpacing: 8,
                     alignment: WrapAlignment.end,
                     children: [
+                      OutlinedButton.icon(
+                        onPressed: () => context.go('/stats'),
+                        icon: const Icon(Icons.insights_outlined),
+                        label: const Text('Estadísticas'),
+                      ),
                       _ReviewButton(packId: pack.id),
                       OutlinedButton.icon(
                         onPressed: () => context.go('/exam'),
