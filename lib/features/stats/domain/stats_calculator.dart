@@ -22,6 +22,13 @@ abstract final class StatsCalculator {
   static const weakMinAnswers = 10;
   static const weakTopicCount = 5;
 
+  /// Un tema es débil si su % de aciertos está por debajo de
+  /// max(weakFloorPercent, % global). El 60 % es lo que hace falta en el
+  /// ej. 1 de Zaragoza contestando todo para llegar al 5 (30 de 50: +6 − 1).
+  /// Con una media alta, débil es lo que va peor que la media; con una media
+  /// baja, lo que no llegaría al aprobado.
+  static const weakFloorPercent = 60;
+
   /// Días que se muestran en la evolución diaria (hoy incluido).
   static const windowDays = 30;
 
@@ -119,7 +126,7 @@ abstract final class StatsCalculator {
       studyDays: byDay.length,
       blocks: List.unmodifiable(blocks),
       days: List.unmodifiable(days),
-      weakTopics: List.unmodifiable(_weakTopics(topics)),
+      weakTopics: List.unmodifiable(_weakTopics(topics, total)),
       unpracticedTopics: List.unmodifiable([
         for (final t in topics)
           if (t.isUnpracticed && t.coverage.practicable > 0) t,
@@ -134,13 +141,24 @@ abstract final class StatsCalculator {
     totalTimeMs: answer.timeMs,
   );
 
-  /// Peor % de aciertos primero; a igualdad, el que tiene más respuestas
-  /// (el dato es más fiable) y, al final, el orden del pack.
-  static List<TopicStats> _weakTopics(List<TopicStats> topics) {
+  /// Temas por debajo de max([weakFloorPercent], % global), con al menos
+  /// [weakMinAnswers] respuestas. Peor % de aciertos primero; a igualdad, el
+  /// que tiene más respuestas (el dato es más fiable) y, al final, el orden
+  /// del pack.
+  static List<TopicStats> _weakTopics(
+    List<TopicStats> topics,
+    AnswerTally total,
+  ) {
     final order = {for (final (i, t) in topics.indexed) t.topic.id: i};
+    // x < max(a, b) ⇔ x < a o x < b. Todo en enteros, multiplicando en
+    // cruz: correct / counted < 60 / 100 o < total.correct / total.counted.
+    bool isWeak(AnswerTally t) =>
+        t.counted >= weakMinAnswers &&
+        (t.correct * 100 < weakFloorPercent * t.counted ||
+            t.correct * total.counted < total.correct * t.counted);
     final candidates = [
       for (final t in topics)
-        if (t.tally.counted >= weakMinAnswers) t,
+        if (isWeak(t.tally)) t,
     ];
     candidates.sort((a, b) {
       // a.correct / a.counted frente a b.correct / b.counted, sin double.

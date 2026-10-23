@@ -367,3 +367,58 @@
 - **Los repositorios usan `clockProvider`.** `progressRepositoryProvider` guardaba las respuestas
   con la hora real aunque los tests fijaran otra, y `review_flow_test` solo pasaba el día en que se
   escribió (5/10/2026). Se vio al ejecutarlo el 18/10.
+
+## Fase 5 — Estadísticas
+
+### Cálculo
+
+- **`StatsCalculator` es una función pura**, como `Leitner.replay`: recibe las preguntas del pack,
+  las respuestas y la caché de repaso, y devuelve `PackStats`. Se calcula en Dart y no con
+  `GROUP BY` en SQL por la misma razón que el filtro de práctica: las reglas (anuladas, obsoletas,
+  oficiales) están en un solo sitio y se prueban sin base de datos. Con unas 18 000 respuestas al
+  año el coste es despreciable.
+- **Cuenta cada respuesta, también las repetidas.** Las estadísticas miden intentos; la cobertura
+  (preguntas distintas vistas / practicables) dice cuánto temario se ha tocado.
+- **«No cuentan»** las respuestas a preguntas anuladas hoy o que ya no están en el pack, igual que en
+  el resumen de sesión. Las de preguntas que el filtro deja fuera (obsoletas, fuente) no entran.
+- **Filtro (`StatsFilter`)**: modos (todos por defecto; el repositorio ya filtraba por modo),
+  oficiales / estudio / todas, y obsoletas fuera por defecto.
+- **Las respuestas del ej. 2 «no corregido» cuentan**: son respuestas reales y ya contaban para el
+  repaso.
+- **Días de calendario locales** con el mismo `ReviewCalendar` del repaso: una respuesta de las
+  23:59 cuenta en su día, y los tests en UTC+2 dan lo mismo en Windows que en el CI. La evolución
+  muestra los últimos 30 días, también los vacíos; lo anterior cuenta en el total.
+- **Dominadas** salen de la caché de Leitner, filtradas por fuente y obsoletas pero no por modo: es
+  una etiqueta del repaso, que cuenta todos los modos.
+- **`since` opcional** para el reinicio de progreso de la Fase 6 (marca de fecha, sin borrar eventos).
+
+### Temas débiles y sin practicar
+
+- **Débil = % de aciertos por debajo de max(60 %, % global)**, con al menos 10 respuestas; como
+  mucho 5, de peor a mejor (a igualdad, el de más respuestas). Todo configurable como constantes de
+  `StatsCalculator`.
+- **Por qué esa regla.** La primera versión («los 5 peores») marcaba como débil un tema con un 90 %
+  solo por ser de los peores. El 60 % es lo que hace falta en el ej. 1 contestando todo para llegar
+  al 5 (30 de 50: +6 − 1 = 5): por debajo, ese tema no aprobaría. Con una media alta (85 %) es débil
+  lo que va peor que la media aunque pase del 60 %; con una media baja (40 %), lo que no llega al
+  60 %. Hay un test para cada caso y otro con un tema justo en el 60 % (no es débil: tiene que estar
+  por debajo).
+- **Mínimo de 10 respuestas**: con menos, un solo fallo pondría el tema el primero.
+- **Comparaciones sin `double`**: los porcentajes se comparan multiplicando en cruz
+  (`a.correct · b.counted` frente a `b.correct · a.counted`), así no hay empates falsos por redondeo.
+- **Sin practicar = tema con preguntas practicables y ninguna respuesta que cuente.** Un tema que
+  solo tiene anuladas no sale (no hay nada que practicar); responder solo anuladas no lo saca de la
+  lista.
+
+### Historial de simulacros
+
+- **`LoadExamHistory` reutiliza `LoadExamResult`**: la nota es la misma recalculada que muestra la
+  pantalla de resultado, y las dos nunca dicen cosas distintas. Cuesta unas consultas por
+  simulacro, despreciable con decenas de simulacros. Descartado: reconstruir los resultados en
+  memoria, que duplicaba las reglas de encadenar ejercicios y de «no corregido».
+- **Se entra por la primera sesión** de cada simulacro (`previousSessionId == null`); el único cambio
+  en datos es `ProgressRepository.packSessions`, sin migración.
+- **Una serie de notas por ejercicio**, en el orden del simulacro del pack, con la nota mínima de la
+  entrega más reciente (las reglas se copian en cada simulacro). Solo entran los ejercicios
+  corregidos: los «no corregidos» y los que están sin entregar salen en la lista, pero no tienen nota.
+- **El historial no depende del filtro de estadísticas**: un simulacro se puntúa entero.

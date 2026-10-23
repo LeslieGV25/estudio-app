@@ -105,9 +105,11 @@ void main() {
     expect(stats.coverage.seen, 3);
     expect(stats.coverage.practicable, 7);
 
-    // Los dos que llegan a 10 respuestas, el peor primero.
-    expect([for (final t in stats.weakTopics) t.topic.id], [1, 2]);
-    expect(stats.weakTopics.first.tally.correctPercent, closeTo(33.3, 0.1));
+    // Umbral: max(60 %, 52 % global) = 60 %. El tema 2 (90 %) no es débil
+    // y el tema 3 no llega a 10 respuestas.
+    expect(stats.tally.correctPercent, 52);
+    expect([for (final t in stats.weakTopics) t.topic.id], [1]);
+    expect(stats.weakTopics.single.tally.correctPercent, closeTo(33.3, 0.1));
     expect([for (final t in stats.unpracticedTopics) t.topic.id], [4]);
     final tema4 = stats.topics.singleWhere((t) => t.topic.id == 4);
     expect(tema4.coverage.seen, 0);
@@ -281,11 +283,44 @@ void main() {
         [q('t1'), q('t2', topicId: 2)],
         [
           ...answers('t1', n: 9, correct: 0),
-          ...answers('t2', n: 10, correct: 8),
+          ...answers('t2', n: 10, correct: 3),
         ],
       );
 
       expect([for (final t in stats.weakTopics) t.topic.id], [2]);
+    });
+
+    test('media alta (85 %): débil es lo que va peor que la media', () {
+      // 19/20 (95 %), 8/10 (80 %) y 7/10 (70 %): 34/40 = 85 % global.
+      final stats = compute(
+        [q('t1'), q('t2', topicId: 2), q('t3', topicId: 3)],
+        [
+          ...answers('t1', n: 20, correct: 19),
+          ...answers('t2', n: 10, correct: 8),
+          ...answers('t3', n: 10, correct: 7),
+        ],
+      );
+
+      expect(stats.tally.correctPercent, 85);
+      // 80 % y 70 % superan el 60 %, pero están por debajo de la media.
+      expect([for (final t in stats.weakTopics) t.topic.id], [3, 2]);
+    });
+
+    test('media baja (40 %): débil es lo que no llega al 60 %', () {
+      // 5/10 (50 %), 1/10 (10 %) y 6/10 (60 %): 12/30 = 40 % global.
+      final stats = compute(
+        [q('t1'), q('t2', topicId: 2), q('t3', topicId: 3)],
+        [
+          ...answers('t1', n: 10, correct: 5),
+          ...answers('t2', n: 10, correct: 1),
+          ...answers('t3', n: 10, correct: 6),
+        ],
+      );
+
+      expect(stats.tally.correctPercent, 40);
+      // El 50 % supera la media, pero no llega al 60 %. Justo el 60 % no
+      // es débil: tiene que estar por debajo.
+      expect([for (final t in stats.weakTopics) t.topic.id], [2, 1]);
     });
 
     test('a igual %, primero el que tiene más respuestas', () {
@@ -301,7 +336,7 @@ void main() {
     });
 
     test('como mucho 5', () {
-      // Hacen falta más de 5 temas: 7, todos con 10 respuestas.
+      // Hacen falta más de 5 temas débiles: 7, todos por debajo del 60 %.
       final bigOutline = PackOutline(
         blocks: const [Block(id: 1, name: 'Bloque 1')],
         topics: [
@@ -317,9 +352,9 @@ void main() {
         outline: bigOutline,
         questions: bigQuestions,
         answers: [
-          // Tema n: n aciertos de 10.
+          // Tema n: n aciertos de 20 (del 5 % al 35 %).
           for (var id = 1; id <= 7; id++)
-            ...answers('t$id', n: 10, correct: id),
+            ...answers('t$id', n: 20, correct: id),
         ],
         reviewStates: const {},
         filter: const StatsFilter(),

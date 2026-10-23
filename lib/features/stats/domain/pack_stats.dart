@@ -133,7 +133,8 @@ class PackStats {
   /// Últimos días, del más antiguo a hoy, también los días sin respuestas.
   final List<DayStats> days;
 
-  /// Peor % de aciertos primero, entre los temas con bastantes respuestas.
+  /// Temas por debajo de max(60 %, % global) con bastantes respuestas, el
+  /// peor primero (ver `StatsCalculator.weakFloorPercent`).
   final List<TopicStats> weakTopics;
 
   /// Temas con preguntas que practicar y ninguna respuesta, en orden.
