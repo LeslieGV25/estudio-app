@@ -44,6 +44,25 @@ class DriftProgressRepository implements ProgressRepository {
   }
 
   @override
+  Future<List<StudySession>> packSessions(
+    String packId, {
+    required Set<SessionMode> modes,
+  }) async {
+    final query = _db.select(_db.sessions)
+      ..where(
+        (s) =>
+            s.packId.equals(packId) &
+            s.mode.isInValues(modes) &
+            s.deletedAt.isNull(),
+      )
+      ..orderBy([
+        (s) => OrderingTerm.asc(s.startedAt),
+        (s) => OrderingTerm.asc(s.rowId),
+      ]);
+    return (await query.get()).map(_toSession).toList();
+  }
+
+  @override
   Future<void> updateSessionConfig(
     String sessionId,
     Map<String, Object?> config,

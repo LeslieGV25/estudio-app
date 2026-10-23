@@ -28,6 +28,13 @@ abstract interface class ProgressRepository {
   /// `null` si no existe o está borrada.
   Future<StudySession?> findSession(String sessionId);
 
+  /// Sesiones del pack [packId] de [modes] no borradas, terminadas o no, por
+  /// hora de inicio.
+  Future<List<StudySession>> packSessions(
+    String packId, {
+    required Set<SessionMode> modes,
+  });
+
   /// Sustituye la configuración de una sesión sin terminar (el borrador del
   /// simulacro). Lanza [StateError] si no existe o ya terminó.
   Future<void> updateSessionConfig(

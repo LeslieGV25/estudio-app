@@ -370,4 +370,46 @@ void main() {
       expect(answers.map((a) => a.questionId), ['q1']);
     });
   });
+
+  group('packSessions', () {
+    Future<String> start(String packId, SessionMode mode) async =>
+        (await repo.startSession(
+          packId: packId,
+          mode: mode,
+          config: const {},
+        )).id;
+
+    test('devuelve las del pack en los modos pedidos, por inicio', () async {
+      final second = await start('pack-a', SessionMode.exam);
+      now = now.subtract(const Duration(hours: 1));
+      final first = await start('pack-a', SessionMode.exam);
+      await start('pack-a', SessionMode.practice);
+      await start('pack-b', SessionMode.exam);
+      await repo.finishSession(first, score: '5.000');
+
+      final sessions = await repo.packSessions(
+        'pack-a',
+        modes: {SessionMode.exam},
+      );
+
+      expect(sessions.map((s) => s.id), [first, second]);
+      expect(sessions.first.score, '5.000');
+      expect(sessions.last.isFinished, isFalse);
+    });
+
+    test('ignora las sesiones con borrado lógico', () async {
+      final kept = await start('pack-a', SessionMode.exam);
+      final deleted = await start('pack-a', SessionMode.exam);
+      await (db.update(db.sessions)..where((s) => s.id.equals(deleted))).write(
+        SessionsCompanion(deletedAt: Value(now)),
+      );
+
+      final sessions = await repo.packSessions(
+        'pack-a',
+        modes: {SessionMode.exam},
+      );
+
+      expect(sessions.map((s) => s.id), [kept]);
+    });
+  });
 }
